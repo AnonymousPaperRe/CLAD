@@ -38,3 +38,11 @@ Each task is trained with an **independent T5-base model**.
 
 ## 📁 Repository Structure
 
+- `data/processed/` — task datasets for **𝒯ₐ**, **𝒯_dm**, **𝒯_df**, **𝒯_f** (train/dev/test).
+- `models/` — checkpoints for the four T5-base task models (not tracked by git).
+- `src/clad/pipeline/` — end-to-end multi-stage inference pipeline.
+- `src/clad/reasoning/` — reusable reasoning utilities (e.g., `logic_reasoning.py`, grounding/alignment).
+- `src/clad/training/` — training scripts (shared trainer + per-task launchers).
+- `src/clad/evaluation/` — CM/EX evaluation, aggregation, and error taxonomy.
+- `configs/` — YAML configs for data paths, schema settings, training hyperparameters, and evaluation.
+- `outputs/` — predictions, logs, and generated tables.
