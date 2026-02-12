@@ -1,0 +1,2586 @@
+[
+  {
+    "rawnl": "What are the names of Pathways that the gene BCAS3 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"BCAS3\" })-[r:PARTICIPATES_GpPW]->(n2:Pathway) RETURN n2.name",
+    "rewrite_nl": "What are the names of Pathways that the gene \"BCAS3\" participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"BCAS3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of the Pathways that the gene EXOC5 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"EXOC5\" })-[r:PARTICIPATES_GpPW]->(n2:Pathway) RETURN n2.name",
+    "rewrite_nl": "What are the names of the Pathways that the gene \"EXOC5\" participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"EXOC5\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which compound does Hexobarbital resemble, and what is its name?",
+    "cql": "MATCH (n1:Compound { name: \"Hexobarbital\" })-[r:RESEMBLES_CrC]->(n2:Compound) RETURN n2.name",
+    "rewrite_nl": "Which compound does \"Hexobarbital\" resemble, and what is its name?",
+    "nodes": [
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Hexobarbital\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Compound",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the CellularComponent that the gene TRPM7 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"TRPM7\" })-[r:PARTICIPATES_GpCC]->(n2:CellularComponent) RETURN n2.name",
+    "rewrite_nl": "What is the name of the CellularComponent that the gene \"TRPM7\" participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"TRPM7\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of symptoms presented by the disease \"breast cancer\"?",
+    "cql": "MATCH (n1:Disease { name: \"breast cancer\" })-[r:PRESENTS_DpS]->(n2:Symptom) RETURN n2.name",
+    "rewrite_nl": "What are the names of symptoms presented by the disease \"breast cancer\"?",
+    "nodes": [
+      "Symptom",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"breast cancer\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "PRESENTS_DpS",
+          "obj": "Symptom",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Symptom",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Biological Process that the gene CFL1 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"CFL1\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Biological Process that the gene \"CFL1\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"CFL1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by the compound Hydroflumethiazide?",
+    "cql": "MATCH (n1:Compound { name: \"Hydroflumethiazide\" })-[r:UPREGULATES_CuG]->(n2:Gene) RETURN n2.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by the compound \"Hydroflumethiazide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Hydroflumethiazide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Compounds that are included in the PharmacologicClass named \"pleuromutilin\"?",
+    "cql": "MATCH (n1:PharmacologicClass { name: \"pleuromutilin\" })-[r:INCLUDES_PCiC]->(n2:Compound) RETURN n2.name",
+    "rewrite_nl": "What are the names of Compounds that are included in the PharmacologicClass named \"pleuromutilin\"?",
+    "nodes": [
+      "PharmacologicClass",
+      "Compound"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"pleuromutilin\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Compound",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that the gene LIF participates in?",
+    "cql": "MATCH (n1:Gene { name: \"LIF\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the molecular function that the gene \"LIF\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"LIF\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of diseases that are resembled by the disease named \"retroperitoneal cancer\"?",
+    "cql": "MATCH (n1:Disease { name: \"retroperitoneal cancer\" })-[r:RESEMBLES_DrD]->(n2:Disease) RETURN n2.name",
+    "rewrite_nl": "What are the names of diseases that are resembled by the disease named \"retroperitoneal cancer\"?",
+    "nodes": [
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"retroperitoneal cancer\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Biological Processes that the gene CD79B participates in?",
+    "cql": "MATCH (n1:Gene { name: \"CD79B\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What are the names of Biological Processes that the gene \"CD79B\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"CD79B\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the disease that Clindamycin treats?",
+    "cql": "MATCH (n1:Compound { name: \"Clindamycin\" })-[r:TREATS_CtD]->(n2:Disease) RETURN n2.name",
+    "rewrite_nl": "What is the name of the disease that \"Clindamycin\" treats?",
+    "nodes": [
+      "Disease"
+    ],
+    "instance": [
+      "Compound(name:\"Clindamycin\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Pathway that the gene LTBP3 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"LTBP3\" })-[r:PARTICIPATES_GpPW]->(n2:Pathway) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Pathway that the gene \"LTBP3\" participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"LTBP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that the gene named IRAK4 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"IRAK4\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the molecular function that the gene named \"IRAK4\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"IRAK4\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Pathway that the gene WNT7A participates in?",
+    "cql": "MATCH (n1:Gene { name: \"WNT7A\" })-[r:PARTICIPATES_GpPW]->(n2:Pathway) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Pathway that the gene \"WNT7A\" participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"WNT7A\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that the gene ME3 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"ME3\" })-[r:PARTICIPATES_GpCC]->(n2:CellularComponent) RETURN n2.name",
+    "rewrite_nl": "What is the name of the cellular component that the gene \"ME3\" participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"ME3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Molecular Function that the gene SELL participates in?",
+    "cql": "MATCH (n1:Gene { name: \"SELL\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Molecular Function that the gene \"SELL\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"SELL\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that the gene MYRIP participates in?",
+    "cql": "MATCH (n1:Gene { name: \"MYRIP\" })-[r:PARTICIPATES_GpCC]->(n2:CellularComponent) RETURN n2.name",
+    "rewrite_nl": "What is the name of the cellular component that the gene \"MYRIP\" participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"MYRIP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Compounds that are included in the PharmacologicClass named \"Alkylating Activity\"?",
+    "cql": "MATCH (n1:PharmacologicClass { name: \"Alkylating Activity\" })-[r:INCLUDES_PCiC]->(n2:Compound) RETURN n2.name",
+    "rewrite_nl": "What are the names of Compounds that are included in the PharmacologicClass named \"Alkylating Activity\"?",
+    "nodes": [
+      "PharmacologicClass",
+      "Compound"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"Alkylating Activity\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Compound",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Biological Process that the gene RFTN1 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"RFTN1\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Biological Process that the gene \"RFTN1\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"RFTN1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the CellularComponent that the gene CDK4 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"CDK4\" })-[r:PARTICIPATES_GpCC]->(n2:CellularComponent) RETURN n2.name",
+    "rewrite_nl": "What is the name of the CellularComponent that the gene \"CDK4\" participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"CDK4\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the BiologicalProcess that the gene FBXW7 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"FBXW7\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the BiologicalProcess that the gene \"FBXW7\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"FBXW7\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are connected to the gene named \"FUS\" by a COVARIES_GcG relationship?",
+    "cql": "MATCH (n1:Gene { name: \"FUS\" })-[r:COVARIES_GcG]->(n2:Gene) RETURN n2.name",
+    "rewrite_nl": "What are the names of genes that are connected to the gene named \"FUS\" by a COVARIES_GcG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"FUS\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the MolecularFunction that the gene SPTBN5 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"SPTBN5\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the MolecularFunction that the gene \"SPTBN5\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"SPTBN5\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the disease that is treated by the compound Ketotifen?",
+    "cql": "MATCH (n1:Compound { name: \"Ketotifen\" })-[r:TREATS_CtD]->(n2:Disease) RETURN n2.name",
+    "rewrite_nl": "What is the name of the disease that is treated by the compound \"Ketotifen\"?",
+    "nodes": [
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Ketotifen\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Pathway that the gene ITGAV participates in?",
+    "cql": "MATCH (n1:Gene { name: \"ITGAV\" })-[r:PARTICIPATES_GpPW]->(n2:Pathway) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Pathway that the gene \"ITGAV\" participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ITGAV\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which diseases are treated by the compound Amitriptyline?",
+    "cql": "MATCH (n1:Compound { name: \"Amitriptyline\" })-[r:TREATS_CtD]->(n2:Disease) RETURN n2.name",
+    "rewrite_nl": "Which diseases are treated by the compound \"Amitriptyline\"?",
+    "nodes": [
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Amitriptyline\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which diseases are treated by the compound Clonidine?",
+    "cql": "MATCH (n1:Compound { name: \"Clonidine\" })-[r:TREATS_CtD]->(n2:Disease) RETURN n2.name",
+    "rewrite_nl": "Which diseases are treated by the compound \"Clonidine\"?",
+    "nodes": [
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Clonidine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the biological process that the gene FBN1 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"FBN1\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the biological process that the gene \"FBN1\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"FBN1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that the gene DLG3 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"DLG3\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the molecular function that the gene \"DLG3\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"DLG3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Pathway that the gene CFL1 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"CFL1\" })-[r:PARTICIPATES_GpPW]->(n2:Pathway) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Pathway that the gene \"CFL1\" participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"CFL1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by the gene named NAA25?",
+    "cql": "MATCH (n1:Gene { name: \"NAA25\" })-[r:REGULATES_GrG]->(n2:Gene) RETURN n2.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by the gene named \"NAA25\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"NAA25\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which diseases are resembled by mediastinal cancer, and what are their names?",
+    "cql": "MATCH (n1:Disease { name: \"mediastinal cancer\" })-[r:RESEMBLES_DrD]->(n2:Disease) RETURN n2.name",
+    "rewrite_nl": "Which diseases are resembled by \"mediastinal cancer\", and what are their names?",
+    "nodes": [
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"mediastinal cancer\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of symptoms presented by the disease \"alopecia areata\"?",
+    "cql": "MATCH (n1:Disease { name: \"alopecia areata\" })-[r:PRESENTS_DpS]->(n2:Symptom) RETURN n2.name",
+    "rewrite_nl": "What are the names of symptoms presented by the disease \"alopecia areata\"?",
+    "nodes": [
+      "Symptom",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"alopecia areata\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "PRESENTS_DpS",
+          "obj": "Symptom",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Symptom",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is expressed by the anatomy structure called \"corpus luteum\"?",
+    "cql": "MATCH (n1:Anatomy { name: \"corpus luteum\" })-[r:EXPRESSES_AeG]->(n2:Gene) RETURN n2.name",
+    "rewrite_nl": "What is the name of the gene that is expressed by the anatomy structure called \"corpus luteum\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"corpus luteum\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the disease that is treated by the compound Dexamethasone?",
+    "cql": "MATCH (n1:Compound { name: \"Dexamethasone\" })-[r:TREATS_CtD]->(n2:Disease) RETURN n2.name",
+    "rewrite_nl": "What is the name of the disease that is treated by the compound \"Dexamethasone\"?",
+    "nodes": [
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Dexamethasone\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Pathway that the gene IRS1 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"IRS1\" })-[r:PARTICIPATES_GpPW]->(n2:Pathway) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Pathway that the gene \"IRS1\" participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IRS1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Cellular Component that the gene SLC2A5 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"SLC2A5\" })-[r:PARTICIPATES_GpCC]->(n2:CellularComponent) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Cellular Component that the gene \"SLC2A5\" participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"SLC2A5\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Compounds that are included in the PharmacologicClass named \"Sulfones\"?",
+    "cql": "MATCH (n1:PharmacologicClass { name: \"Sulfones\" })-[r:INCLUDES_PCiC]->(n2:Compound) RETURN n2.name",
+    "rewrite_nl": "What are the names of Compounds that are included in the PharmacologicClass named \"Sulfones\"?",
+    "nodes": [
+      "PharmacologicClass",
+      "Compound"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"Sulfones\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Compound",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the MolecularFunction that the gene RASL11B participates in?",
+    "cql": "MATCH (n1:Gene { name: \"RASL11B\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the MolecularFunction that the gene \"RASL11B\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"RASL11B\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the pathway that the gene IPO8 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"IPO8\" })-[r:PARTICIPATES_GpPW]->(n2:Pathway) RETURN n2.name",
+    "rewrite_nl": "What is the name of the pathway that the gene \"IPO8\" participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IPO8\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of pathways that the gene SLC7A9 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"SLC7A9\" })-[r:PARTICIPATES_GpPW]->(n2:Pathway) RETURN n2.name",
+    "rewrite_nl": "What are the names of pathways that the gene \"SLC7A9\" participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"SLC7A9\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the BiologicalProcess that the gene RASA2 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"RASA2\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the BiologicalProcess that the gene \"RASA2\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"RASA2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which molecular functions does the gene ANKZF1 participate in?",
+    "cql": "MATCH (n1:Gene { name: \"ANKZF1\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "Which molecular functions does the gene \"ANKZF1\" participate in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"ANKZF1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the biological process that the gene RASAL2 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"RASAL2\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the biological process that the gene \"RASAL2\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"RASAL2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that Cetrorelix binds to?",
+    "cql": "MATCH (n1:Compound { name: \"Cetrorelix\" })-[r:BINDS_CbG]->(n2:Gene) RETURN n2.name",
+    "rewrite_nl": "What is the name of the gene that \"Cetrorelix\" binds to?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Cetrorelix\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Molecular Function that the gene SERINC1 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"SERINC1\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Molecular Function that the gene \"SERINC1\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"SERINC1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of the MolecularFunction nodes that the gene SLC6A19 participates in via the PARTICIPATES_GpMF relationship?",
+    "cql": "MATCH (n1:Gene { name: \"SLC6A19\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What are the names of the MolecularFunction nodes that the gene \"SLC6A19\" participates in via the PARTICIPATES_GpMF relationship?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"SLC6A19\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the CellularComponent that the gene SCN1B participates in?",
+    "cql": "MATCH (n1:Gene { name: \"SCN1B\" })-[r:PARTICIPATES_GpCC]->(n2:CellularComponent) RETURN n2.name",
+    "rewrite_nl": "What is the name of the CellularComponent that the gene \"SCN1B\" participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"SCN1B\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that the gene RDH8 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"RDH8\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the molecular function that the gene \"RDH8\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"RDH8\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of any disease that is resembled by polycystic ovary syndrome?",
+    "cql": "MATCH (n1:Disease { name: \"polycystic ovary syndrome\" })-[r:RESEMBLES_DrD]->(n2:Disease) RETURN n2.name",
+    "rewrite_nl": "What is the name of any disease that is resembled by \"polycystic ovary syndrome\"?",
+    "nodes": [
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the MolecularFunction that the gene IFNA10 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"IFNA10\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the MolecularFunction that the gene \"IFNA10\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"IFNA10\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that the gene IL12B participates in?",
+    "cql": "MATCH (n1:Gene { name: \"IL12B\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the molecular function that the gene \"IL12B\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"IL12B\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of diseases that are palliated by the compound named Nifedipine?",
+    "cql": "MATCH (n1:Compound { name: \"Nifedipine\" })-[r:PALLIATES_CpD]->(n2:Disease) RETURN n2.name",
+    "rewrite_nl": "What are the names of diseases that are palliated by the compound named \"Nifedipine\"?",
+    "nodes": [
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Nifedipine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that the gene SNTA1 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"SNTA1\" })-[r:PARTICIPATES_GpCC]->(n2:CellularComponent) RETURN n2.name",
+    "rewrite_nl": "What is the name of the cellular component that the gene \"SNTA1\" participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"SNTA1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by the compound Acarbose?",
+    "cql": "MATCH (n1:Compound { name: \"Acarbose\" })-[r:UPREGULATES_CuG]->(n2:Gene) RETURN n2.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by the compound \"Acarbose\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Acarbose\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are interacted with by the gene named \"SRMS\"?",
+    "cql": "MATCH (n1:Gene { name: \"SRMS\" })-[r:INTERACTS_GiG]->(n2:Gene) RETURN n2.name",
+    "rewrite_nl": "What are the names of genes that are interacted with by the gene named \"SRMS\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"SRMS\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which biological processes does the gene FCGR1A participate in?",
+    "cql": "MATCH (n1:Gene { name: \"FCGR1A\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "Which biological processes does the gene \"FCGR1A\" participate in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"FCGR1A\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of symptoms presented by bile duct cancer?",
+    "cql": "MATCH (n1:Disease { name: \"bile duct cancer\" })-[r:PRESENTS_DpS]->(n2:Symptom) RETURN n2.name",
+    "rewrite_nl": "What are the names of symptoms presented by \"bile duct cancer\"?",
+    "nodes": [
+      "Symptom"
+    ],
+    "instance": [
+      "Disease(name:\"bile duct cancer\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "PRESENTS_DpS",
+          "obj": "Symptom",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Symptom",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which diseases are treated by the compound Olmesartan?",
+    "cql": "MATCH (n1:Compound { name: \"Olmesartan\" })-[r:TREATS_CtD]->(n2:Disease) RETURN n2.name",
+    "rewrite_nl": "Which diseases are treated by the compound \"Olmesartan\"?",
+    "nodes": [
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Olmesartan\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that the gene named SCO2 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"SCO2\" })-[r:PARTICIPATES_GpCC]->(n2:CellularComponent) RETURN n2.name",
+    "rewrite_nl": "What is the name of the cellular component that the gene named \"SCO2\" participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"SCO2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of biological processes that the gene VAV2 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"VAV2\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What are the names of biological processes that the gene \"VAV2\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"VAV2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of diseases that are resembled by kidney cancer?",
+    "cql": "MATCH (n1:Disease { name: \"kidney cancer\" })-[r:RESEMBLES_DrD]->(n2:Disease) RETURN n2.name",
+    "rewrite_nl": "What are the names of diseases that are resembled by \"kidney cancer\"?",
+    "nodes": [
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"kidney cancer\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Biological Processes that the gene LECT1 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"LECT1\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What are the names of Biological Processes that the gene \"LECT1\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"LECT1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Pathways that PIK3R2 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"PIK3R2\" })-[r:PARTICIPATES_GpPW]->(n2:Pathway) RETURN n2.name",
+    "rewrite_nl": "What are the names of Pathways that \"PIK3R2\" participates in?",
+    "nodes": [
+      "Pathway"
+    ],
+    "instance": [
+      "Gene(name:\"PIK3R2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that the gene MRPS24 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"MRPS24\" })-[r:PARTICIPATES_GpCC]->(n2:CellularComponent) RETURN n2.name",
+    "rewrite_nl": "What is the name of the cellular component that the gene \"MRPS24\" participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"MRPS24\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of diseases that are palliated by the compound Topiramate?",
+    "cql": "MATCH (n1:Compound { name: \"Topiramate\" })-[r:PALLIATES_CpD]->(n2:Disease) RETURN n2.name",
+    "rewrite_nl": "What are the names of diseases that are palliated by the compound \"Topiramate\"?",
+    "nodes": [
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Topiramate\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Pathways that the gene ARHGDIG participates in?",
+    "cql": "MATCH (n1:Gene { name: \"ARHGDIG\" })-[r:PARTICIPATES_GpPW]->(n2:Pathway) RETURN n2.name",
+    "rewrite_nl": "What are the names of Pathways that the gene \"ARHGDIG\" participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ARHGDIG\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the CellularComponent that the gene HADHB participates in?",
+    "cql": "MATCH (n1:Gene { name: \"HADHB\" })-[r:PARTICIPATES_GpCC]->(n2:CellularComponent) RETURN n2.name",
+    "rewrite_nl": "What is the name of the CellularComponent that the gene \"HADHB\" participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"HADHB\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that the Gene named \"CBLN4\" connects to via the \"COVARIES_GcG\" relationship?",
+    "cql": "MATCH (n1:Gene { name: \"CBLN4\" })-[r:COVARIES_GcG]->(n2:Gene) RETURN n2.name",
+    "rewrite_nl": "What are the names of Genes that the Gene named \"CBLN4\" connects to via the \"COVARIES_GcG\" relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"CBLN4\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the CellularComponent that the gene VPS37B participates in?",
+    "cql": "MATCH (n1:Gene { name: \"VPS37B\" })-[r:PARTICIPATES_GpCC]->(n2:CellularComponent) RETURN n2.name",
+    "rewrite_nl": "What is the name of the CellularComponent that the gene \"VPS37B\" participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"VPS37B\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that the gene GDF11 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"GDF11\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the molecular function that the gene \"GDF11\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"GDF11\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Biological Process that the gene LCP2 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"LCP2\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Biological Process that the gene \"LCP2\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"LCP2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the biological process that the gene GRIN2B participates in?",
+    "cql": "MATCH (n1:Gene { name: \"GRIN2B\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the biological process that the gene \"GRIN2B\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"GRIN2B\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function in which the gene named STAMBP participates?",
+    "cql": "MATCH (n1:Gene { name: \"STAMBP\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the molecular function in which the gene named \"STAMBP\" participates?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"STAMBP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the pathway that the gene SPP1 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"SPP1\" })-[r:PARTICIPATES_GpPW]->(n2:Pathway) RETURN n2.name",
+    "rewrite_nl": "What is the name of the pathway that the gene \"SPP1\" participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"SPP1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Compound that is included in the PharmacologicClass named \"Xanthines\"?",
+    "cql": "MATCH (n1:PharmacologicClass { name: \"Xanthines\" })-[r:INCLUDES_PCiC]->(n2:Compound) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Compound that is included in the PharmacologicClass named \"Xanthines\"?",
+    "nodes": [
+      "PharmacologicClass",
+      "Compound"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"Xanthines\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Compound",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the compound that Quinapril resembles?",
+    "cql": "MATCH (n1:Compound { name: \"Quinapril\" })-[r:RESEMBLES_CrC]->(n2:Compound) RETURN n2.name",
+    "rewrite_nl": "What is the name of the compound that \"Quinapril\" resembles?",
+    "nodes": [
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Quinapril\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Compound",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are upregulated by the compound Nicergoline?",
+    "cql": "MATCH (n1:Compound { name: \"Nicergoline\" })-[r:UPREGULATES_CuG]->(n2:Gene) RETURN n2.name",
+    "rewrite_nl": "What are the names of genes that are upregulated by the compound \"Nicergoline\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Nicergoline\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the biological process that the gene NFKBIB participates in?",
+    "cql": "MATCH (n1:Gene { name: \"NFKBIB\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the biological process that the gene \"NFKBIB\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"NFKBIB\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the compound that Oxacillin resembles?",
+    "cql": "MATCH (n1:Compound { name: \"Oxacillin\" })-[r:RESEMBLES_CrC]->(n2:Compound) RETURN n2.name",
+    "rewrite_nl": "What is the name of the compound that \"Oxacillin\" resembles?",
+    "nodes": [
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Oxacillin\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Compound",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the BiologicalProcess that the gene PSMC6 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"PSMC6\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the BiologicalProcess that the gene \"PSMC6\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"PSMC6\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Compound that is included in the PharmacologicClass named \"Cystine Disulfide Reduction\"?",
+    "cql": "MATCH (n1:PharmacologicClass { name: \"Cystine Disulfide Reduction\" })-[r:INCLUDES_PCiC]->(n2:Compound) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Compound that is included in the PharmacologicClass named \"Cystine Disulfide Reduction\"?",
+    "nodes": [
+      "PharmacologicClass",
+      "Compound"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"Cystine Disulfide Reduction\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Compound",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that the gene \"A2M\" participates in?",
+    "cql": "MATCH (n1:Gene { name: \"A2M\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the molecular function that the gene \"A2M\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"A2M\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of diseases that are treated by the compound Disulfiram?",
+    "cql": "MATCH (n1:Compound { name: \"Disulfiram\" })-[r:TREATS_CtD]->(n2:Disease) RETURN n2.name",
+    "rewrite_nl": "What are the names of diseases that are treated by the compound \"Disulfiram\"?",
+    "nodes": [
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Disulfiram\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Molecular Function that the gene BRCC3 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"BRCC3\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Molecular Function that the gene \"BRCC3\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"BRCC3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the BiologicalProcess that the gene named PIK3CB participates in?",
+    "cql": "MATCH (n1:Gene { name: \"PIK3CB\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the BiologicalProcess that the gene named \"PIK3CB\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"PIK3CB\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the MolecularFunction that the gene named \"MT3\" participates in?",
+    "cql": "MATCH (n1:Gene { name: \"MT3\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the MolecularFunction that the gene named \"MT3\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"MT3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Compounds that are included in the PharmacologicClass named \"Progesterone\"?",
+    "cql": "MATCH (n1:PharmacologicClass { name: \"Progesterone\" })-[r:INCLUDES_PCiC]->(n2:Compound) RETURN n2.name",
+    "rewrite_nl": "What are the names of Compounds that are included in the PharmacologicClass named \"Progesterone\"?",
+    "nodes": [
+      "PharmacologicClass",
+      "Compound"
+    ],
+    "instance": [
+      "SideEffect(name:\"Progesterone\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Compound",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of pathways that the gene named AGO4 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"AGO4\" })-[r:PARTICIPATES_GpPW]->(n2:Pathway) RETURN n2.name",
+    "rewrite_nl": "What are the names of pathways that the gene named \"AGO4\" participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"AGO4\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that the gene \"CXCR6\" participates in?",
+    "cql": "MATCH (n1:Gene { name: \"CXCR6\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the molecular function that the gene \"CXCR6\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"CXCR6\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried by the gene named \"RPL10L\" via the COVARIES_GcG relationship?",
+    "cql": "MATCH (n1:Gene { name: \"RPL10L\" })-[r:COVARIES_GcG]->(n2:Gene) RETURN n2.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by the gene named \"RPL10L\" via the COVARIES_GcG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"RPL10L\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Biological Process in which the gene PTK2 participates?",
+    "cql": "MATCH (n1:Gene { name: \"PTK2\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the Biological Process in which the gene \"PTK2\" participates?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"PTK2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the biological process that the gene ABHD4 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"ABHD4\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the biological process that the gene \"ABHD4\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"ABHD4\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the CellularComponent that the gene SNTG2 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"SNTG2\" })-[r:PARTICIPATES_GpCC]->(n2:CellularComponent) RETURN n2.name",
+    "rewrite_nl": "What is the name of the CellularComponent that the gene \"SNTG2\" participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"SNTG2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the biological process that the gene FFAR2 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"FFAR2\" })-[r:PARTICIPATES_GpBP]->(n2:BiologicalProcess) RETURN n2.name",
+    "rewrite_nl": "What is the name of the biological process that the gene \"FFAR2\" participates in?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Gene(name:\"FFAR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that the gene named CXCL3 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"CXCL3\" })-[r:PARTICIPATES_GpMF]->(n2:MolecularFunction) RETURN n2.name",
+    "rewrite_nl": "What is the name of the molecular function that the gene named \"CXCL3\" participates in?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"CXCL3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is bound by the compound named Cyamemazine?",
+    "cql": "MATCH (n1:Compound { name: \"Cyamemazine\" })-[r:BINDS_CbG]->(n2:Gene) RETURN n2.name",
+    "rewrite_nl": "What is the name of the gene that is bound by the compound named \"Cyamemazine\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Cyamemazine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene does the compound Colchicine bind to, and what is its name?",
+    "cql": "MATCH (n1:Compound { name: \"Colchicine\" })-[r:BINDS_CbG]->(n2:Gene) RETURN n2.name",
+    "rewrite_nl": "Which gene does the compound \"Colchicine\" bind to, and what is its name?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Colchicine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that the gene ANXA2 participates in?",
+    "cql": "MATCH (n1:Gene { name: \"ANXA2\" })-[r:PARTICIPATES_GpCC]->(n2:CellularComponent) RETURN n2.name",
+    "rewrite_nl": "What is the name of the cellular component that the gene \"ANXA2\" participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"ANXA2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  }
+]

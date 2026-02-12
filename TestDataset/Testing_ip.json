@@ -1,0 +1,3979 @@
+[
+  {
+    "rawnl": "Which gene is upregulated by polycystic ovary syndrome, then regulates PIH1D1, and is also covaried with by HES6?",
+    "cql": "MATCH (n1:Disease{ name: \"polycystic ovary syndrome\" })-[r1:UPREGULATES_DuG]->(n4:Gene)-[r2:REGULATES_GrG]->(n2:Gene{ name: \"PIH1D1\" }), (n3:Gene{ name: \"HES6\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by \"polycystic ovary syndrome\", then regulates \"PIH1D1\", and is also covaried with by \"HES6\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Gene(name:\"PIH1D1\")",
+      "Gene(name:\"HES6\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by the compound Varenicline, is upregulated by polycystic ovary syndrome, and also regulates the gene HMGB2?",
+    "cql": "MATCH (n1:Compound{ name: \"Varenicline\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:REGULATES_GrG]->(n2:Gene{ name: \"HMGB2\" }), (n3:Disease{ name: \"polycystic ovary syndrome\" })-[r3:UPREGULATES_DuG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by the compound \"Varenicline\", is upregulated by \"polycystic ovary syndrome\", and also regulates the gene \"HMGB2\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Varenicline\")",
+      "Gene(name:\"HMGB2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by allergic rhinitis, interacts with CCDC42, and is regulated by GADD45B?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:UPREGULATES_DuG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"CCDC42\" }), (n3:Gene{ name: \"GADD45B\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by \"allergic rhinitis\", interacts with \"CCDC42\", and is regulated by \"GADD45B\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"GADD45B\")",
+      "Gene(name:\"CCDC42\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by the endometrium, participates in the pathway \"Translocation of GLUT4 to the plasma membrane,\" and is downregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Anatomy{ name: \"endometrium\" })-[r1:UPREGULATES_AuG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Translocation of GLUT4 to the plasma membrane\" }), (n3:Compound{ name: \"Niclosamide\" })-[r3:DOWNREGULATES_CdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by the \"endometrium\", participates in the pathway \"Translocation of GLUT4 to the plasma membrane\", and is downregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Pathway",
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Pathway(name:\"Translocation of GLUT4 to the plasma membrane\")",
+      "Anatomy(name:\"endometrium\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by the cerebellum, covaries with ESRRA, and is regulated by EPHA2?",
+    "cql": "MATCH (n1:Anatomy{ name: \"cerebellum\" })-[r1:DOWNREGULATES_AdG]->(n4:Gene)-[r2:COVARIES_GcG]->(n2:Gene{ name: \"ESRRA\" }), (n3:Gene{ name: \"EPHA2\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by the \"cerebellum\", covaries with \"ESRRA\", and is regulated by \"EPHA2\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"cerebellum\")",
+      "Gene(name:\"EPHA2\")",
+      "Gene(name:\"ESRRA\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is expressed by the pancreas, participates in the cell leading edge, and is downregulated by Niclosamide?",
+    "cql": "MATCH (n1:Anatomy{ name: \"pancreas\" })-[r1:EXPRESSES_AeG]->(n4:Gene)-[r2:PARTICIPATES_GpCC]->(n2:CellularComponent{ name: \"cell leading edge\" }), (n3:Compound{ name: \"Niclosamide\" })-[r3:DOWNREGULATES_CdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is expressed by the \"pancreas\", participates in the \"cell leading edge\", and is downregulated by \"Niclosamide\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "CellularComponent(name:\"cell leading edge\")",
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"pancreas\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are upregulated by Mebendazole, participate in the \"Signaling Pathways\" pathway, and are associated with allergic rhinitis?",
+    "cql": "MATCH (n1:Compound{ name: \"Mebendazole\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Signaling Pathways\" }), (n3:Disease{ name: \"allergic rhinitis\" })-[r3:ASSOCIATES_DaG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are upregulated by \"Mebendazole\", participate in the \"Signaling Pathways\" pathway, and are associated with \"allergic rhinitis\"?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Pathway(name:\"Signaling Pathways\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Mebendazole\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by Niclosamide, participates in the Translocation of GLUT4 to the plasma membrane pathway, and is regulated by UBE2L6?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Translocation of GLUT4 to the plasma membrane\" }), (n3:Gene{ name: \"UBE2L6\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by \"Niclosamide\", participates in the \"Translocation of GLUT4 to the plasma membrane\" pathway, and is regulated by \"UBE2L6\"?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Pathway(name:\"Translocation of GLUT4 to the plasma membrane\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"UBE2L6\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are downregulated by the saliva-secreting gland, participate in malate dehydrogenase activity, and are regulated by RPS13?",
+    "cql": "MATCH (n1:Anatomy{ name: \"saliva-secreting gland\" })-[r1:DOWNREGULATES_AdG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"malate dehydrogenase activity\" }), (n3:Gene{ name: \"RPS13\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are downregulated by the \"saliva-secreting gland\", participate in \"malate dehydrogenase activity\", and are regulated by \"RPS13\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"malate dehydrogenase activity\")",
+      "Anatomy(name:\"saliva-secreting gland\")",
+      "Gene(name:\"RPS13\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by the compound Quinacrine, interacts with the gene RBM48, and is also upregulated by the disease polycystic ovary syndrome?",
+    "cql": "MATCH (n1:Compound{ name: \"Quinacrine\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"RBM48\" }), (n3:Disease{ name: \"polycystic ovary syndrome\" })-[r3:UPREGULATES_DuG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by the compound \"Quinacrine\", interacts with the gene \"RBM48\", and is also upregulated by the disease \"polycystic ovary syndrome\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Quinacrine\")",
+      "Gene(name:\"RBM48\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by the endometrium, participates in phospholipid binding, and is downregulated by niclosamide?",
+    "cql": "MATCH (n1:Anatomy{ name: \"endometrium\" })-[r1:UPREGULATES_AuG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"phospholipid binding\" }), (n3:Compound{ name: \"Niclosamide\" })-[r3:DOWNREGULATES_CdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by the \"endometrium\", participates in \"phospholipid binding\", and is downregulated by \"Niclosamide\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"phospholipid binding\")",
+      "Anatomy(name:\"endometrium\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by Mebendazole, participates in the biological process \"signal transduction by protein phosphorylation,\" and is associated with the disease allergic rhinitis?",
+    "cql": "MATCH (n1:Compound{ name: \"Mebendazole\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"signal transduction by protein phosphorylation\" }), (n3:Disease{ name: \"allergic rhinitis\" })-[r3:ASSOCIATES_DaG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by \"Mebendazole\", participates in the biological process \"signal transduction by protein phosphorylation\", and is associated with the disease \"allergic rhinitis\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"signal transduction by protein phosphorylation\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Mebendazole\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by polycystic ovary syndrome, regulates the gene CD320, and is also regulated by the gene CHERP?",
+    "cql": "MATCH (n1:Disease{ name: \"polycystic ovary syndrome\" })-[r1:UPREGULATES_DuG]->(n4:Gene)-[r2:REGULATES_GrG]->(n2:Gene{ name: \"CD320\" }), (n3:Gene{ name: \"CHERP\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by \"polycystic ovary syndrome\", regulates the gene \"CD320\", and is also regulated by the gene \"CHERP\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Gene(name:\"CD320\")",
+      "Gene(name:\"CHERP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are bound by the compound Niclosamide and interact with HDAC3, and are also interacted with by PDGFRA?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:BINDS_CbG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"HDAC3\" }), (n3:Gene{ name: \"PDGFRA\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are bound by the compound \"Niclosamide\" and interact with \"HDAC3\", and are also interacted with by \"PDGFRA\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"PDGFRA\")",
+      "Gene(name:\"HDAC3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are downregulated by blood and regulated by PIK3R1, and participate in the Mitochondrial protein import pathway?",
+    "cql": "MATCH (n1:Anatomy{ name: \"blood\" })-[r1:DOWNREGULATES_AdG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Mitochondrial protein import\" }), (n3:Gene{ name: \"PIK3R1\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are downregulated by \"blood\" and regulated by \"PIK3R1\", and participate in the \"Mitochondrial protein import\" pathway?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Pathway(name:\"Mitochondrial protein import\")",
+      "Gene(name:\"PIK3R1\")",
+      "Anatomy(name:\"blood\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that Niclosamide upregulates, that participates in \"single-organism cellular localization,\" and is covaried by ZSCAN9?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"single-organism cellular localization\" }), (n3:Gene{ name: \"ZSCAN9\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that \"Niclosamide\" upregulates, that participates in \"single-organism cellular localization\", and is covaried by \"ZSCAN9\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"single-organism cellular localization\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"ZSCAN9\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene does the telencephalon upregulate, that also participates in the GPI-anchor transamidase complex and is covaried by ABCA7?",
+    "cql": "MATCH (n1:Anatomy{ name: \"telencephalon\" })-[r1:UPREGULATES_AuG]->(n4:Gene)-[r2:PARTICIPATES_GpCC]->(n2:CellularComponent{ name: \"GPI-anchor transamidase complex\" }), (n3:Gene{ name: \"ABCA7\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene does the \"telencephalon\" upregulate, that also participates in the \"GPI-anchor transamidase complex\" and is covaried by \"ABCA7\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "CellularComponent(name:\"GPI-anchor transamidase complex\")",
+      "Anatomy(name:\"telencephalon\")",
+      "Gene(name:\"ABCA7\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are upregulated by the compound Treprostinil, participate in the Syndecan-1-mediated signaling events pathway, and are downregulated by the disease allergic rhinitis?",
+    "cql": "MATCH (n1:Compound{ name: \"Treprostinil\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Syndecan-1-mediated signaling events\" }), (n3:Disease{ name: \"allergic rhinitis\" })-[r3:DOWNREGULATES_DdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are upregulated by the compound \"Treprostinil\", participate in the \"Syndecan-1-mediated signaling events\" pathway, and are downregulated by the disease \"allergic rhinitis\"?",
+    "nodes": [
+      "Pathway",
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Pathway(name:\"Syndecan-1-mediated signaling events\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Treprostinil\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by the disease \"allergic rhinitis\", covaries with the gene \"HOXA1\", and is also covaried with the gene \"BSX\"?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:UPREGULATES_DuG]->(n4:Gene)-[r2:COVARIES_GcG]->(n2:Gene{ name: \"HOXA1\" }), (n3:Gene{ name: \"BSX\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by the disease \"allergic rhinitis\", covaries with the gene \"HOXA1\", and is also covaried with the gene \"BSX\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"HOXA1\")",
+      "Gene(name:\"BSX\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene does the pituitary gland upregulate, that participates in the GPI-anchor transamidase complex, and is also covaried with ABCA7?",
+    "cql": "MATCH (n1:Anatomy{ name: \"pituitary gland\" })-[r1:UPREGULATES_AuG]->(n4:Gene)-[r2:PARTICIPATES_GpCC]->(n2:CellularComponent{ name: \"GPI-anchor transamidase complex\" }), (n3:Gene{ name: \"ABCA7\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene does the \"pituitary gland\" upregulate, that participates in the \"GPI-anchor transamidase complex\", and is also covaried with \"ABCA7\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "CellularComponent(name:\"GPI-anchor transamidase complex\")",
+      "Anatomy(name:\"pituitary gland\")",
+      "Gene(name:\"ABCA7\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are associated with the disease \"allergic rhinitis\", participate in the pathway \"Allograft Rejection\", and are covaried by the gene \"ZNF449\"?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Allograft Rejection\" }), (n3:Gene{ name: \"ZNF449\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are associated with the disease \"allergic rhinitis\", participate in the pathway \"Allograft Rejection\", and are covaried by the gene \"ZNF449\"?",
+    "nodes": [
+      "Pathway",
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Pathway(name:\"Allograft Rejection\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"ZNF449\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by the compound Niclosamide, participates in the Membrane Trafficking pathway, and is covaried by the gene NOVA2?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Membrane Trafficking\" }), (n3:Gene{ name: \"NOVA2\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by the compound \"Niclosamide\", participates in the \"Membrane Trafficking\" pathway, and is covaried by the gene \"NOVA2\"?",
+    "nodes": [
+      "Pathway",
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Pathway(name:\"Membrane Trafficking\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"NOVA2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is expressed in the vagina, participates in the cellular response to peptide hormone stimulus, and is downregulated by Niclosamide?",
+    "cql": "MATCH (n1:Anatomy{ name: \"vagina\" })-[r1:EXPRESSES_AeG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"cellular response to peptide hormone stimulus\" }), (n3:Compound{ name: \"Niclosamide\" })-[r3:DOWNREGULATES_CdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is expressed in the \"vagina\", participates in the \"cellular response to peptide hormone stimulus\", and is downregulated by \"Niclosamide\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"cellular response to peptide hormone stimulus\")",
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"vagina\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are upregulated by the compound Niclosamide, participate in the biological process \"cellular carbohydrate metabolic process,\" and are interated with the gene BCL2L13?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"cellular carbohydrate metabolic process\" }), (n3:Gene{ name: \"BCL2L13\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are upregulated by the compound \"Niclosamide\", participate in the biological process \"cellular carbohydrate metabolic process\", and are interacted with the gene \"BCL2L13\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"cellular carbohydrate metabolic process\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"BCL2L13\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by Niclosamide, covaries with ZNHIT6, and is also covaried with NPDC1?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:COVARIES_GcG]->(n2:Gene{ name: \"ZNHIT6\" }), (n3:Gene{ name: \"NPDC1\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by \"Niclosamide\", covaries with \"ZNHIT6\", and is also covaried with \"NPDC1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"ZNHIT6\")",
+      "Gene(name:\"NPDC1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by allergic rhinitis, participates in the positive regulation of organelle assembly biological process, and is upregulated by the heart?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:DOWNREGULATES_DdG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"positive regulation of organelle assembly\" }), (n3:Anatomy{ name: \"heart\" })-[r3:UPREGULATES_AuG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by \"allergic rhinitis\", participates in the \"positive regulation of organelle assembly\" biological process, and is upregulated by the \"heart\"?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"positive regulation of organelle assembly\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"heart\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by the disease \"allergic rhinitis\", covaries with the gene \"IL36RN\", and is also covaried with \"BSX\"?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:UPREGULATES_DuG]->(n4:Gene)-[r2:COVARIES_GcG]->(n2:Gene{ name: \"IL36RN\" }), (n3:Gene{ name: \"BSX\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by the disease \"allergic rhinitis\", covaries with the gene \"IL36RN\", and is also covaried with \"BSX\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"IL36RN\")",
+      "Gene(name:\"BSX\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by the compound Niclosamide, participates in the molecular function phospholipid binding, and is regulated by the gene SLC16A3?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"phospholipid binding\" }), (n3:Gene{ name: \"SLC16A3\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by the compound \"Niclosamide\", participates in the molecular function \"phospholipid binding\", and is regulated by the gene \"SLC16A3\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"phospholipid binding\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"SLC16A3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is downregulated by the compound Estradiol valerate/Dienogest, regulates the gene RPS4Y1, and is also downregulated by the disease polycystic ovary syndrome?",
+    "cql": "MATCH (n1:Compound{ name: \"Estradiol valerate/Dienogest\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:REGULATES_GrG]->(n2:Gene{ name: \"RPS4Y1\" }), (n3:Disease{ name: \"polycystic ovary syndrome\" })-[r3:DOWNREGULATES_DdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is downregulated by the compound \"Estradiol valerate/Dienogest\", regulates the gene \"RPS4Y1\", and is also downregulated by the disease \"polycystic ovary syndrome\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Estradiol valerate/Dienogest\")",
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Gene(name:\"RPS4Y1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are associated with allergic rhinitis, participate in the pathway \"IL2 signaling events mediated by STAT5\", and are downregulated by the female gonad?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"IL2 signaling events mediated by STAT5\" }), (n3:Anatomy{ name: \"female gonad\" })-[r3:DOWNREGULATES_AdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are associated with \"allergic rhinitis\", participate in the pathway \"IL2 signaling events mediated by STAT5\", and are downregulated by the \"female gonad\"?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Pathway(name:\"IL2 signaling events mediated by STAT5\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"female gonad\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are expressed by the bronchus, participate in the \"Mitochondrial protein import\" pathway, and are regulated by DMTF1?",
+    "cql": "MATCH (n1:Anatomy{ name: \"bronchus\" })-[r1:EXPRESSES_AeG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Mitochondrial protein import\" }), (n3:Gene{ name: \"DMTF1\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are expressed by the \"bronchus\", participate in the \"Mitochondrial protein import\" pathway, and are regulated by \"DMTF1\"?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Pathway(name:\"Mitochondrial protein import\")",
+      "Anatomy(name:\"bronchus\")",
+      "Gene(name:\"DMTF1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are associated with allergic rhinitis, participate in the TGF-beta Signaling Pathway, and are expressed in the digestive system?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"TGF-beta Signaling Pathway\" }), (n3:Anatomy{ name: \"digestive system\" })-[r3:EXPRESSES_AeG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are associated with \"allergic rhinitis\", participate in the \"TGF-beta Signaling Pathway\", and are expressed in the \"digestive system\"?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Pathway(name:\"TGF-beta Signaling Pathway\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"digestive system\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene does bone marrow express, regulates BID, and is also covaried with IQGAP3?",
+    "cql": "MATCH (n1:Anatomy{ name: \"bone marrow\" })-[r1:EXPRESSES_AeG]->(n4:Gene)-[r2:REGULATES_GrG]->(n2:Gene{ name: \"BID\" }), (n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene does \"bone marrow\" express, regulates \"BID\", and is also covaried with \"IQGAP3\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"bone marrow\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"BID\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by the midbrain, bound by Niclosamide, and participates in (S)-limonene 7-monooxygenase activity?",
+    "cql": "MATCH (n1:Anatomy{ name: \"midbrain\" })-[r1:DOWNREGULATES_AdG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"(S)-limonene 7-monooxygenase activity\" }), (n3:Compound{ name: \"Niclosamide\" })-[r3:BINDS_CbG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by the \"midbrain\", bound by \"Niclosamide\", and participates in \"(S)-limonene 7-monooxygenase activity\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"(S)-limonene 7-monooxygenase activity\")",
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"midbrain\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by the prostate gland, participates in the biological process \"regulation of locomotion,\" and is regulated by the gene GSK3B?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:DOWNREGULATES_AdG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"regulation of locomotion\" }), (n3:Gene{ name: \"GSK3B\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by the \"prostate gland\", participates in the biological process \"regulation of locomotion\", and is regulated by the gene \"GSK3B\"?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"regulation of locomotion\")",
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"GSK3B\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by Niclosamide, participates in UDP-glycosyltransferase activity, and is interacted with the gene named CREB3?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"UDP-glycosyltransferase activity\" }), (n3:Gene{ name: \"CREB3\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by \"Niclosamide\", participates in \"UDP-glycosyltransferase activity\", and is interacted with the gene named \"CREB3\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"UDP-glycosyltransferase activity\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"CREB3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by the prostate gland, interacts with the gene HABP2, and is also interacted with by the gene APP?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:UPREGULATES_AuG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"HABP2\" }), (n3:Gene{ name: \"APP\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by the \"prostate gland\", interacts with the gene \"HABP2\", and is also interacted with by the gene \"APP\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"HABP2\")",
+      "Gene(name:\"APP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by Niclosamide, interacts with SYNE4, and is also regulated by RBPJ?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"SYNE4\" }), (n3:Gene{ name: \"RBPJ\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by \"Niclosamide\", interacts with \"SYNE4\", and is also regulated by \"RBPJ\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"SYNE4\")",
+      "Gene(name:\"RBPJ\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by the liver, participates in malate dehydrogenase activity, and is interacted with by the gene TRAF4?",
+    "cql": "MATCH (n1:Anatomy{ name: \"liver\" })-[r1:DOWNREGULATES_AdG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"malate dehydrogenase activity\" }), (n3:Gene{ name: \"TRAF4\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by the \"liver\", participates in \"malate dehydrogenase activity\", and is interacted with by the gene \"TRAF4\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"malate dehydrogenase activity\")",
+      "Anatomy(name:\"liver\")",
+      "Gene(name:\"TRAF4\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by the prostate gland, participates in small GTPase mediated signal transduction, and is interacted with the gene UBC?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:DOWNREGULATES_AdG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"small GTPase mediated signal transduction\" }), (n3:Gene{ name: \"UBC\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by the \"prostate gland\", participates in \"small GTPase mediated signal transduction\", and is interacted with the gene \"UBC\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"small GTPase mediated signal transduction\")",
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"UBC\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene does Niclosamide downregulate and participates in the cell projection membrane and is also interacted with by UBC?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:PARTICIPATES_GpCC]->(n2:CellularComponent{ name: \"cell projection membrane\" }), (n3:Gene{ name: \"UBC\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene does \"Niclosamide\" downregulate and participates in the \"cell projection membrane\" and is also interacted with by \"UBC\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "CellularComponent(name:\"cell projection membrane\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"UBC\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are bound by the compound Niclosamide, participate in the pathway \"Metabolism of lipids and lipoproteins,\" and are downregulated in the midbrain?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:BINDS_CbG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Metabolism of lipids and lipoproteins\" }), (n3:Anatomy{ name: \"midbrain\" })-[r3:DOWNREGULATES_AdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are bound by the compound \"Niclosamide\", participate in the pathway \"Metabolism of lipids and lipoproteins\", and are downregulated in the \"midbrain\"?",
+    "nodes": [
+      "Pathway",
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Pathway(name:\"Metabolism of lipids and lipoproteins\")",
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"midbrain\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is expressed by the bone marrow, interacts with MMS19, and is covaried by IQGAP3?",
+    "cql": "MATCH (n1:Anatomy{ name: \"bone marrow\" })-[r1:EXPRESSES_AeG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"MMS19\" }), (n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is expressed by the \"bone marrow\", interacts with \"MMS19\", and is covaried by \"IQGAP3\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"bone marrow\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"MMS19\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by the compound Niclosamide, participates in the Golgi cisterna, and is expressed by the decidua?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpCC]->(n2:CellularComponent{ name: \"Golgi cisterna\" }), (n3:Anatomy{ name: \"decidua\" })-[r3:EXPRESSES_AeG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by the compound \"Niclosamide\", participates in the \"Golgi cisterna\", and is expressed by the \"decidua\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "CellularComponent(name:\"Golgi cisterna\")",
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"decidua\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is expressed by the thyroid gland, interacts with the gene MMS19, and is also covaried by the gene IQGAP3?",
+    "cql": "MATCH (n1:Anatomy{ name: \"thyroid gland\" })-[r1:EXPRESSES_AeG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"MMS19\" }), (n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is expressed by the \"thyroid gland\", interacts with the gene \"MMS19\", and is also covaried by the gene \"IQGAP3\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"thyroid gland\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"MMS19\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are expressed by the telencephalon, participate in the GPI-anchor transamidase complex, and are interacted with the gene TUBA4A?",
+    "cql": "MATCH (n1:Anatomy{ name: \"telencephalon\" })-[r1:EXPRESSES_AeG]->(n4:Gene)-[r2:PARTICIPATES_GpCC]->(n2:CellularComponent{ name: \"GPI-anchor transamidase complex\" }), (n3:Gene{ name: \"TUBA4A\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are expressed by the \"telencephalon\", participate in the \"GPI-anchor transamidase complex\", and are interacted with the gene \"TUBA4A\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "CellularComponent(name:\"GPI-anchor transamidase complex\")",
+      "Anatomy(name:\"telencephalon\")",
+      "Gene(name:\"TUBA4A\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is bound by sucralfate, is downregulated by polycystic ovary syndrome, and participate the regulation of endothelial cell proliferation?",
+    "cql": "MATCH (n1:Compound{ name: \"Sucralfate\" })-[r1:BINDS_CbG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"regulation of endothelial cell proliferation\" }), (n3:Disease{ name: \"polycystic ovary syndrome\" })-[r3:DOWNREGULATES_DdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is bound by \"Sucralfate\", is downregulated by \"polycystic ovary syndrome\", and participate the \"regulation of endothelial cell proliferation\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"regulation of endothelial cell proliferation\")",
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Sucralfate\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is expressed by the testis, participates in transferase activity transferring glycosyl groups, and is upregulated by Niclosamide?",
+    "cql": "MATCH (n1:Anatomy{ name: \"testis\" })-[r1:EXPRESSES_AeG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"transferase activity, transferring glycosyl groups\" }), (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is expressed by the \"testis\", participates in \"transferase activity, transferring glycosyl groups\", and is upregulated by \"Niclosamide\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"transferase activity, transferring glycosyl groups\")",
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"testis\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by the compound Niclosamide, participates in the Golgi cisterna, and is interacted with by BCL2L13?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpCC]->(n2:CellularComponent{ name: \"Golgi cisterna\" }), (n3:Gene{ name: \"BCL2L13\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by the compound \"Niclosamide\", participates in the \"Golgi cisterna\", and is interacted with by \"BCL2L13\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "CellularComponent(name:\"Golgi cisterna\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"BCL2L13\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is bound by the compound N-Acetyl-D-glucosamine, covaries with the gene FBXO46, and is upregulated by polycystic ovary syndrome?",
+    "cql": "MATCH (n1:Compound{ name: \"N-Acetyl-D-glucosamine\" })-[r1:BINDS_CbG]->(n4:Gene)-[r2:COVARIES_GcG]->(n2:Gene{ name: \"FBXO46\" }), (n3:Disease{ name: \"polycystic ovary syndrome\" })-[r3:UPREGULATES_DuG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is bound by the compound \"N-Acetyl-D-glucosamine\", covaries with the gene \"FBXO46\", and is upregulated by \"polycystic ovary syndrome\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"N-Acetyl-D-glucosamine\")",
+      "Gene(name:\"FBXO46\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are bound by Sucralfate, participate in cytokine activity, and are downregulated by polycystic ovary syndrome?",
+    "cql": "MATCH (n1:Compound{ name: \"Sucralfate\" })-[r1:BINDS_CbG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"cytokine activity\" }), (n3:Disease{ name: \"polycystic ovary syndrome\" })-[r3:DOWNREGULATES_DdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are bound by \"Sucralfate\", participate in \"cytokine activity\", and are downregulated by \"polycystic ovary syndrome\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "MolecularFunction(name:\"cytokine activity\")",
+      "Compound(name:\"Sucralfate\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by the disease \"allergic rhinitis\", interacts with the gene \"ENKD1\", and is also covaried by the gene \"BSX\"?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:UPREGULATES_DuG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"ENKD1\" }), (n3:Gene{ name: \"BSX\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by the disease \"allergic rhinitis\", interacts with the gene \"ENKD1\", and is also covaried by the gene \"BSX\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"ENKD1\")",
+      "Gene(name:\"BSX\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by Niclosamide, regulates MPZL1, and is expressed in the vagina?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:REGULATES_GrG]->(n2:Gene{ name: \"MPZL1\" }), (n3:Anatomy{ name: \"vagina\" })-[r3:EXPRESSES_AeG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by \"Niclosamide\", regulates \"MPZL1\", and is expressed in the \"vagina\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"vagina\")",
+      "Gene(name:\"MPZL1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by the liver, participates in the \"Mitochondrial protein import\" pathway, and is regulated by the gene MDH2?",
+    "cql": "MATCH (n1:Anatomy{ name: \"liver\" })-[r1:UPREGULATES_AuG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Mitochondrial protein import\" }), (n3:Gene{ name: \"MDH2\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by the \"liver\", participates in the \"Mitochondrial protein import\" pathway, and is regulated by the gene \"MDH2\"?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Pathway(name:\"Mitochondrial protein import\")",
+      "Anatomy(name:\"liver\")",
+      "Gene(name:\"MDH2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are upregulated by the compound Niclosamide, participate in the Metabolism pathway, and are downregulated by the adrenal gland?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Metabolism\" }), (n3:Anatomy{ name: \"adrenal gland\" })-[r3:DOWNREGULATES_AdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are upregulated by the compound \"Niclosamide\", participate in the \"Metabolism\" pathway, and are downregulated by the \"adrenal gland\"?",
+    "nodes": [
+      "Pathway",
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Anatomy(name:\"adrenal gland\")",
+      "Compound(name:\"Niclosamide\")",
+      "Pathway(name:\"Metabolism\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by the compound Niclosamide, participates in the glycoprotein biosynthetic process, and is expressed in the decidua?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"glycoprotein biosynthetic process\" }), (n3:Anatomy{ name: \"decidua\" })-[r3:EXPRESSES_AeG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by the compound \"Niclosamide\", participates in the \"glycoprotein biosynthetic process\", and is expressed in the \"decidua\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"glycoprotein biosynthetic process\")",
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"decidua\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes expressed by the adrenal gland and participate in the cell leading edge and are downregulated by Niclosamide?",
+    "cql": "MATCH (n1:Anatomy{ name: \"adrenal gland\" })-[r1:EXPRESSES_AeG]->(n4:Gene)-[r2:PARTICIPATES_GpCC]->(n2:CellularComponent{ name: \"cell leading edge\" }), (n3:Compound{ name: \"Niclosamide\" })-[r3:DOWNREGULATES_CdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes expressed by the \"adrenal gland\" and participate in the \"cell leading edge\" and are downregulated by \"Niclosamide\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "CellularComponent(name:\"cell leading edge\")",
+      "Anatomy(name:\"adrenal gland\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by the saliva-secreting gland, participates in the chondroitin sulfate/dermatan sulfate metabolism pathway, and is upregulated by Niclosamide?",
+    "cql": "MATCH (n1:Anatomy{ name: \"saliva-secreting gland\" })-[r1:DOWNREGULATES_AdG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Chondroitin sulfate/dermatan sulfate metabolism\" }), (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by the \"saliva-secreting gland\", participates in the \"Chondroitin sulfate/dermatan sulfate metabolism\" pathway, and is upregulated by \"Niclosamide\"?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Pathway(name:\"Chondroitin sulfate/dermatan sulfate metabolism\")",
+      "Anatomy(name:\"saliva-secreting gland\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by adipose tissue and covaries with ESRRA, and is also regulated by PPAT?",
+    "cql": "MATCH (n1:Anatomy{ name: \"adipose tissue\" })-[r1:UPREGULATES_AuG]->(n4:Gene)-[r2:COVARIES_GcG]->(n2:Gene{ name: \"ESRRA\" }), (n3:Gene{ name: \"PPAT\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by \"adipose tissue\" and covaries with \"ESRRA\", and is also regulated by \"PPAT\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"adipose tissue\")",
+      "Gene(name:\"ESRRA\")",
+      "Gene(name:\"PPAT\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by both allergic rhinitis and the saliva-secreting gland and interacts with KRT40?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:UPREGULATES_DuG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"KRT40\" }), (n3:Anatomy{ name: \"saliva-secreting gland\" })-[r3:UPREGULATES_AuG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by both \"allergic rhinitis\" and the \"saliva-secreting gland\" and interacts with \"KRT40\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"saliva-secreting gland\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"KRT40\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are associated with allergic rhinitis, expressed in the decidua, and participate in the ribonucleoside biosynthetic process?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"ribonucleoside biosynthetic process\" }), (n3:Anatomy{ name: \"decidua\" })-[r3:EXPRESSES_AeG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are associated with \"allergic rhinitis\", expressed in the \"decidua\", and participate in the \"ribonucleoside biosynthetic process\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"ribonucleoside biosynthetic process\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"decidua\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are downregulated by allergic rhinitis and by the liver, and participate in the positive regulation of exocytosis biological process?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:DOWNREGULATES_DdG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"positive regulation of exocytosis\" }), (n3:Anatomy{ name: \"liver\" })-[r3:DOWNREGULATES_AdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are downregulated by \"allergic rhinitis\" and by the \"liver\", and participate in the \"positive regulation of exocytosis\" biological process?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"positive regulation of exocytosis\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"liver\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by the compound Niclosamide, participates in the Chondroitin sulfate/dermatan sulfate metabolism pathway, and is downregulated by the cardiac ventricle?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Chondroitin sulfate/dermatan sulfate metabolism\" }), (n3:Anatomy{ name: \"cardiac ventricle\" })-[r3:DOWNREGULATES_AdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by the compound \"Niclosamide\", participates in the \"Chondroitin sulfate/dermatan sulfate metabolism\" pathway, and is downregulated by the \"cardiac ventricle\"?",
+    "nodes": [
+      "Pathway",
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Pathway(name:\"Chondroitin sulfate/dermatan sulfate metabolism\")",
+      "Anatomy(name:\"cardiac ventricle\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are upregulated by the compound Niclosamide, participate in the Rho GTPase cycle pathway, and are covaried with the gene ZSCAN9?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Rho GTPase cycle\" }), (n3:Gene{ name: \"ZSCAN9\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are upregulated by the compound \"Niclosamide\", participate in the \"Rho GTPase cycle\" pathway, and are covaried with the gene \"ZSCAN9\"?",
+    "nodes": [
+      "Pathway",
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Pathway(name:\"Rho GTPase cycle\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"ZSCAN9\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by allergic rhinitis, participates in the IL5-mediated signaling events pathway, and is regulated by the KSR2 gene?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:DOWNREGULATES_DdG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"IL5-mediated signaling events\" }), (n3:Gene{ name: \"KSR2\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by \"allergic rhinitis\", participates in the \"IL5-mediated signaling events\" pathway, and is regulated by the \"KSR2\" gene?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Pathway(name:\"IL5-mediated signaling events\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"KSR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene does Niclosamide bind to, and participates in the Notch-mediated HES/HEY network pathway and is also regulated by LRRC16A?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:BINDS_CbG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Notch-mediated HES/HEY network\" }), (n3:Gene{ name: \"LRRC16A\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene does \"Niclosamide\" bind to, and participates in the \"Notch-mediated HES/HEY network\" pathway and is also regulated by \"LRRC16A\"?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Pathway(name:\"Notch-mediated HES/HEY network\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"LRRC16A\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is targeted by Niclosamide with a downregulating effect, regulates MPZL1, and is expressed in the cardiac ventricle?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:REGULATES_GrG]->(n2:Gene{ name: \"MPZL1\" }), (n3:Anatomy{ name: \"cardiac ventricle\" })-[r3:EXPRESSES_AeG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is targeted by \"Niclosamide\" with a downregulating effect, regulates \"MPZL1\", and is expressed in the \"cardiac ventricle\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"cardiac ventricle\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"MPZL1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by polycystic ovary syndrome, interacts with the gene CCDC155, and is also covaried by the gene ATG101?",
+    "cql": "MATCH (n1:Disease{ name: \"polycystic ovary syndrome\" })-[r1:DOWNREGULATES_DdG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"CCDC155\" }), (n3:Gene{ name: \"ATG101\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by \"polycystic ovary syndrome\", interacts with the gene \"CCDC155\", and is also covaried by the gene \"ATG101\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Gene(name:\"CCDC155\")",
+      "Gene(name:\"ATG101\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are associated with allergic rhinitis, participate in the extracellular matrix, and are interacted with by TRAF6?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n4:Gene)-[r2:PARTICIPATES_GpCC]->(n2:CellularComponent{ name: \"extracellular matrix\" }), (n3:Gene{ name: \"TRAF6\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are associated with \"allergic rhinitis\", participate in the \"extracellular matrix\", and are interacted with by \"TRAF6\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "CellularComponent(name:\"extracellular matrix\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"TRAF6\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are expressed in the hematopoietic system, participate in the metabolism of lipids and lipoproteins pathway, and are also bound by the compound Niclosamide?",
+    "cql": "MATCH (n1:Anatomy{ name: \"hematopoietic system\" })-[r1:EXPRESSES_AeG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Metabolism of lipids and lipoproteins\" }), (n3:Compound{ name: \"Niclosamide\" })-[r3:BINDS_CbG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are expressed in the \"hematopoietic system\", participate in the \"Metabolism of lipids and lipoproteins\" pathway, and are also bound by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Pathway",
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Pathway(name:\"Metabolism of lipids and lipoproteins\")",
+      "Anatomy(name:\"hematopoietic system\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by the compound Niclosamide, participates in the Translocation of GLUT4 to the plasma membrane pathway, and is interacted with the gene FIBP?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:PARTICIPATES_GpPW]->(n2:Pathway{ name: \"Translocation of GLUT4 to the plasma membrane\" }), (n3:Gene{ name: \"FIBP\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by the compound \"Niclosamide\", participates in the \"Translocation of GLUT4 to the plasma membrane\" pathway, and is interacted with the gene \"FIBP\"?",
+    "nodes": [
+      "Pathway",
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Pathway(name:\"Translocation of GLUT4 to the plasma membrane\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"FIBP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by allergic rhinitis, participates in the structural constituent of eye lens molecular function, and is expressed in the sense organ?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:UPREGULATES_DuG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"structural constituent of eye lens\" }), (n3:Anatomy{ name: \"sense organ\" })-[r3:EXPRESSES_AeG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by \"allergic rhinitis\", participates in the \"structural constituent of eye lens\" molecular function, and is expressed in the \"sense organ\"?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"structural constituent of eye lens\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"sense organ\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are downregulated by the spinal cord, participate in the biological process \"response to drug\", and are bound by the compound Niclosamide?",
+    "cql": "MATCH (n1:Anatomy{ name: \"spinal cord\" })-[r1:DOWNREGULATES_AdG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"response to drug\" }), (n3:Compound{ name: \"Niclosamide\" })-[r3:BINDS_CbG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are downregulated by the \"spinal cord\", participate in the biological process \"response to drug\", and are bound by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"response to drug\")",
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"spinal cord\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by the compound Niclosamide, participates in the biological process \"positive regulation of vesicle fusion,\" and is interacted with by the gene FIBP?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"positive regulation of vesicle fusion\" }), (n3:Gene{ name: \"FIBP\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by the compound \"Niclosamide\", participates in the biological process \"positive regulation of vesicle fusion\", and is interacted with by the gene \"FIBP\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"positive regulation of vesicle fusion\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"FIBP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is associated with allergic rhinitis, interacts with IL33, and is covaried by PPP1R3G?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"IL33\" }), (n3:Gene{ name: \"PPP1R3G\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is associated with \"allergic rhinitis\", interacts with \"IL33\", and is covaried by \"PPP1R3G\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"PPP1R3G\")",
+      "Gene(name:\"IL33\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by the compound Niclosamide, participates in the molecular function \"lipid binding\", and is covaried by the gene CHIC2?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"lipid binding\" }), (n3:Gene{ name: \"CHIC2\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by the compound \"Niclosamide\", participates in the molecular function \"lipid binding\", and is covaried by the gene \"CHIC2\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"lipid binding\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"CHIC2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by adipose tissue, covaries with ESRRA, and is regulated by VDAC1?",
+    "cql": "MATCH (n1:Anatomy{ name: \"adipose tissue\" })-[r1:UPREGULATES_AuG]->(n4:Gene)-[r2:COVARIES_GcG]->(n2:Gene{ name: \"ESRRA\" }), (n3:Gene{ name: \"VDAC1\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by \"adipose tissue\", covaries with \"ESRRA\", and is regulated by \"VDAC1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"adipose tissue\")",
+      "Gene(name:\"ESRRA\")",
+      "Gene(name:\"VDAC1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are bound by the compound Niclosamide and participate in the biological process \"response to ethanol\", and are also regulated by the gene RPN2?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:BINDS_CbG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"response to ethanol\" }), (n3:Gene{ name: \"RPN2\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are bound by the compound \"Niclosamide\" and participate in the biological process \"response to ethanol\", and are also regulated by the gene \"RPN2\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"response to ethanol\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"RPN2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the disease that is resembled by gestational diabetes, and localizes the embryo, and is treated by Metformin?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n4:Disease)-[r2:LOCALIZES_DlA]->(n2:Anatomy{ name: \"embryo\" }), (n3:Compound{ name: \"Metformin\" })-[r3:TREATS_CtD]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the disease that is resembled by \"gestational diabetes\", and localizes the \"embryo\", and is treated by \"Metformin\"?",
+    "nodes": [
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"gestational diabetes\")",
+      "Compound(name:\"Metformin\")",
+      "Anatomy(name:\"embryo\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "LOCALIZES_DlA",
+          "obj": "Anatomy",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is downregulated by the compound Niclosamide, participates in the molecular function lipid binding, and is interacted with by the gene UBC?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"lipid binding\" }), (n3:Gene{ name: \"UBC\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is downregulated by the compound \"Niclosamide\", participates in the molecular function \"lipid binding\", and is interacted with by the gene \"UBC\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"lipid binding\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"UBC\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is bound by the compound Niclosamide, participates in the molecular function (S)-limonene 7-monooxygenase activity, and is downregulated by the spinal cord?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:BINDS_CbG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"(S)-limonene 7-monooxygenase activity\" }), (n3:Anatomy{ name: \"spinal cord\" })-[r3:DOWNREGULATES_AdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is bound by the compound \"Niclosamide\", participates in the molecular function \"(S)-limonene 7-monooxygenase activity\", and is downregulated by the \"spinal cord\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"(S)-limonene 7-monooxygenase activity\")",
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"spinal cord\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is associated with allergic rhinitis, participates in receptor signaling protein activity, and is covaried by the gene PPP1R3G?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"receptor signaling protein activity\" }), (n3:Gene{ name: \"PPP1R3G\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is associated with \"allergic rhinitis\", participates in \"receptor signaling protein activity\", and is covaried by the gene \"PPP1R3G\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"receptor signaling protein activity\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"PPP1R3G\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are bound by N-Acetyl-D-glucosamine, participate in the glycocalyx, and are upregulated by polycystic ovary syndrome?",
+    "cql": "MATCH (n1:Compound{ name: \"N-Acetyl-D-glucosamine\" })-[r1:BINDS_CbG]->(n4:Gene)-[r2:PARTICIPATES_GpCC]->(n2:CellularComponent{ name: \"glycocalyx\" }), (n3:Disease{ name: \"polycystic ovary syndrome\" })-[r3:UPREGULATES_DuG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are bound by \"N-Acetyl-D-glucosamine\", participate in the \"glycocalyx\", and are upregulated by \"polycystic ovary syndrome\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"N-Acetyl-D-glucosamine\")",
+      "CellularComponent(name:\"glycocalyx\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by Niclosamide, participates in the molecular function of phospholipid binding, and is upregulated by the testis?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"phospholipid binding\" }), (n3:Anatomy{ name: \"testis\" })-[r3:UPREGULATES_AuG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by \"Niclosamide\", participates in the molecular function of \"phospholipid binding\", and is upregulated by the \"testis\"?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"phospholipid binding\")",
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"testis\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by the compound Niclosamide, participates in the molecular function \"transferase activity, transferring glycosyl groups,\" and is regulated by the gene PKD1?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"transferase activity, transferring glycosyl groups\" }), (n3:Gene{ name: \"PKD1\" })-[r3:REGULATES_GrG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by the compound \"Niclosamide\", participates in the molecular function \"transferase activity, transferring glycosyl groups\", and is regulated by the gene \"PKD1\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"transferase activity, transferring glycosyl groups\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"PKD1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are upregulated by allergic rhinitis and also upregulated by the saliva-secreting gland, and participate in the biological process \"response to osmotic stress\"?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:UPREGULATES_DuG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"response to osmotic stress\" }), (n3:Anatomy{ name: \"saliva-secreting gland\" })-[r3:UPREGULATES_AuG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are upregulated by \"allergic rhinitis\" and also upregulated by the \"saliva-secreting gland\", and participate in the biological process \"response to osmotic stress\"?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"response to osmotic stress\")",
+      "Anatomy(name:\"saliva-secreting gland\")",
+      "Disease(name:\"allergic rhinitis\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is connected to Niclosamide via binding, regulates RINT1, and covaried by ZIC1?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:BINDS_CbG]->(n4:Gene)-[r2:REGULATES_GrG]->(n2:Gene{ name: \"RINT1\" }), (n3:Gene{ name: \"ZIC1\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is connected to \"Niclosamide\" via binding, regulates \"RINT1\", and covaried by \"ZIC1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"RINT1\")",
+      "Gene(name:\"ZIC1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene has a \"name\" such that it is downregulated by the testis, interacts with the gene named \"CGN\", and is covaried by the gene named \"IQGAP3\"?",
+    "cql": "MATCH (n1:Anatomy{ name: \"testis\" })-[r1:DOWNREGULATES_AdG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"CGN\" }), (n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene has a \"name\" such that it is downregulated by the \"testis\", interacts with the gene named \"CGN\", and is covaried by the gene named \"IQGAP3\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Anatomy(name:\"testis\")",
+      "Gene(name:\"CGN\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by the brain, interacts with YWHAQ, and is covaried by IQGAP3?",
+    "cql": "MATCH (n1:Anatomy{ name: \"brain\" })-[r1:UPREGULATES_AuG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"YWHAQ\" }), (n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by the \"brain\", interacts with \"YWHAQ\", and is covaried by \"IQGAP3\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"YWHAQ\")",
+      "Anatomy(name:\"brain\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are downregulated by the prostate gland, interact with ITM2C, and are also interacted with by ATP1B1?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:DOWNREGULATES_AdG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"ITM2C\" }), (n3:Gene{ name: \"ATP1B1\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are downregulated by the \"prostate gland\", interact with \"ITM2C\", and are also interacted with by \"ATP1B1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"ATP1B1\")",
+      "Gene(name:\"ITM2C\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are upregulated by Quinacrine and also interact with the gene C6orf165, and are upregulated by polycystic ovary syndrome as well?",
+    "cql": "MATCH (n1:Compound{ name: \"Quinacrine\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"C6orf165\" }), (n3:Disease{ name: \"polycystic ovary syndrome\" })-[r3:UPREGULATES_DuG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are upregulated by \"Quinacrine\" and also interact with the gene \"C6orf165\", and are upregulated by \"polycystic ovary syndrome\" as well?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Quinacrine\")",
+      "Gene(name:\"C6orf165\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is downregulated by the compound Niclosamide, covaries with the gene SRP54, and receives an interaction from the gene TTN?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:COVARIES_GcG]->(n2:Gene{ name: \"SRP54\" }), (n3:Gene{ name: \"TTN\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is downregulated by the compound \"Niclosamide\", covaries with the gene \"SRP54\", and receives an interaction from the gene \"TTN\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"SRP54\")",
+      "Gene(name:\"TTN\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are downregulated by the compound Niclosamide and interacted with the gene FIBP, and participate in the molecular function of calcium ion binding?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene)-[r2:PARTICIPATES_GpMF]->(n2:MolecularFunction{ name: \"calcium ion binding\" }), (n3:Gene{ name: \"FIBP\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are downregulated by the compound \"Niclosamide\" and interacted with the gene \"FIBP\", and participate in the molecular function of \"calcium ion binding\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "MolecularFunction(name:\"calcium ion binding\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"FIBP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are downregulated by polycystic ovary syndrome, covary with ZNF740, and are also covaried by OR10K2?",
+    "cql": "MATCH (n1:Disease{ name: \"polycystic ovary syndrome\" })-[r1:DOWNREGULATES_DdG]->(n4:Gene)-[r2:COVARIES_GcG]->(n2:Gene{ name: \"ZNF740\" }), (n3:Gene{ name: \"OR10K2\" })-[r3:COVARIES_GcG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are downregulated by \"polycystic ovary syndrome\", covary with \"ZNF740\", and are also covaried by \"OR10K2\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Gene(name:\"ZNF740\")",
+      "Gene(name:\"OR10K2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is upregulated by the compound Niclosamide, participates in the organelle subcompartment, and is interacted with the gene BCL2L13?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n4:Gene)-[r2:PARTICIPATES_GpCC]->(n2:CellularComponent{ name: \"organelle subcompartment\" }), (n3:Gene{ name: \"BCL2L13\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is upregulated by the compound \"Niclosamide\", participates in the \"organelle subcompartment\", and is interacted with the gene \"BCL2L13\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "CellularComponent(name:\"organelle subcompartment\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"BCL2L13\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene does Sucralfate bind to, and also interacts with RPS19, and downregulated by polycystic ovary syndrome?",
+    "cql": "MATCH (n1:Compound{ name: \"Sucralfate\" })-[r1:BINDS_CbG]->(n4:Gene)-[r2:INTERACTS_GiG]->(n2:Gene{ name: \"RPS19\" }), (n3:Disease{ name: \"polycystic ovary syndrome\" })-[r3:DOWNREGULATES_DdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene does \"Sucralfate\" bind to, that also interacts with \"RPS19\", and downregulated by \"polycystic ovary syndrome\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Sucralfate\")",
+      "Gene(name:\"RPS19\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is bound by Thalidomide, participates in the biological process \"cellular response to alkaloid,\" and is associated with allergic rhinitis?",
+    "cql": "MATCH (n1:Compound{ name: \"Thalidomide\" })-[r1:BINDS_CbG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"cellular response to alkaloid\" }), (n3:Disease{ name: \"allergic rhinitis\" })-[r3:ASSOCIATES_DaG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is bound by \"Thalidomide\", participates in the biological process \"cellular response to alkaloid\", and is associated with \"allergic rhinitis\"?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"cellular response to alkaloid\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Thalidomide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is downregulated by the pituitary gland, participates in the endoplasmic reticulum membrane, and is bound by Niclosamide?",
+    "cql": "MATCH (n1:Anatomy{ name: \"pituitary gland\" })-[r1:DOWNREGULATES_AdG]->(n4:Gene)-[r2:PARTICIPATES_GpCC]->(n2:CellularComponent{ name: \"endoplasmic reticulum membrane\" }), (n3:Compound{ name: \"Niclosamide\" })-[r3:BINDS_CbG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which gene is downregulated by the \"pituitary gland\", participates in the \"endoplasmic reticulum membrane\", and is bound by \"Niclosamide\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "CellularComponent(name:\"endoplasmic reticulum membrane\")",
+      "Anatomy(name:\"pituitary gland\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are downregulated by the disease \"allergic rhinitis\", interacted with the gene \"GRIA1\", and participate in the biological process \"neuron projection development\"?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:DOWNREGULATES_DdG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"neuron projection development\" }), (n3:Gene{ name: \"GRIA1\" })-[r3:INTERACTS_GiG]->(n4) RETURN n4.name",
+    "rewrite_nl": "Which genes are downregulated by the disease \"allergic rhinitis\", interacted with the gene \"GRIA1\", and participate in the biological process \"neuron projection development\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"neuron projection development\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"GRIA1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is bound by Niclosamide, participates in the exogenous drug catabolic process, and is downregulated by the spinal cord?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:BINDS_CbG]->(n4:Gene)-[r2:PARTICIPATES_GpBP]->(n2:BiologicalProcess{ name: \"exogenous drug catabolic process\" }), (n3:Anatomy{ name: \"spinal cord\" })-[r3:DOWNREGULATES_AdG]->(n4) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is bound by \"Niclosamide\", participates in the \"exogenous drug catabolic process\", and is downregulated by the \"spinal cord\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "BiologicalProcess(name:\"exogenous drug catabolic process\")",
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"spinal cord\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  }
+]
