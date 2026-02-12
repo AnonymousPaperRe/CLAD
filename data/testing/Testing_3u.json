@@ -1,0 +1,4000 @@
+[
+  {
+    "rawnl": "What are the names of genes that are covaried by the gene CRHR2, or upregulated by the disease polycystic ovary syndrome, or upregulated by the compound Mebendazole?",
+    "cql": "MATCH (n1:Gene{ name: \"CRHR2\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Mebendazole\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are covaried by the gene \"CRHR2\", or upregulated by the disease \"polycystic ovary syndrome\", or upregulated by the compound \"Mebendazole\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Mebendazole\")",
+      "Gene(name:\"CRHR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes have a connection from APP via an INTERACTS_GiG relationship, or from allergic rhinitis via a DOWNREGULATES_DdG relationship, or from blood via an UPREGULATES_AuG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"APP\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"blood\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes have a connection from \"APP\" via an INTERACTS_GiG relationship, or from \"allergic rhinitis\" via a DOWNREGULATES_DdG relationship, or from \"blood\" via an UPREGULATES_AuG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"blood\")",
+      "Gene(name:\"APP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene IL4R or by the gene B4GALT1, or that are upregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"IL4R\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"B4GALT1\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"IL4R\" or by the gene \"B4GALT1\", or that are upregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"B4GALT1\")",
+      "Gene(name:\"IL4R\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either covaried with the gene NOVA2, or are expressed by the myometrium, or are downregulated by Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"NOVA2\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"myometrium\" })-[r2:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either covaried with the gene \"NOVA2\", or are expressed by the \"myometrium\", or are downregulated by \"Niclosamide\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"myometrium\")",
+      "Gene(name:\"NOVA2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by PGAM1 or LRSAM1, or that are upregulated by the prostate gland?",
+    "cql": "MATCH (n1:Gene{ name: \"PGAM1\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"LRSAM1\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"prostate gland\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by \"PGAM1\" or \"LRSAM1\", or that are upregulated by the \"prostate gland\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"LRSAM1\")",
+      "Gene(name:\"PGAM1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that are covaried with the gene named IQGAP3, or are interacted with by the gene named MARK2, or are expressed in the anatomy named testis?",
+    "cql": "MATCH (n1:Gene{ name: \"IQGAP3\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"MARK2\" })-[r2:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"testis\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of Genes that are covaried with the gene named \"IQGAP3\", or are interacted with by the gene named \"MARK2\", or are expressed in the anatomy named \"testis\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Anatomy(name:\"testis\")",
+      "Gene(name:\"MARK2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are bound by Pentosan Polysulfate, or downregulated by polycystic ovary syndrome, or upregulated by the female gonad?",
+    "cql": "MATCH (n1:Compound{ name: \"Pentosan Polysulfate\" })-[r1:BINDS_CbG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"female gonad\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are bound by \"Pentosan Polysulfate\", or downregulated by \"polycystic ovary syndrome\", or upregulated by the \"female gonad\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Pentosan Polysulfate\")",
+      "Anatomy(name:\"female gonad\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are covaried by the gene ZSCAN9, or interacted with by the gene YWHAG, or upregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"ZSCAN9\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"YWHAG\" })-[r2:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are covaried by the gene \"ZSCAN9\", or interacted with by the gene \"YWHAG\", or upregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"ZSCAN9\")",
+      "Gene(name:\"YWHAG\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with by the gene ECH1, or upregulated by the liver, or bound by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"ECH1\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"liver\" })-[r2:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:BINDS_CbG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with by the gene \"ECH1\", or upregulated by the \"liver\", or bound by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"liver\")",
+      "Gene(name:\"ECH1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with by the gene CREB3, or downregulated by the cardiac ventricle anatomy, or upregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"CREB3\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"cardiac ventricle\" })-[r2:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with by the gene \"CREB3\", or downregulated by the \"cardiac ventricle\" anatomy, or upregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Anatomy(name:\"cardiac ventricle\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"CREB3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with by the gene CDH1 or downregulated by the disease allergic rhinitis, or downregulated by the compound Varenicline?",
+    "cql": "MATCH (n1:Gene{ name: \"CDH1\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Varenicline\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with by the gene \"CDH1\" or downregulated by the disease \"allergic rhinitis\", or downregulated by the compound \"Varenicline\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Varenicline\")",
+      "Gene(name:\"CDH1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that are either interacted with by BRCA2, or associated with allergic rhinitis, or downregulated by Triamcinolone?",
+    "cql": "MATCH (n1:Gene{ name: \"BRCA2\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Triamcinolone\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of Genes that are either interacted with by \"BRCA2\", or associated with \"allergic rhinitis\", or downregulated by \"Triamcinolone\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Triamcinolone\")",
+      "Gene(name:\"BRCA2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with gene PRKAA1, or interacted with gene ZMYND10, or are upregulated by the disease allergic rhinitis?",
+    "cql": "MATCH (n1:Gene{ name: \"PRKAA1\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"ZMYND10\" })-[r2:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Disease{ name: \"allergic rhinitis\" })-[r3:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with gene \"PRKAA1\", or interacted with gene \"ZMYND10\", or are upregulated by the disease \"allergic rhinitis\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"ZMYND10\")",
+      "Gene(name:\"PRKAA1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are bound by the compound N-Acetyl-D-glucosamine, or that are upregulated by the disease polycystic ovary syndrome, or that are upregulated by the endometrium?",
+    "cql": "MATCH (n1:Compound{ name: \"N-Acetyl-D-glucosamine\" })-[r1:BINDS_CbG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"endometrium\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are bound by the compound \"N-Acetyl-D-glucosamine\", or that are upregulated by the disease \"polycystic ovary syndrome\", or that are upregulated by the \"endometrium\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"N-Acetyl-D-glucosamine\")",
+      "Anatomy(name:\"endometrium\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are covaried by the gene BSX, or upregulated by the disease allergic rhinitis, or upregulated by blood?",
+    "cql": "MATCH (n1:Gene{ name: \"BSX\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"blood\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are covaried by the gene \"BSX\", or upregulated by the disease \"allergic rhinitis\", or upregulated by \"blood\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"blood\")",
+      "Gene(name:\"BSX\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene KSR2, or that are downregulated by the disease allergic rhinitis, or that are downregulated by the compound Varenicline?",
+    "cql": "MATCH (n1:Gene{ name: \"KSR2\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Varenicline\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"KSR2\", or that are downregulated by the disease \"allergic rhinitis\", or that are downregulated by the compound \"Varenicline\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Varenicline\")",
+      "Gene(name:\"KSR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with the gene BCL2L13, or are downregulated by the cortex of kidney, or are upregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"BCL2L13\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"cortex of kidney\" })-[r2:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with the gene \"BCL2L13\", or are downregulated by the \"cortex of kidney\", or are upregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Anatomy(name:\"cortex of kidney\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"BCL2L13\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by SLC35A1 or HEBP1, or FXR2 through the REGULATES_GrG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"SLC35A1\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"HEBP1\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Gene{ name: \"FXR2\" })-[r3:REGULATES_GrG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by \"SLC35A1\" or \"HEBP1\", or \"FXR2\" through the REGULATES_GrG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"SLC35A1\")",
+      "Gene(name:\"HEBP1\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Can you list the names of genes that are connected to FXR2 by INTERACTS_GiG, or connected to WRN by REGULATES_GrG, or connected to the thyroid gland by EXPRESSES_AeG?",
+    "cql": "MATCH (n1:Gene{ name: \"FXR2\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"WRN\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"thyroid gland\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Can you list the names of genes that are connected to \"FXR2\" by INTERACTS_GiG, or connected to \"WRN\" by REGULATES_GrG, or connected to the \"thyroid gland\" by EXPRESSES_AeG?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"thyroid gland\")",
+      "Gene(name:\"FXR2\")",
+      "Gene(name:\"WRN\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are covaried by the gene MAGEH1, or associated with the disease allergic rhinitis, or upregulated by the compound Digoxin?",
+    "cql": "MATCH (n1:Gene{ name: \"MAGEH1\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Digoxin\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are covaried by the gene \"MAGEH1\", or associated with the disease \"allergic rhinitis\", or upregulated by the compound \"Digoxin\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Digoxin\")",
+      "Gene(name:\"MAGEH1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by either TRAM2 or PTK2B, or are downregulated by allergic rhinitis?",
+    "cql": "MATCH (n1:Gene{ name: \"TRAM2\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"PTK2B\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Disease{ name: \"allergic rhinitis\" })-[r3:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by either \"TRAM2\" or \"PTK2B\", or are downregulated by \"allergic rhinitis\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"TRAM2\")",
+      "Gene(name:\"PTK2B\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes have a COVARIES_GcG relationship from ZSCAN9, or are expressed in the testis, or are upregulated by Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"ZSCAN9\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"testis\" })-[r2:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes have a COVARIES_GcG relationship from \"ZSCAN9\", or are expressed in the \"testis\", or are upregulated by \"Niclosamide\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"testis\")",
+      "Gene(name:\"ZSCAN9\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are connected from the gene \"GRIA1\" by an \"INTERACTS_GiG\" relationship, or from the gene \"KCNK2\" by a \"REGULATES_GrG\" relationship, or from the disease \"allergic rhinitis\" by a \"DOWNREGULATES_DdG\" relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"GRIA1\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"KCNK2\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Disease{ name: \"allergic rhinitis\" })-[r3:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are connected from the gene \"GRIA1\" by an \"INTERACTS_GiG\" relationship, or from the gene \"KCNK2\" by a \"REGULATES_GrG\" relationship, or from the disease \"allergic rhinitis\" by a \"DOWNREGULATES_DdG\" relationship?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"GRIA1\")",
+      "Gene(name:\"KCNK2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are downregulated by the compound Biperiden, or upregulated by the disease allergic rhinitis, or expressed by the saliva-secreting gland?",
+    "cql": "MATCH (n1:Compound{ name: \"Biperiden\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"saliva-secreting gland\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are downregulated by the compound \"Biperiden\", or upregulated by the disease \"allergic rhinitis\", or expressed by the \"saliva-secreting gland\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Anatomy(name:\"saliva-secreting gland\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Biperiden\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that are connected from the Gene named NOVA2 via the COVARIES_GcG relationship, or from the Gene named FIBP via the INTERACTS_GiG relationship, or from the Compound named Niclosamide via the DOWNREGULATES_CdG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"NOVA2\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"FIBP\" })-[r2:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of Genes that are connected from the Gene named \"NOVA2\" via the COVARIES_GcG relationship, or from the Gene named \"FIBP\" via the INTERACTS_GiG relationship, or from the Compound named \"Niclosamide\" via the DOWNREGULATES_CdG relationship?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"NOVA2\")",
+      "Gene(name:\"FIBP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are bound by the compound Sucralfate, or downregulated by the disease polycystic ovary syndrome, or upregulated by the anatomy female gonad?",
+    "cql": "MATCH (n1:Compound{ name: \"Sucralfate\" })-[r1:BINDS_CbG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"female gonad\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are bound by the compound \"Sucralfate\", or downregulated by the disease \"polycystic ovary syndrome\", or upregulated by the anatomy \"female gonad\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Anatomy(name:\"female gonad\")",
+      "Compound(name:\"Sucralfate\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either connected from the gene OR8D4 via the COVARIES_GcG relationship, or are connected from the disease allergic rhinitis via the UPREGULATES_DuG relationship, or are connected from the compound Biperiden via the DOWNREGULATES_CdG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"OR8D4\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Biperiden\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either connected from the gene \"OR8D4\" via the COVARIES_GcG relationship, or are connected from the disease \"allergic rhinitis\" via the UPREGULATES_DuG relationship, or are connected from the compound \"Biperiden\" via the DOWNREGULATES_CdG relationship?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Biperiden\")",
+      "Gene(name:\"OR8D4\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene names correspond to genes that are covaried by MDC1, or associated with polycystic ovary syndrome, or bound by Ofloxacin?",
+    "cql": "MATCH (n1:Gene{ name: \"MDC1\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Ofloxacin\" })-[r3:BINDS_CbG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which gene names correspond to genes that are covaried by \"MDC1\", or associated with \"polycystic ovary syndrome\", or bound by \"Ofloxacin\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Ofloxacin\")",
+      "Gene(name:\"MDC1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with by the gene SMAD2, or associated with the disease allergic rhinitis, or downregulated by the compound Triamcinolone?",
+    "cql": "MATCH (n1:Gene{ name: \"SMAD2\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Triamcinolone\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with by the gene \"SMAD2\", or associated with the disease \"allergic rhinitis\", or downregulated by the compound \"Triamcinolone\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Triamcinolone\")",
+      "Gene(name:\"SMAD2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Can you list the genes that are regulated by MSRA, or upregulated by allergic rhinitis, or expressed by the urethra?",
+    "cql": "MATCH (n1:Gene{ name: \"MSRA\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"urethra\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Can you list the genes that are regulated by \"MSRA\", or upregulated by \"allergic rhinitis\", or expressed by the \"urethra\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"urethra\")",
+      "Gene(name:\"MSRA\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that are connected from the Gene named \"ZSCAN9\" by the \"COVARIES_GcG\" relationship, or from the Anatomy named \"smooth muscle tissue\" by the \"EXPRESSES_AeG\" relationship, or from the Compound named \"Niclosamide\" by the \"UPREGULATES_CuG\" relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"ZSCAN9\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"smooth muscle tissue\" })-[r2:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of Genes that are connected from the Gene named \"ZSCAN9\" by the \"COVARIES_GcG\" relationship, or from the Anatomy named \"smooth muscle tissue\" by the \"EXPRESSES_AeG\" relationship, or from the Compound named \"Niclosamide\" by the \"UPREGULATES_CuG\" relationship?",
+    "nodes": [
+      "Anatomy",
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Anatomy(name:\"smooth muscle tissue\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"ZSCAN9\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either connected from the gene IQGAP3 by the COVARIES_GcG relationship, or are connected from the gene SOAT2 by the REGULATES_GrG relationship, or are connected from the anatomy medulla oblongata by the UPREGULATES_AuG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"IQGAP3\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"SOAT2\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"medulla oblongata\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either connected from the gene \"IQGAP3\" by the COVARIES_GcG relationship, or are connected from the gene \"SOAT2\" by the REGULATES_GrG relationship, or are connected from the anatomy \"medulla oblongata\" by the UPREGULATES_AuG relationship?",
+    "nodes": [
+      "Anatomy",
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"medulla oblongata\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"SOAT2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are bound by the compound Thalidomide, or are associated with the disease allergic rhinitis, or are expressed in the adrenal gland?",
+    "cql": "MATCH (n1:Compound{ name: \"Thalidomide\" })-[r1:BINDS_CbG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"adrenal gland\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are bound by the compound \"Thalidomide\", or are associated with the disease \"allergic rhinitis\", or are expressed in the \"adrenal gland\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"adrenal gland\")",
+      "Compound(name:\"Thalidomide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes have either an INTERACTS_GiG connection from CDH1, or an INTERACTS_GiG connection from GRIA1, or a DOWNREGULATES_DdG connection from allergic rhinitis?",
+    "cql": "MATCH (n1:Gene{ name: \"CDH1\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"GRIA1\" })-[r2:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Disease{ name: \"allergic rhinitis\" })-[r3:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes have either an INTERACTS_GiG connection from \"CDH1\", or an INTERACTS_GiG connection from \"GRIA1\", or a DOWNREGULATES_DdG connection from \"allergic rhinitis\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"GRIA1\")",
+      "Gene(name:\"CDH1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Can you list the names of genes that are covaried by OR10K2, or are the target of an interaction from RAC3, or are downregulated by polycystic ovary syndrome?",
+    "cql": "MATCH (n1:Gene{ name: \"OR10K2\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"RAC3\" })-[r2:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Disease{ name: \"polycystic ovary syndrome\" })-[r3:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Can you list the names of genes that are covaried by \"OR10K2\", or are the target of an interaction from \"RAC3\", or are downregulated by \"polycystic ovary syndrome\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Gene(name:\"OR10K2\")",
+      "Gene(name:\"RAC3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with by the gene FIBP, or regulated by the gene PIM1, or downregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"FIBP\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"PIM1\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with by the gene \"FIBP\", or regulated by the gene \"PIM1\", or downregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"FIBP\")",
+      "Gene(name:\"PIM1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either covaried by the gene ZSCAN9, or downregulated by the adrenal cortex, or upregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"ZSCAN9\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"adrenal cortex\" })-[r2:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either covaried by the gene \"ZSCAN9\", or downregulated by the \"adrenal cortex\", or upregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Anatomy(name:\"adrenal cortex\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"ZSCAN9\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Gene that is bound by the compound Phosphatidylserine, or is downregulated by the disease polycystic ovary syndrome, or is downregulated by the anatomy spinal cord?",
+    "cql": "MATCH (n1:Compound{ name: \"Phosphatidylserine\" })-[r1:BINDS_CbG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"spinal cord\" })-[r3:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the Gene that is bound by the compound \"Phosphatidylserine\", or is downregulated by the disease \"polycystic ovary syndrome\", or is downregulated by the anatomy \"spinal cord\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Phosphatidylserine\")",
+      "Anatomy(name:\"spinal cord\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are targets of covariation from OR10K2, or downregulation from polycystic ovary syndrome, or upregulation from the midbrain?",
+    "cql": "MATCH (n1:Gene{ name: \"OR10K2\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"midbrain\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are targets of covariation from \"OR10K2\", or downregulation from \"polycystic ovary syndrome\", or upregulation from the \"midbrain\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Anatomy(name:\"midbrain\")",
+      "Gene(name:\"OR10K2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that are covaried by the gene IQGAP3, or that are interacted with the gene PAK1, or that are upregulated by the medulla oblongata?",
+    "cql": "MATCH (n1:Gene{ name: \"IQGAP3\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"PAK1\" })-[r2:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"medulla oblongata\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of Genes that are covaried by the gene \"IQGAP3\", or that are interacted with the gene \"PAK1\", or that are upregulated by the \"medulla oblongata\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"medulla oblongata\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"PAK1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are interacted with the gene CYB5A, or are expressed in the renal system, or are bound by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"CYB5A\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"renal system\" })-[r2:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:BINDS_CbG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are interacted with the gene \"CYB5A\", or are expressed in the \"renal system\", or are bound by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Anatomy(name:\"renal system\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"CYB5A\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene NUP62, or regulated by the gene EBF1, or downregulated by the prostate gland?",
+    "cql": "MATCH (n1:Gene{ name: \"NUP62\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"EBF1\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"prostate gland\" })-[r3:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"NUP62\", or regulated by the gene \"EBF1\", or downregulated by the \"prostate gland\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"NUP62\")",
+      "Gene(name:\"EBF1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with by the gene FXR2, or regulated by the gene WRN, or expressed in the prostate gland?",
+    "cql": "MATCH (n1:Gene{ name: \"FXR2\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"WRN\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"prostate gland\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with by the gene \"FXR2\", or regulated by the gene \"WRN\", or expressed in the \"prostate gland\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"FXR2\")",
+      "Gene(name:\"WRN\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are either targets of regulation by EBF1, or by PDPK1, or are downregulated by the prostate gland?",
+    "cql": "MATCH (n1:Gene{ name: \"EBF1\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"PDPK1\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"prostate gland\" })-[r3:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes are either targets of regulation by \"EBF1\", or by \"PDPK1\", or are downregulated by the \"prostate gland\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"PDPK1\")",
+      "Gene(name:\"EBF1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene PIM1, or are downregulated by the anatomy nipple, or are downregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"PIM1\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"nipple\" })-[r2:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"PIM1\", or are downregulated by the anatomy \"nipple\", or are downregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"nipple\")",
+      "Gene(name:\"PIM1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either bound by the compound Pentosan Polysulfate, or downregulated by the disease polycystic ovary syndrome, or downregulated by the thyroid gland?",
+    "cql": "MATCH (n1:Compound{ name: \"Pentosan Polysulfate\" })-[r1:BINDS_CbG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"thyroid gland\" })-[r3:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either bound by the compound \"Pentosan Polysulfate\", or downregulated by the disease \"polycystic ovary syndrome\", or downregulated by the \"thyroid gland\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Pentosan Polysulfate\")",
+      "Anatomy(name:\"thyroid gland\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are either regulated by TNFRSF1A, or associated with allergic rhinitis, or are downregulated by the midbrain?",
+    "cql": "MATCH (n1:Gene{ name: \"TNFRSF1A\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"midbrain\" })-[r3:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes are either regulated by \"TNFRSF1A\", or associated with \"allergic rhinitis\", or are downregulated by the \"midbrain\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"TNFRSF1A\")",
+      "Anatomy(name:\"midbrain\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either covaried by the gene ZYX, or downregulated by the disease polycystic ovary syndrome, or bound by the compound Orlistat?",
+    "cql": "MATCH (n1:Gene{ name: \"ZYX\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Orlistat\" })-[r3:BINDS_CbG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either covaried by the gene \"ZYX\", or downregulated by the disease \"polycystic ovary syndrome\", or bound by the compound \"Orlistat\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Orlistat\")",
+      "Gene(name:\"ZYX\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes have a connection from GRIA1 via an INTERACTS_GiG relationship, or from SLC25A4 via a REGULATES_GrG relationship, or from allergic rhinitis via a DOWNREGULATES_DdG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"GRIA1\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"SLC25A4\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Disease{ name: \"allergic rhinitis\" })-[r3:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes have a connection from \"GRIA1\" via an INTERACTS_GiG relationship, or from \"SLC25A4\" via a REGULATES_GrG relationship, or from \"allergic rhinitis\" via a DOWNREGULATES_DdG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"SLC25A4\")",
+      "Gene(name:\"GRIA1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene CREB3L2, or are associated with the disease allergic rhinitis, or are expressed in the lymphoid tissue?",
+    "cql": "MATCH (n1:Gene{ name: \"CREB3L2\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"lymphoid tissue\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"CREB3L2\", or are associated with the disease \"allergic rhinitis\", or are expressed in the \"lymphoid tissue\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"lymphoid tissue\")",
+      "Gene(name:\"CREB3L2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with by the gene GLG1, or associated with the disease allergic rhinitis, or upregulated by the compound Mebendazole?",
+    "cql": "MATCH (n1:Gene{ name: \"GLG1\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Mebendazole\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with by the gene \"GLG1\", or associated with the disease \"allergic rhinitis\", or upregulated by the compound \"Mebendazole\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Mebendazole\")",
+      "Gene(name:\"GLG1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Can you list the names of genes that have an incoming REGULATES_GrG relationship from B4GALT4, or an incoming DOWNREGULATES_AdG relationship from the nipple, or an incoming DOWNREGULATES_CdG relationship from Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"B4GALT4\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"nipple\" })-[r2:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Can you list the names of genes that have an incoming REGULATES_GrG relationship from \"B4GALT4\", or an incoming DOWNREGULATES_AdG relationship from the \"nipple\", or an incoming DOWNREGULATES_CdG relationship from \"Niclosamide\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"B4GALT4\")",
+      "Anatomy(name:\"nipple\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that either receive a \"COVARIES_GcG\" connection from the gene ARL8A, or from the gene ULBP3, or receive an \"INTERACTS_GiG\" connection from the gene MYC?",
+    "cql": "MATCH (n1:Gene{ name: \"ARL8A\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"ULBP3\" })-[r2:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Gene{ name: \"MYC\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that either receive a \"COVARIES_GcG\" connection from the gene \"ARL8A\", or from the gene \"ULBP3\", or receive an \"INTERACTS_GiG\" connection from the gene \"MYC\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ULBP3\")",
+      "Gene(name:\"ARL8A\")",
+      "Gene(name:\"MYC\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of any gene that is either interacted with by the gene PDGFRA, or regulated by the gene HERPUD1, or bound by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"PDGFRA\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"HERPUD1\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:BINDS_CbG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of any gene that is either interacted with by the gene \"PDGFRA\", or regulated by the gene \"HERPUD1\", or bound by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"HERPUD1\")",
+      "Gene(name:\"PDGFRA\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with the gene ZMYND10, or are upregulated by the disease allergic rhinitis, or are expressed in the pituitary gland?",
+    "cql": "MATCH (n1:Gene{ name: \"ZMYND10\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"pituitary gland\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with the gene \"ZMYND10\", or are upregulated by the disease \"allergic rhinitis\", or are expressed in the \"pituitary gland\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"pituitary gland\")",
+      "Gene(name:\"ZMYND10\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are upregulated by the compound Quinacrine, or upregulated by the disease polycystic ovary syndrome, or expressed by the lymph node?",
+    "cql": "MATCH (n1:Compound{ name: \"Quinacrine\" })-[r1:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"lymph node\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are upregulated by the compound \"Quinacrine\", or upregulated by the disease \"polycystic ovary syndrome\", or expressed by the \"lymph node\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Quinacrine\")",
+      "Anatomy(name:\"lymph node\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which Genes have a COVARIES_GcG relationship starting from ARHGEF11, or from ULBP3, or are upregulated by the brain (as per the UPREGULATES_AuG relationship)?",
+    "cql": "MATCH (n1:Gene{ name: \"ARHGEF11\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"ULBP3\" })-[r2:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"brain\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which Genes have a COVARIES_GcG relationship starting from \"ARHGEF11\", or from \"ULBP3\", or are upregulated by the \"brain\" (as per the UPREGULATES_AuG relationship)?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ARHGEF11\")",
+      "Anatomy(name:\"brain\")",
+      "Gene(name:\"ULBP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with by CALM2, or interacted with by IQCB1, or expressed in the liver?",
+    "cql": "MATCH (n1:Gene{ name: \"CALM2\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"IQCB1\" })-[r2:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"liver\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with by \"CALM2\", or interacted with by \"IQCB1\", or expressed in the \"liver\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"liver\")",
+      "Gene(name:\"CALM2\")",
+      "Gene(name:\"IQCB1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which Genes have a name such that they are covaried by CCDC109B, or upregulated by polycystic ovary syndrome, or bound by Sucralfate?",
+    "cql": "MATCH (n1:Gene{ name: \"CCDC109B\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Sucralfate\" })-[r3:BINDS_CbG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which Genes have a name such that they are covaried by \"CCDC109B\", or upregulated by \"polycystic ovary syndrome\", or bound by \"Sucralfate\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Sucralfate\")",
+      "Gene(name:\"CCDC109B\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that are connected by an INTERACTS_GiG relationship from MAPK1 or from MARK2, or by a COVARIES_GcG relationship from IQGAP3?",
+    "cql": "MATCH (n1:Gene{ name: \"MAPK1\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"MARK2\" })-[r2:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of Genes that are connected by an INTERACTS_GiG relationship from \"MAPK1\" or from \"MARK2\", or by a COVARIES_GcG relationship from \"IQGAP3\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"MARK2\")",
+      "Gene(name:\"MAPK1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with the gene named \"AES\", or are upregulated by the disease \"allergic rhinitis\", or are upregulated by the anatomy \"saliva-secreting gland\"?",
+    "cql": "MATCH (n1:Gene{ name: \"AES\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"saliva-secreting gland\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with the gene named \"AES\", or are upregulated by the disease \"allergic rhinitis\", or are upregulated by the anatomy \"saliva-secreting gland\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Anatomy(name:\"saliva-secreting gland\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"AES\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with the gene MYLIP, or are upregulated by the disease allergic rhinitis, or are downregulated by the compound Biperiden?",
+    "cql": "MATCH (n1:Gene{ name: \"MYLIP\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Biperiden\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with the gene \"MYLIP\", or are upregulated by the disease \"allergic rhinitis\", or are downregulated by the compound \"Biperiden\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Biperiden\")",
+      "Gene(name:\"MYLIP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that receive a COVARIES_GcG connection from BSX, or a REGULATES_GrG connection from MSRA, or an UPREGULATES_DuG connection from allergic rhinitis?",
+    "cql": "MATCH (n1:Gene{ name: \"BSX\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"MSRA\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Disease{ name: \"allergic rhinitis\" })-[r3:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of Genes that receive a COVARIES_GcG connection from \"BSX\", or a REGULATES_GrG connection from \"MSRA\", or an UPREGULATES_DuG connection from \"allergic rhinitis\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"MSRA\")",
+      "Gene(name:\"BSX\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of any Gene that is bound by Sucralfate, or downregulated by polycystic ovary syndrome, or expressed by smooth muscle tissue?",
+    "cql": "MATCH (n1:Compound{ name: \"Sucralfate\" })-[r1:BINDS_CbG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"smooth muscle tissue\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of any Gene that is bound by \"Sucralfate\", or downregulated by \"polycystic ovary syndrome\", or expressed by \"smooth muscle tissue\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Anatomy(name:\"smooth muscle tissue\")",
+      "Compound(name:\"Sucralfate\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are covaried by BSX or regulated by FGG, or upregulated by allergic rhinitis, and what are their names?",
+    "cql": "MATCH (n1:Gene{ name: \"BSX\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"FGG\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Disease{ name: \"allergic rhinitis\" })-[r3:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes are covaried by \"BSX\" or regulated by \"FGG\", or upregulated by \"allergic rhinitis\", and what are their names?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"FGG\")",
+      "Gene(name:\"BSX\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with the gene BCL2L13, or are downregulated by the cardiac ventricle, or are upregulated by Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"BCL2L13\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"cardiac ventricle\" })-[r2:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with the gene \"BCL2L13\", or are downregulated by the \"cardiac ventricle\", or are upregulated by \"Niclosamide\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"cardiac ventricle\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"BCL2L13\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that are upregulated by the compound Treprostinil, or downregulated by the disease allergic rhinitis, or upregulated by the anatomy bone marrow?",
+    "cql": "MATCH (n1:Compound{ name: \"Treprostinil\" })-[r1:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"bone marrow\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of Genes that are upregulated by the compound \"Treprostinil\", or downregulated by the disease \"allergic rhinitis\", or upregulated by the anatomy \"bone marrow\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Treprostinil\")",
+      "Anatomy(name:\"bone marrow\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are connected to the gene named \"OR10K2\" by the \"COVARIES_GcG\" relationship, or to which the disease \"polycystic ovary syndrome\" is connected by \"DOWNREGULATES_DdG\", or to which the anatomy \"vagina\" is connected by \"DOWNREGULATES_AdG\"?",
+    "cql": "MATCH (n1:Gene{ name: \"OR10K2\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"vagina\" })-[r3:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are connected to the gene named \"OR10K2\" by the \"COVARIES_GcG\" relationship, or to which the disease \"polycystic ovary syndrome\" is connected by \"DOWNREGULATES_DdG\", or to which the anatomy \"vagina\" is connected by \"DOWNREGULATES_AdG\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Gene(name:\"OR10K2\")",
+      "Anatomy(name:\"vagina\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are downregulated by the compound Biperiden, or upregulated by the disease allergic rhinitis, or upregulated by the medulla oblongata?",
+    "cql": "MATCH (n1:Compound{ name: \"Biperiden\" })-[r1:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"medulla oblongata\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are downregulated by the compound \"Biperiden\", or upregulated by the disease \"allergic rhinitis\", or upregulated by the \"medulla oblongata\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Anatomy(name:\"medulla oblongata\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Biperiden\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with by the gene FIBP, or regulated by the gene PER2, or downregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"FIBP\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"PER2\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with by the gene \"FIBP\", or regulated by the gene \"PER2\", or downregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"FIBP\")",
+      "Gene(name:\"PER2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that are regulated by the gene MSRA, or upregulated by the disease allergic rhinitis, or expressed by the saliva-secreting gland?",
+    "cql": "MATCH (n1:Gene{ name: \"MSRA\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"saliva-secreting gland\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of Genes that are regulated by the gene \"MSRA\", or upregulated by the disease \"allergic rhinitis\", or expressed by the \"saliva-secreting gland\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Anatomy(name:\"saliva-secreting gland\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"MSRA\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene CD40 or by the gene CREB3L2, or that are associated with the disease allergic rhinitis?",
+    "cql": "MATCH (n1:Gene{ name: \"CD40\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"CREB3L2\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Disease{ name: \"allergic rhinitis\" })-[r3:ASSOCIATES_DaG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"CD40\" or by the gene \"CREB3L2\", or that are associated with the disease \"allergic rhinitis\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"CREB3L2\")",
+      "Gene(name:\"CD40\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which Genes are regulated by CDK4, or are upregulated by allergic rhinitis, or are upregulated by the saliva-secreting gland?",
+    "cql": "MATCH (n1:Gene{ name: \"CDK4\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"saliva-secreting gland\" })-[r3:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which Genes are regulated by \"CDK4\", or are upregulated by \"allergic rhinitis\", or are upregulated by the \"saliva-secreting gland\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"saliva-secreting gland\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"CDK4\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are connected to the gene \"NSF\" by an INTERACTS_GiG relationship, or connected to the gene \"CDH2\" by an INTERACTS_GiG relationship, or are regulated by the gene \"HSD17B2\" through a REGULATES_GrG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"NSF\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"CDH2\" })-[r2:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Gene{ name: \"HSD17B2\" })-[r3:REGULATES_GrG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are connected to the gene \"NSF\" by an INTERACTS_GiG relationship, or connected to the gene \"CDH2\" by an INTERACTS_GiG relationship, or are regulated by the gene \"HSD17B2\" through a REGULATES_GrG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"HSD17B2\")",
+      "Gene(name:\"CDH2\")",
+      "Gene(name:\"NSF\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene KSR2, or downregulated by the disease allergic rhinitis, or upregulated by the compound Treprostinil?",
+    "cql": "MATCH (n1:Gene{ name: \"KSR2\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Treprostinil\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"KSR2\", or downregulated by the disease \"allergic rhinitis\", or upregulated by the compound \"Treprostinil\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Treprostinil\")",
+      "Gene(name:\"KSR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with by the gene ATP1B1, or regulated by the gene PDPK1, or downregulated by the prostate gland?",
+    "cql": "MATCH (n1:Gene{ name: \"ATP1B1\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"PDPK1\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"prostate gland\" })-[r3:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with by the gene \"ATP1B1\", or regulated by the gene \"PDPK1\", or downregulated by the \"prostate gland\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"ATP1B1\")",
+      "Gene(name:\"PDPK1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene FOS, or by the gene WRN, or that are interacted with the gene FXR2?",
+    "cql": "MATCH (n1:Gene{ name: \"FOS\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"WRN\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Gene{ name: \"FXR2\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"FOS\", or by the gene \"WRN\", or that are interacted with the gene \"FXR2\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"FXR2\")",
+      "Gene(name:\"WRN\")",
+      "Gene(name:\"FOS\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with the gene TRIM27, or are upregulated by polycystic ovary syndrome, or are upregulated by the compound Quinacrine?",
+    "cql": "MATCH (n1:Gene{ name: \"TRIM27\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Quinacrine\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with the gene \"TRIM27\", or are upregulated by \"polycystic ovary syndrome\", or are upregulated by the compound \"Quinacrine\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Quinacrine\")",
+      "Gene(name:\"TRIM27\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene B4GALT4, or upregulated by the thyroid gland, or downregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"B4GALT4\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"thyroid gland\" })-[r2:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"B4GALT4\", or upregulated by the \"thyroid gland\", or downregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Anatomy(name:\"thyroid gland\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"B4GALT4\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with by the gene PDGFRA, or regulated by the gene SLC6A8, or bound by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"PDGFRA\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"SLC6A8\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:BINDS_CbG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with by the gene \"PDGFRA\", or regulated by the gene \"SLC6A8\", or bound by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"PDGFRA\")",
+      "Gene(name:\"SLC6A8\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with the gene \"BCL2L13\", or are regulated by the gene \"HYOU1\", or are upregulated by the compound \"Niclosamide\"?",
+    "cql": "MATCH (n1:Gene{ name: \"BCL2L13\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"HYOU1\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with the gene \"BCL2L13\", or are regulated by the gene \"HYOU1\", or are upregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"BCL2L13\")",
+      "Gene(name:\"HYOU1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene LTBR, or associated with the disease allergic rhinitis, or bound by the compound Thalidomide?",
+    "cql": "MATCH (n1:Gene{ name: \"LTBR\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Thalidomide\" })-[r3:BINDS_CbG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"LTBR\", or associated with the disease \"allergic rhinitis\", or bound by the compound \"Thalidomide\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Thalidomide\")",
+      "Gene(name:\"LTBR\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that either receive a \"COVARIES_GcG\" relationship from the Gene named \"G6PD\", or are interacted with the Gene named \"VIM\" via an \"INTERACTS_GiG\" relationship, or are downregulated by the Compound named \"Niclosamide\" through a \"DOWNREGULATES_CdG\" relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"G6PD\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"VIM\" })-[r2:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:DOWNREGULATES_CdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of Genes that either receive a \"COVARIES_GcG\" relationship from the Gene named \"G6PD\", or are interacted with the Gene named \"VIM\" via an \"INTERACTS_GiG\" relationship, or are downregulated by the Compound named \"Niclosamide\" through a \"DOWNREGULATES_CdG\" relationship?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"G6PD\")",
+      "Gene(name:\"VIM\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are interacted with the gene APP, or are downregulated by the disease allergic rhinitis, or are expressed in the spinal cord?",
+    "cql": "MATCH (n1:Gene{ name: \"APP\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"spinal cord\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are interacted with the gene \"APP\", or are downregulated by the disease \"allergic rhinitis\", or are expressed in the \"spinal cord\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"spinal cord\")",
+      "Gene(name:\"APP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with the gene BCL2L13, or are upregulated by bone marrow, or are upregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"BCL2L13\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"bone marrow\" })-[r2:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with the gene \"BCL2L13\", or are upregulated by \"bone marrow\", or are upregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"bone marrow\")",
+      "Gene(name:\"BCL2L13\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene SMAD3, or upregulated by the disease allergic rhinitis, or downregulated by the anatomy urethra?",
+    "cql": "MATCH (n1:Gene{ name: \"SMAD3\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"urethra\" })-[r3:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"SMAD3\", or upregulated by the disease \"allergic rhinitis\", or downregulated by the anatomy \"urethra\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"urethra\")",
+      "Gene(name:\"SMAD3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene CEP55, or regulated by the gene RPN2, or bound by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"CEP55\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"RPN2\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:BINDS_CbG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"CEP55\", or regulated by the gene \"RPN2\", or bound by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"CEP55\")",
+      "Gene(name:\"RPN2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with by the gene MAGEA11, or regulated by the gene GSK3B, or downregulated by the prostate gland?",
+    "cql": "MATCH (n1:Gene{ name: \"MAGEA11\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"GSK3B\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"prostate gland\" })-[r3:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with by the gene \"MAGEA11\", or regulated by the gene \"GSK3B\", or downregulated by the \"prostate gland\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"MAGEA11\")",
+      "Gene(name:\"GSK3B\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes have a covaries relation from PPP1R3G, or an associates relation from the disease allergic rhinitis, or are expressed by the female reproductive system?",
+    "cql": "MATCH (n1:Gene{ name: \"PPP1R3G\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"female reproductive system\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes have a covaries relation from \"PPP1R3G\", or an associates relation from the disease \"allergic rhinitis\", or are expressed by the \"female reproductive system\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Anatomy(name:\"female reproductive system\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"PPP1R3G\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are upregulated by the compound Quinacrine, or upregulated by the disease polycystic ovary syndrome, or downregulated by the spinal cord?",
+    "cql": "MATCH (n1:Compound{ name: \"Quinacrine\" })-[r1:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"spinal cord\" })-[r3:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are upregulated by the compound \"Quinacrine\", or upregulated by the disease \"polycystic ovary syndrome\", or downregulated by the \"spinal cord\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Anatomy(name:\"spinal cord\")",
+      "Compound(name:\"Quinacrine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that are either connected from the Gene named \"RCOR1\" by the INTERACTS_GiG relationship, or are upregulated by the Disease \"polycystic ovary syndrome\" via UPREGULATES_DuG, or are upregulated by the Compound \"Quinacrine\" via UPREGULATES_CuG?",
+    "cql": "MATCH (n1:Gene{ name: \"RCOR1\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Quinacrine\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of Genes that are either connected from the Gene named \"RCOR1\" by the INTERACTS_GiG relationship, or are upregulated by the Disease \"polycystic ovary syndrome\" via UPREGULATES_DuG, or are upregulated by the Compound \"Quinacrine\" via UPREGULATES_CuG?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Quinacrine\")",
+      "Gene(name:\"RCOR1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either covaried with the gene ZSCAN9, or downregulated by the pituitary gland, or upregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"ZSCAN9\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"pituitary gland\" })-[r2:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either covaried with the gene \"ZSCAN9\", or downregulated by the \"pituitary gland\", or upregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Anatomy(name:\"pituitary gland\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"ZSCAN9\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene RPN2, or upregulated by the liver, or bound by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"RPN2\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Anatomy{ name: \"liver\" })-[r2:UPREGULATES_AuG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:BINDS_CbG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"RPN2\", or upregulated by the \"liver\", or bound by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Anatomy(name:\"liver\")",
+      "Gene(name:\"RPN2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are covaried by the gene IQGAP3, or that are interacted with the gene MAX, or are downregulated by the anatomy testis?",
+    "cql": "MATCH (n1:Gene{ name: \"IQGAP3\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"MAX\" })-[r2:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"testis\" })-[r3:DOWNREGULATES_AdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are covaried by the gene \"IQGAP3\", or that are interacted with the gene \"MAX\", or are downregulated by the anatomy \"testis\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Anatomy(name:\"testis\")",
+      "Gene(name:\"MAX\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that are connected to the gene ZNF655 by the COVARIES_GcG relationship, or to which polycystic ovary syndrome is connected by the DOWNREGULATES_DdG relationship, or to which Orlistat is connected by the BINDS_CbG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"ZNF655\" })-[r1:COVARIES_GcG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Orlistat\" })-[r3:BINDS_CbG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of Genes that are connected to the gene \"ZNF655\" by the COVARIES_GcG relationship, or to which \"polycystic ovary syndrome\" is connected by the DOWNREGULATES_DdG relationship, or to which \"Orlistat\" is connected by the BINDS_CbG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Orlistat\")",
+      "Gene(name:\"ZNF655\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either bound by the compound Thalidomide, or associated with the disease allergic rhinitis, or expressed in the cardiac atrium?",
+    "cql": "MATCH (n1:Compound{ name: \"Thalidomide\" })-[r1:BINDS_CbG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Anatomy{ name: \"cardiac atrium\" })-[r3:EXPRESSES_AeG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either bound by the compound \"Thalidomide\", or associated with the disease \"allergic rhinitis\", or expressed in the \"cardiac atrium\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Anatomy(name:\"cardiac atrium\")",
+      "Compound(name:\"Thalidomide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene SPDEF, or are associated with the disease allergic rhinitis, or are upregulated by the compound Mebendazole?",
+    "cql": "MATCH (n1:Gene{ name: \"SPDEF\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Mebendazole\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"SPDEF\", or are associated with the disease \"allergic rhinitis\", or are upregulated by the compound \"Mebendazole\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Mebendazole\")",
+      "Gene(name:\"SPDEF\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are either interacted with by the gene COX4I1, or downregulated by the disease allergic rhinitis, or upregulated by the compound Treprostinil?",
+    "cql": "MATCH (n1:Gene{ name: \"COX4I1\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Disease{ name: \"allergic rhinitis\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Treprostinil\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are either interacted with by the gene \"COX4I1\", or downregulated by the disease \"allergic rhinitis\", or upregulated by the compound \"Treprostinil\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Treprostinil\")",
+      "Gene(name:\"COX4I1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene VCP, or regulated by the gene B4GALT1, or upregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"VCP\" })-[r1:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"B4GALT1\" })-[r2:REGULATES_GrG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"VCP\", or regulated by the gene \"B4GALT1\", or upregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"B4GALT1\")",
+      "Gene(name:\"VCP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are interacted with by the gene BCL2L13 or the gene CREB3, or are upregulated by the compound Niclosamide?",
+    "cql": "MATCH (n1:Gene{ name: \"BCL2L13\" })-[r1:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n2:Gene{ name: \"CREB3\" })-[r2:INTERACTS_GiG]->(n4:Gene) RETURN n4.name UNION MATCH (n3:Compound{ name: \"Niclosamide\" })-[r3:UPREGULATES_CuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are interacted with by the gene \"BCL2L13\" or the gene \"CREB3\", or are upregulated by the compound \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"BCL2L13\")",
+      "Gene(name:\"CREB3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  }
+]

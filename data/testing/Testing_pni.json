@@ -1,0 +1,3931 @@
+[
+  {
+    "rawnl": "What is the name of the gene that is bound by the compound Cimetidine, which is included in the pharmacologic class Histamine H2 Receptor Antagonists, and is not upregulated by the cervicothoracic ganglion?",
+    "cql": "MATCH (n1:PharmacologicClass{ name: \"Histamine H2 Receptor Antagonists\" })-[r1:INCLUDES_PCiC]->(n2:Compound{ name: \"Cimetidine\" })-[r2:BINDS_CbG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"cervicothoracic ganglion\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is bound by the compound \"Cimetidine\", which is included in the pharmacologic class \"Histamine H2 Receptor Antagonists\", and is not upregulated by the \"cervicothoracic ganglion\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "PharmacologicClass"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"Histamine H2 Receptor Antagonists\")",
+      "Anatomy(name:\"cervicothoracic ganglion\")",
+      "Compound(name:\"Cimetidine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is associated with the disease allergic rhinitis, where the disease is palliated by pseudoephedrine, and which is not expressed in the anatomy pes?",
+    "cql": "MATCH (n1:Compound{ name: \"Pseudoephedrine\" })-[r1:PALLIATES_CpD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"pes\" })-[:EXPRESSES_AeG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is associated with the disease \"allergic rhinitis\", where the disease is palliated by \"Pseudoephedrine\", and which is not expressed in the anatomy \"pes\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Pseudoephedrine\")",
+      "Anatomy(name:\"pes\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by FOXP3, which is associated with the disease allergic rhinitis, and is not covaried with by PTPRO?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n2:Gene{ name: \"FOXP3\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"PTPRO\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by \"FOXP3\", which is associated with the disease \"allergic rhinitis\", and is not covaried with by \"PTPRO\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"PTPRO\")",
+      "Gene(name:\"FOXP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is regulated by ARHGEF2 that is covaried with IQGAP3, and is not upregulated by the corpus luteum?",
+    "cql": "MATCH (n1:Gene{ name: \"IQGAP3\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ARHGEF2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"corpus luteum\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene is regulated by \"ARHGEF2\" that is covaried with \"IQGAP3\", and is not upregulated by the \"corpus luteum\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"corpus luteum\")",
+      "Gene(name:\"ARHGEF2\")",
+      "Gene(name:\"IQGAP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of the genes that are upregulated in allergic rhinitis treated with Hydrocortisone and are not downregulated by the female reproductive system?",
+    "cql": "MATCH (n1:Compound{ name: \"Hydrocortisone\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"female reproductive system\" })-[:DOWNREGULATES_AdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What are the names of the genes that are upregulated in \"allergic rhinitis\" treated with \"Hydrocortisone\" and are not downregulated by the \"female reproductive system\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"female reproductive system\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Hydrocortisone\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by Meclofenamic acid, where Meclofenamic acid is resembled by Niclosamide, and the gene is not interacted with ARID4B?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:UPREGULATES_CuG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"ARID4B\" })-[:INTERACTS_GiG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by \"Meclofenamic acid\", where \"Meclofenamic acid\" is resembled by \"Niclosamide\", and the gene is not interacted with \"ARID4B\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Meclofenamic acid\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"ARID4B\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by PFKM, which is upregulated by polycystic ovary syndrome, and is not downregulated by Viomycin?",
+    "cql": "MATCH (n1:Disease{ name: \"polycystic ovary syndrome\" })-[r1:UPREGULATES_DuG]->(n2:Gene{ name: \"PFKM\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Viomycin\" })-[:DOWNREGULATES_CdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by \"PFKM\", which is upregulated by \"polycystic ovary syndrome\", and is not downregulated by \"Viomycin\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Viomycin\")",
+      "Gene(name:\"PFKM\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by POMK (which is downregulated by the prostate gland) and is not associated with bile duct cancer?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:DOWNREGULATES_AdG]->(n2:Gene{ name: \"POMK\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"bile duct cancer\" })-[:ASSOCIATES_DaG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by \"POMK\" (which is downregulated by the \"prostate gland\") and is not associated with \"bile duct cancer\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"bile duct cancer\")",
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"POMK\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by the gene PHKG2, where PHKG2 is expressed in the lung and Methylphenobarbital does not upregulate those genes?",
+    "cql": "MATCH (n1:Anatomy{ name: \"lung\" })-[r1:EXPRESSES_AeG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Methylphenobarbital\" })-[:UPREGULATES_CuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by the gene \"PHKG2\", where \"PHKG2\" is expressed in the \"lung\" and \"Methylphenobarbital\" does not upregulate those genes?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Methylphenobarbital\")",
+      "Gene(name:\"PHKG2\")",
+      "Anatomy(name:\"lung\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of any gene that is associated with the disease \"allergic rhinitis\", which is treated by the compound \"Hydrocortisone\", where the anatomy \"gonad\" does not upregulate that gene?",
+    "cql": "MATCH (n1:Compound{ name: \"Hydrocortisone\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"gonad\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of any gene that is associated with the disease \"allergic rhinitis\", which is treated by the compound \"Hydrocortisone\", where the anatomy \"gonad\" does not upregulate that gene?",
+    "nodes": [
+      "Anatomy",
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Hydrocortisone\")",
+      "Anatomy(name:\"gonad\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by the gene FGF2, where FGF2 is downregulated by polycystic ovary syndrome, and polycystic ovary syndrome does not upregulate those genes?",
+    "cql": "MATCH (n1:Disease{ name: \"polycystic ovary syndrome\" })-[r1:DOWNREGULATES_DdG]->(n2:Gene{ name: \"FGF2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"polycystic ovary syndrome\" })-[:UPREGULATES_DuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by the gene \"FGF2\", where \"FGF2\" is downregulated by \"polycystic ovary syndrome\", and \"polycystic ovary syndrome\" does not upregulate those genes?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Gene(name:\"FGF2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is downregulated by polycystic ovary syndrome, where gestational diabetes resembles polycystic ovary syndrome, and multiple sclerosis does not associate with that gene?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"multiple sclerosis\" })-[:ASSOCIATES_DaG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is downregulated by \"polycystic ovary syndrome\", where \"gestational diabetes\" resembles \"polycystic ovary syndrome\", and \"multiple sclerosis\" does not associate with that gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Disease(name:\"multiple sclerosis\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is interacted with the gene CSGALNACT2 (which is upregulated by Niclosamide) and is not covaried with IQGAP3?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n2:Gene{ name: \"CSGALNACT2\" })-[r2:INTERACTS_GiG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"IQGAP3\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is interacted with the gene \"CSGALNACT2\" (which is upregulated by \"Niclosamide\") and is not covaried with \"IQGAP3\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"CSGALNACT2\")",
+      "Gene(name:\"IQGAP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by FGF2, where polycystic ovary syndrome downregulates FGF2 and Niclosamide does not upregulate those genes?",
+    "cql": "MATCH (n1:Disease{ name: \"polycystic ovary syndrome\" })-[r1:DOWNREGULATES_DdG]->(n2:Gene{ name: \"FGF2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Niclosamide\" })-[:UPREGULATES_CuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by \"FGF2\", where \"polycystic ovary syndrome\" downregulates \"FGF2\" and \"Niclosamide\" does not upregulate those genes?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"FGF2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that FOXP3 regulates, which is associated with allergic rhinitis, and is not downregulated by Bretylium?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n2:Gene{ name: \"FOXP3\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Bretylium\" })-[:DOWNREGULATES_CdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that \"FOXP3\" regulates, which is associated with \"allergic rhinitis\", and is not downregulated by \"Bretylium\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Bretylium\")",
+      "Gene(name:\"FOXP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is bound by the compound Meclofenamic acid, which is resembled by Niclosamide, and is not downregulated by Methylphenobarbital?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:BINDS_CbG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Methylphenobarbital\" })-[:DOWNREGULATES_CdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is bound by the compound \"Meclofenamic acid\", which resembles \"Niclosamide\", and is not downregulated by \"Methylphenobarbital\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Methylphenobarbital\")",
+      "Compound(name:\"Meclofenamic acid\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by allergic rhinitis that treated with hydrocortisone, and is not expressed by the bulbo-urethral gland?",
+    "cql": "MATCH (n1:Compound{ name: \"Hydrocortisone\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"bulbo-urethral gland\" })-[:EXPRESSES_AeG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by \"allergic rhinitis\" that treated with \"Hydrocortisone\", and is not expressed by the \"bulbo-urethral gland\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"bulbo-urethral gland\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Hydrocortisone\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by the gene FGF2, where polycystic ovary syndrome downregulates FGF2 and asthma does not upregulate that gene?",
+    "cql": "MATCH (n1:Disease{ name: \"polycystic ovary syndrome\" })-[r1:DOWNREGULATES_DdG]->(n2:Gene{ name: \"FGF2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"asthma\" })-[:UPREGULATES_DuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by the gene \"FGF2\", where \"polycystic ovary syndrome\" downregulates \"FGF2\" and \"asthma\" does not upregulate that gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"asthma\")",
+      "Gene(name:\"FGF2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is downregulated by Meclofenamic acid, which is resembled by Niclosamide, and is not expressed in the fourth ventricle?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:DOWNREGULATES_CdG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"fourth ventricle\" })-[:EXPRESSES_AeG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is downregulated by \"Meclofenamic acid\", which is resembled by \"Niclosamide\", and is not expressed in the \"fourth ventricle\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Meclofenamic acid\")",
+      "Anatomy(name:\"fourth ventricle\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is regulated by the gene FOXP3, which is associated with the disease allergic rhinitis, and is not interacted with APOBEC3G?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n2:Gene{ name: \"FOXP3\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"APOBEC3G\" })-[:INTERACTS_GiG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene is regulated by the gene \"FOXP3\", which is associated with the disease \"allergic rhinitis\", and is not interacted with \"APOBEC3G\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"APOBEC3G\")",
+      "Gene(name:\"FOXP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by Meclofenamic acid, where Niclosamide resembles Meclofenamic acid, and the fourth ventricle does not upregulate this gene?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:UPREGULATES_CuG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"fourth ventricle\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by \"Meclofenamic acid\", where \"Niclosamide\" resembles \"Meclofenamic acid\", and the \"fourth ventricle\" does not upregulate this gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Meclofenamic acid\")",
+      "Anatomy(name:\"fourth ventricle\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by FGF2, which is downregulated by polycystic ovary syndrome, and are not downregulated by Methylphenobarbital?",
+    "cql": "MATCH (n1:Disease{ name: \"polycystic ovary syndrome\" })-[r1:DOWNREGULATES_DdG]->(n2:Gene{ name: \"FGF2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Methylphenobarbital\" })-[:DOWNREGULATES_CdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by \"FGF2\", which is downregulated by \"polycystic ovary syndrome\", and are not downregulated by \"Methylphenobarbital\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Methylphenobarbital\")",
+      "Gene(name:\"FGF2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are associated with polycystic ovary syndrome, which is resembled by gestational diabetes, and are not bound by Flavoxate?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Flavoxate\" })-[:BINDS_CbG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are associated with \"polycystic ovary syndrome\", which is resembled by \"gestational diabetes\", and are not bound by \"Flavoxate\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Compound(name:\"Flavoxate\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes associated with allergic rhinitis treated by Hydrocortisone, where the bulbo-urethral gland does not upregulate those genes?",
+    "cql": "MATCH (n1:Compound{ name: \"Hydrocortisone\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"bulbo-urethral gland\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes associated with \"allergic rhinitis\" treated by \"Hydrocortisone\", where the \"bulbo-urethral gland\" does not upregulate those genes?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"bulbo-urethral gland\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Hydrocortisone\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is regulated by the gene STAT3, which is bound to by the compound Niclosamide, and is not expressed in the bulbo-urethral gland?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:BINDS_CbG]->(n2:Gene{ name: \"STAT3\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"bulbo-urethral gland\" })-[:EXPRESSES_AeG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene is regulated by the gene \"STAT3\", which is bound to by the compound \"Niclosamide\", and is not expressed in the \"bulbo-urethral gland\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Anatomy(name:\"bulbo-urethral gland\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"STAT3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by the POMK gene, such that the prostate gland downregulates POMK and age-related macular degeneration does not upregulate those genes?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:DOWNREGULATES_AdG]->(n2:Gene{ name: \"POMK\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"age related macular degeneration\" })-[:UPREGULATES_DuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by the \"POMK\" gene, such that the \"prostate gland\" downregulates \"POMK\" and \"age related macular degeneration\" does not upregulate those genes?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"age related macular degeneration\")",
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"POMK\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is regulated by the gene COL4A2, which itself is upregulated by the prostate gland, and is not upregulated by nicotine dependence?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:UPREGULATES_AuG]->(n2:Gene{ name: \"COL4A2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"nicotine dependence\" })-[:UPREGULATES_DuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene is regulated by the gene \"COL4A2\", which itself is upregulated by the \"prostate gland\", and is not upregulated by \"nicotine dependence\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"nicotine dependence\")",
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"COL4A2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by the gene CAND1, which itself is interacted with the gene FXR2, and is not bound by the compound Cefacetrile?",
+    "cql": "MATCH (n1:Gene{ name: \"FXR2\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"CAND1\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Cefacetrile\" })-[:BINDS_CbG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by the gene \"CAND1\", which itself is interacted with the gene \"FXR2\", and is not bound by the compound \"Cefacetrile\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Cefacetrile\")",
+      "Gene(name:\"CAND1\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by PHKG2, where ID2 regulates PHKG2, and Methylphenobarbital does not bind to that gene?",
+    "cql": "MATCH (n1:Gene{ name: \"ID2\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Methylphenobarbital\" })-[:BINDS_CbG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by \"PHKG2\", where \"ID2\" regulates \"PHKG2\", and \"Methylphenobarbital\" does not bind to that gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Methylphenobarbital\")",
+      "Gene(name:\"PHKG2\")",
+      "Gene(name:\"ID2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene's name is associated with polycystic ovary syndrome—the disease that is resembled by gestational diabetes—and the gene is not interacted with SUSD1?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"SUSD1\" })-[:INTERACTS_GiG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene's name is associated with \"polycystic ovary syndrome\"—the disease that is resembled by \"gestational diabetes\"—and the gene is not interacted with \"SUSD1\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Gene(name:\"SUSD1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by the gene named \"CAND1\" via a \"REGULATES_GrG\" relationship, where \"FXR2\" connects to \"CAND1\" by an \"INTERACTS_GiG\" relationship, and \"PTPRO\" does not connect to that gene by a \"COVARIES_GcG\" relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"FXR2\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"CAND1\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"PTPRO\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by the gene named \"CAND1\" via a \"REGULATES_GrG\" relationship, where \"FXR2\" connects to \"CAND1\" by an \"INTERACTS_GiG\" relationship, and \"PTPRO\" does not connect to that gene by a \"COVARIES_GcG\" relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"PTPRO\")",
+      "Gene(name:\"CAND1\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by the gene PFKM, where polycystic ovary syndrome upregulates PFKM, and DNM1P50 does not covary with that gene?",
+    "cql": "MATCH (n1:Disease{ name: \"polycystic ovary syndrome\" })-[r1:UPREGULATES_DuG]->(n2:Gene{ name: \"PFKM\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"DNM1P50\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by the gene \"PFKM\", where \"polycystic ovary syndrome\" upregulates \"PFKM\", and \"DNM1P50\" does not covary with that gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Gene(name:\"DNM1P50\")",
+      "Gene(name:\"PFKM\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene, connected from PHKG2 by REGULATES_GrG and \"PHKG2\" is connected from ID2 by REGULATES_GrG, is not upregulated by the fourth ventricle?",
+    "cql": "MATCH (n1:Gene{ name: \"ID2\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"fourth ventricle\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene, connected from \"PHKG2\" by REGULATES_GrG and \"PHKG2\" is connected from \"ID2\" by REGULATES_GrG, is not upregulated by the \"fourth ventricle\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"fourth ventricle\")",
+      "Gene(name:\"PHKG2\")",
+      "Gene(name:\"ID2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by COL4A2 (which is upregulated by the prostate gland) and is not associated with conduct disorder?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:UPREGULATES_AuG]->(n2:Gene{ name: \"COL4A2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"conduct disorder\" })-[:ASSOCIATES_DaG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by \"COL4A2\" (which is upregulated by the \"prostate gland\") and is not associated with \"conduct disorder\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"conduct disorder\")",
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"COL4A2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by the gene PHKG2, where PHKG2 is expressed in the lung, and that gene is not downregulated by the disease asthma?",
+    "cql": "MATCH (n1:Anatomy{ name: \"lung\" })-[r1:EXPRESSES_AeG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"asthma\" })-[:DOWNREGULATES_DdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by the gene \"PHKG2\", where \"PHKG2\" is expressed in the \"lung\", and that gene is not downregulated by the disease \"asthma\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"asthma\")",
+      "Gene(name:\"PHKG2\")",
+      "Anatomy(name:\"lung\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is regulated by CAND1, and is not connected to ZNHIT1 by an INTERACTS_GiG relationship, given that FXR2 connects to CAND1 by INTERACTS_GiG?",
+    "cql": "MATCH (n1:Gene{ name: \"FXR2\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"CAND1\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"ZNHIT1\" })-[:INTERACTS_GiG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene is regulated by \"CAND1\", and is not connected to \"ZNHIT1\" by an INTERACTS_GiG relationship, given that \"FXR2\" connects to \"CAND1\" by INTERACTS_GiG?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ZNHIT1\")",
+      "Gene(name:\"CAND1\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are upregulated by the disease allergic rhinitis, which is palliated by the compound Pseudoephedrine, and are not upregulated by the anatomy pes?",
+    "cql": "MATCH (n1:Compound{ name: \"Pseudoephedrine\" })-[r1:PALLIATES_CpD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"pes\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are upregulated by the disease \"allergic rhinitis\", which is palliated by the compound \"Pseudoephedrine\", and are not upregulated by the anatomy \"pes\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Pseudoephedrine\")",
+      "Anatomy(name:\"pes\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is regulated by the gene COL4A2 and is not interacted with by the gene APOBEC3G, given that the prostate gland upregulates COL4A2?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:UPREGULATES_AuG]->(n2:Gene{ name: \"COL4A2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"APOBEC3G\" })-[:INTERACTS_GiG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene is regulated by the gene \"COL4A2\" and is not interacted with by the gene \"APOBEC3G\", given that the \"prostate gland\" upregulates \"COL4A2\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"APOBEC3G\")",
+      "Gene(name:\"COL4A2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by allergic rhinitis (the disease palliated by Pseudoephedrine) and is not expressed in the pes?",
+    "cql": "MATCH (n1:Compound{ name: \"Pseudoephedrine\" })-[r1:PALLIATES_CpD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"pes\" })-[:EXPRESSES_AeG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by \"allergic rhinitis\" (the disease palliated by \"Pseudoephedrine\") and is not expressed in the \"pes\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Pseudoephedrine\")",
+      "Anatomy(name:\"pes\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is regulated by PHKG2, which is expressed in the lung, and is not interacted with ZNHIT1?",
+    "cql": "MATCH (n1:Anatomy{ name: \"lung\" })-[r1:EXPRESSES_AeG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"ZNHIT1\" })-[:INTERACTS_GiG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene is regulated by \"PHKG2\", which is expressed in the \"lung\", and is not interacted with \"ZNHIT1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ZNHIT1\")",
+      "Gene(name:\"PHKG2\")",
+      "Anatomy(name:\"lung\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by Meclofenamic acid, where Meclofenamic acid is resembled by Niclosamide, and polycystic ovary syndrome does not downregulate this gene?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:UPREGULATES_CuG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"polycystic ovary syndrome\" })-[:DOWNREGULATES_DdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by \"Meclofenamic acid\", where \"Meclofenamic acid\" is resembled by \"Niclosamide\", and \"polycystic ovary syndrome\" does not downregulate this gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Meclofenamic acid\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Identify the gene that receives regulation from COL4A2, which is upregulated by the prostate gland, and is not connected to age-related macular degeneration via association.",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:UPREGULATES_AuG]->(n2:Gene{ name: \"COL4A2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"age related macular degeneration\" })-[:ASSOCIATES_DaG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Identify the gene that receives regulation from \"COL4A2\", which is upregulated by the \"prostate gland\", and is not connected to \"age related macular degeneration\" via association.",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"age related macular degeneration\")",
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"COL4A2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is regulated by PHKG2, which is itself regulated by the gene ID2, and is not upregulated by the female reproductive system?",
+    "cql": "MATCH (n1:Gene{ name: \"ID2\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"female reproductive system\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene is regulated by \"PHKG2\", which is itself regulated by the gene \"ID2\", and is not upregulated by the \"female reproductive system\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"female reproductive system\")",
+      "Gene(name:\"PHKG2\")",
+      "Gene(name:\"ID2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is regulated by the gene POMK, where the prostate gland downregulates POMK, and the bulbo-urethral gland does not downregulate this gene?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:DOWNREGULATES_AdG]->(n2:Gene{ name: \"POMK\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"bulbo-urethral gland\" })-[:DOWNREGULATES_AdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene is regulated by the gene \"POMK\", where the \"prostate gland\" downregulates \"POMK\", and the \"bulbo-urethral gland\" does not downregulate this gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"bulbo-urethral gland\")",
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"POMK\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are bound by Meclofenamic acid, where Niclosamide resembles Meclofenamic acid, and Fusafungine does not downregulate those genes?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:BINDS_CbG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Fusafungine\" })-[:DOWNREGULATES_CdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are bound by \"Meclofenamic acid\", where \"Niclosamide\" resembles \"Meclofenamic acid\", and \"Fusafungine\" does not downregulate those genes?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Meclofenamic acid\")",
+      "Compound(name:\"Fusafungine\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is regulated by the gene COL4A2, where the prostate gland upregulates COL4A2, and DNM1P50 does not interact with that gene?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:UPREGULATES_AuG]->(n2:Gene{ name: \"COL4A2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"DNM1P50\" })-[:INTERACTS_GiG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene is regulated by the gene \"COL4A2\", where the \"prostate gland\" upregulates \"COL4A2\", and \"DNM1P50\" does not interact with that gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"DNM1P50\")",
+      "Gene(name:\"COL4A2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by Meclofenamic acid, where Meclofenamic acid is resembled by Niclosamide, and the clavicle bone does not express that gene?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:UPREGULATES_CuG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"clavicle bone\" })-[:EXPRESSES_AeG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by \"Meclofenamic acid\", where \"Meclofenamic acid\" is resembled by \"Niclosamide\", and the \"clavicle bone\" does not express that gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Meclofenamic acid\")",
+      "Anatomy(name:\"clavicle bone\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are bound by Meclofenamic acid, which is resembled by Niclosamide, and are not downregulated by allergic rhinitis?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:BINDS_CbG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"allergic rhinitis\" })-[:DOWNREGULATES_DdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are bound by \"Meclofenamic acid\", which is resembled by \"Niclosamide\", and are not downregulated by \"allergic rhinitis\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Meclofenamic acid\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by the gene FDFT1 (which is upregulated by Niclosamide), such that APOBEC3G does not interact with it?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n2:Gene{ name: \"FDFT1\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"APOBEC3G\" })-[:INTERACTS_GiG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by the gene \"FDFT1\" (which is upregulated by \"Niclosamide\"), such that \"APOBEC3G\" does not interact with it?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"APOBEC3G\")",
+      "Gene(name:\"FDFT1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is connected to IQCB1 by an INTERACTS_GiG relationship, where UBB connects to IQCB1 by INTERACTS_GiG, and SUSD1 does not connect to this gene by COVARIES_GcG?",
+    "cql": "MATCH (n1:Gene{ name: \"UBB\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"IQCB1\" })-[r2:INTERACTS_GiG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"SUSD1\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene is connected to \"IQCB1\" by an INTERACTS_GiG relationship, where \"UBB\" connects to \"IQCB1\" by INTERACTS_GiG, and \"SUSD1\" does not connect to this gene by COVARIES_GcG?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQCB1\")",
+      "Gene(name:\"SUSD1\")",
+      "Gene(name:\"UBB\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by ARHGEF2, where IQGAP3 covaries with ARHGEF2, and are not associated with allergic rhinitis?",
+    "cql": "MATCH (n1:Gene{ name: \"IQGAP3\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ARHGEF2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"allergic rhinitis\" })-[:ASSOCIATES_DaG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by \"ARHGEF2\", where \"IQGAP3\" covaries with \"ARHGEF2\", and are not associated with \"allergic rhinitis\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"ARHGEF2\")",
+      "Gene(name:\"IQGAP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of a gene that is bound by Meclofenamic acid, where Niclosamide resembles Meclofenamic acid, and the atrioventricular bundle does not downregulate that gene?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:BINDS_CbG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"atrioventricular bundle\" })-[:DOWNREGULATES_AdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of a gene that is bound by \"Meclofenamic acid\", where \"Niclosamide\" resembles \"Meclofenamic acid\", and the \"atrioventricular bundle\" does not downregulate that gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"atrioventricular bundle\")",
+      "Compound(name:\"Meclofenamic acid\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are upregulated by Meclofenamic acid, where Niclosamide resembles Meclofenamic acid, and the atrioventricular bundle does not upregulate those genes?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:UPREGULATES_CuG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"atrioventricular bundle\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are upregulated by \"Meclofenamic acid\", where \"Niclosamide\" resembles \"Meclofenamic acid\", and the \"atrioventricular bundle\" does not upregulate those genes?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"atrioventricular bundle\")",
+      "Compound(name:\"Meclofenamic acid\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is interacted with by IQCB1, where AKAP8L regulates IQCB1, and APOBEC3G does not covary with that gene?",
+    "cql": "MATCH (n1:Gene{ name: \"AKAP8L\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"IQCB1\" })-[r2:INTERACTS_GiG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"APOBEC3G\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is interacted with by \"IQCB1\", where \"AKAP8L\" regulates \"IQCB1\", and \"APOBEC3G\" does not covary with that gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"APOBEC3G\")",
+      "Gene(name:\"AKAP8L\")",
+      "Gene(name:\"IQCB1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by the gene FDFT1, which is upregulated by Niclosamide, and is not covaried by the gene APOBEC3G?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n2:Gene{ name: \"FDFT1\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"APOBEC3G\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by the gene \"FDFT1\", which is upregulated by \"Niclosamide\", and is not covaried by the gene \"APOBEC3G\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"APOBEC3G\")",
+      "Gene(name:\"FDFT1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by PHKG2, where PHKG2 is expressed in the lung and the gene SUSD1 does not interact with them?",
+    "cql": "MATCH (n1:Anatomy{ name: \"lung\" })-[r1:EXPRESSES_AeG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"SUSD1\" })-[:INTERACTS_GiG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by \"PHKG2\", where \"PHKG2\" is expressed in the \"lung\" and the gene \"SUSD1\" does not interact with them?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"PHKG2\")",
+      "Gene(name:\"SUSD1\")",
+      "Anatomy(name:\"lung\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene, bound by Meclofenamic acid (which is resembled by Niclosamide), is not expressed by the cervicothoracic ganglion?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:BINDS_CbG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"cervicothoracic ganglion\" })-[:EXPRESSES_AeG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene, bound by \"Meclofenamic acid\" (which is resembled by \"Niclosamide\"), is not expressed by the \"cervicothoracic ganglion\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"cervicothoracic ganglion\")",
+      "Compound(name:\"Meclofenamic acid\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by ARHGEF2, where IQGAP3 covaries with ARHGEF2, and Hydroxychloroquine does not bind to that gene?",
+    "cql": "MATCH (n1:Gene{ name: \"IQGAP3\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ARHGEF2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Hydroxychloroquine\" })-[:BINDS_CbG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by \"ARHGEF2\", where \"IQGAP3\" covaries with \"ARHGEF2\", and \"Hydroxychloroquine\" does not bind to that gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Hydroxychloroquine\")",
+      "Gene(name:\"ARHGEF2\")",
+      "Gene(name:\"IQGAP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by Meclofenamic acid, where Meclofenamic acid is resembled by Niclosamide, and that gene is not associated with nicotine dependence?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:UPREGULATES_CuG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"nicotine dependence\" })-[:ASSOCIATES_DaG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by \"Meclofenamic acid\", where \"Meclofenamic acid\" is resembled by \"Niclosamide\", and that gene is not associated with \"nicotine dependence\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"nicotine dependence\")",
+      "Compound(name:\"Meclofenamic acid\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by the gene FGF2, where polycystic ovary syndrome downregulates FGF2 but does not downregulate those genes?",
+    "cql": "MATCH (n1:Disease{ name: \"polycystic ovary syndrome\" })-[r1:DOWNREGULATES_DdG]->(n2:Gene{ name: \"FGF2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"polycystic ovary syndrome\" })-[:DOWNREGULATES_DdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by the gene \"FGF2\", where \"polycystic ovary syndrome\" downregulates \"FGF2\" but does not downregulate those genes?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Gene(name:\"FGF2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by the gene FDFT1, where FDFT1 is upregulated by the compound Niclosamide, and Pindolol does not downregulate this gene?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n2:Gene{ name: \"FDFT1\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Pindolol\" })-[:DOWNREGULATES_CdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by the gene \"FDFT1\", where \"FDFT1\" is upregulated by the compound \"Niclosamide\", and \"Pindolol\" does not downregulate this gene?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Compound(name:\"Pindolol\")",
+      "Gene(name:\"FDFT1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by the gene named PHKG2 via a REGULATES_GrG relationship, where PHKG2 is in turn regulated by the gene named ID2 through a REGULATES_GrG relationship, and is not covaried with by the gene named PTPRO via a COVARIES_GcG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"ID2\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"PTPRO\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by the gene named \"PHKG2\" via a REGULATES_GrG relationship, where \"PHKG2\" is in turn regulated by the gene named \"ID2\" through a REGULATES_GrG relationship, and is not covaried with by the gene named \"PTPRO\" via a COVARIES_GcG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"PTPRO\")",
+      "Gene(name:\"PHKG2\")",
+      "Gene(name:\"ID2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are bound by the compound Cimetidine, which is included in the pharmacologic class \"Histamine H2 Receptor Antagonists\", and are not upregulated by the disease asthma?",
+    "cql": "MATCH (n1:PharmacologicClass{ name: \"Histamine H2 Receptor Antagonists\" })-[r1:INCLUDES_PCiC]->(n2:Compound{ name: \"Cimetidine\" })-[r2:BINDS_CbG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"asthma\" })-[:UPREGULATES_DuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are bound by the compound \"Cimetidine\", which is included in the pharmacologic class \"Histamine H2 Receptor Antagonists\", and are not upregulated by the disease \"asthma\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound",
+      "PharmacologicClass"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"Histamine H2 Receptor Antagonists\")",
+      "Compound(name:\"Cimetidine\")",
+      "Disease(name:\"asthma\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by PHKG2, which is regulated by ID2, and is not covaried by AIMP1 via a COVARIES_GcG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"ID2\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"AIMP1\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by \"PHKG2\", which is regulated by \"ID2\", and is not covaried by \"AIMP1\" via a COVARIES_GcG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"AIMP1\")",
+      "Gene(name:\"PHKG2\")",
+      "Gene(name:\"ID2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that IQCB1 interacts with, and ZNHIT1 does not covary with, where AKAP8L regulates IQCB1?",
+    "cql": "MATCH (n1:Gene{ name: \"AKAP8L\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"IQCB1\" })-[r2:INTERACTS_GiG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"ZNHIT1\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that \"IQCB1\" interacts with, and \"ZNHIT1\" does not covary with, where \"AKAP8L\" regulates \"IQCB1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"AKAP8L\")",
+      "Gene(name:\"ZNHIT1\")",
+      "Gene(name:\"IQCB1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is downregulated by polycystic ovary syndrome, where gestational diabetes resembles polycystic ovary syndrome, and the gonad does not upregulate that gene?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"gonad\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is downregulated by \"polycystic ovary syndrome\", where \"gestational diabetes\" resembles \"polycystic ovary syndrome\", and the \"gonad\" does not upregulate that gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Anatomy(name:\"gonad\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are upregulated by polycystic ovary syndrome, where gestational diabetes resembles polycystic ovary syndrome, and epilepsy syndrome does not downregulate those genes?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:UPREGULATES_DuG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"epilepsy syndrome\" })-[:DOWNREGULATES_DdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are upregulated by \"polycystic ovary syndrome\", where \"gestational diabetes\" resembles \"polycystic ovary syndrome\", and \"epilepsy syndrome\" does not downregulate those genes?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Disease(name:\"epilepsy syndrome\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by FOXP3, which is associated with allergic rhinitis, and are not interacted with by IQGAP3?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n2:Gene{ name: \"FOXP3\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"IQGAP3\" })-[:INTERACTS_GiG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by \"FOXP3\", which is associated with \"allergic rhinitis\", and are not interacted with by \"IQGAP3\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"FOXP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by the gene STAT3, to which Niclosamide binds, and are not upregulated by Pindolol?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:BINDS_CbG]->(n2:Gene{ name: \"STAT3\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Pindolol\" })-[:UPREGULATES_CuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by the gene \"STAT3\", to which \"Niclosamide\" binds, and are not upregulated by \"Pindolol\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Compound(name:\"Pindolol\")",
+      "Gene(name:\"STAT3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is downregulated by polycystic ovary syndrome, which is in turn resembled by gestational diabetes, and is not upregulated by Hydroxychloroquine?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Hydroxychloroquine\" })-[:UPREGULATES_CuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is downregulated by \"polycystic ovary syndrome\", which is in turn resembled by \"gestational diabetes\", and is not upregulated by \"Hydroxychloroquine\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Compound(name:\"Hydroxychloroquine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by the gene POMK, where POMK is downregulated by the prostate gland, and that are not expressed by urine?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:DOWNREGULATES_AdG]->(n2:Gene{ name: \"POMK\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"urine\" })-[:EXPRESSES_AeG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by the gene \"POMK\", where \"POMK\" is downregulated by the \"prostate gland\", and that are not expressed by \"urine\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"prostate gland\")",
+      "Anatomy(name:\"urine\")",
+      "Gene(name:\"POMK\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of a gene that is bound by Meclofenamic acid, where Niclosamide resembles Meclofenamic acid, and HTN3 does not covary with that gene?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:BINDS_CbG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"HTN3\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of a gene that is bound by \"Meclofenamic acid\", where \"Niclosamide\" resembles \"Meclofenamic acid\", and \"HTN3\" does not covary with that gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Meclofenamic acid\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"HTN3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are associated with polycystic ovary syndrome, which is resembled by gestational diabetes, and are not downregulated by the gonad?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"gonad\" })-[:DOWNREGULATES_AdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are associated with \"polycystic ovary syndrome\", which is resembled by \"gestational diabetes\", and are not downregulated by the \"gonad\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Anatomy(name:\"gonad\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by the disease \"allergic rhinitis,\" which is palliated by the compound \"Pseudoephedrine,\" and is not downregulated by the anatomy \"bulbo-urethral gland\"?",
+    "cql": "MATCH (n1:Compound{ name: \"Pseudoephedrine\" })-[r1:PALLIATES_CpD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"bulbo-urethral gland\" })-[:DOWNREGULATES_AdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by the disease \"allergic rhinitis\", which is palliated by the compound \"Pseudoephedrine\", and is not downregulated by the anatomy \"bulbo-urethral gland\"?",
+    "nodes": [
+      "Anatomy",
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Anatomy(name:\"bulbo-urethral gland\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Pseudoephedrine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by the gene FDFT1, where Niclosamide upregulates FDFT1, and the anatomy corpus luteum does not upregulate this gene?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n2:Gene{ name: \"FDFT1\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"corpus luteum\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by the gene \"FDFT1\", where \"Niclosamide\" upregulates \"FDFT1\", and the anatomy \"corpus luteum\" does not upregulate this gene?",
+    "nodes": [
+      "Anatomy",
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"corpus luteum\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"FDFT1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by Meclofenamic acid, where Niclosamide resembles Meclofenamic acid, and Salbutamol does not bind to that gene?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:UPREGULATES_CuG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Salbutamol\" })-[:BINDS_CbG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by \"Meclofenamic acid\", where \"Niclosamide\" resembles \"Meclofenamic acid\", and \"Salbutamol\" does not bind to that gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Meclofenamic acid\")",
+      "Compound(name:\"Niclosamide\")",
+      "Compound(name:\"Salbutamol\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by the gene FDFT1, which is upregulated by Niclosamide, and is not downregulated by Bretylium?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n2:Gene{ name: \"FDFT1\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Bretylium\" })-[:DOWNREGULATES_CdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by the gene \"FDFT1\", which is upregulated by \"Niclosamide\", and is not downregulated by \"Bretylium\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Compound(name:\"Bretylium\")",
+      "Gene(name:\"FDFT1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are regulated by CAND1 (which is interacted with FXR2) and are not interacted with by IQGAP3?",
+    "cql": "MATCH (n1:Gene{ name: \"FXR2\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"CAND1\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"IQGAP3\" })-[:INTERACTS_GiG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are regulated by \"CAND1\" (which is interacted with \"FXR2\") and are not interacted with by \"IQGAP3\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"CAND1\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are connected to Meclofenamic acid by BINDS_CbG, where Meclofenamic acid is resembled by Niclosamide, and corpus luteum does not upregulate those genes?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:BINDS_CbG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"corpus luteum\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are connected to \"Meclofenamic acid\" by BINDS_CbG, where \"Meclofenamic acid\" is resembled by \"Niclosamide\", and \"corpus luteum\" does not upregulate those genes?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Meclofenamic acid\")",
+      "Anatomy(name:\"corpus luteum\")",
+      "Compound(name:\"Niclosamide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by the gene C2CD5, which is downregulated by the compound Niclosamide, and is not covaried with by the gene IQGAP3?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:DOWNREGULATES_CdG]->(n2:Gene{ name: \"C2CD5\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"IQGAP3\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by the gene \"C2CD5\", which is downregulated by the compound \"Niclosamide\", and is not covaried with by the gene \"IQGAP3\"?",
+    "nodes": [
+      "Gene",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"C2CD5\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are associated with polycystic ovary syndrome, where polycystic ovary syndrome is resembled by gestational diabetes, and urine does not downregulate those genes?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"urine\" })-[:DOWNREGULATES_AdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are associated with \"polycystic ovary syndrome\", where \"polycystic ovary syndrome\" is resembled by \"gestational diabetes\", and \"urine\" does not downregulate those genes?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Anatomy(name:\"urine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are associated with polycystic ovary syndrome—the disease that is resembled by gestational diabetes—such that PTPRO does not covary with those genes?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"PTPRO\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are associated with \"polycystic ovary syndrome\"—the disease that is resembled by \"gestational diabetes\"—such that \"PTPRO\" does not covary with those genes?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Gene(name:\"PTPRO\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are downregulated by polycystic ovary syndrome, where gestational diabetes resembles polycystic ovary syndrome and FXR2 does not regulate those genes?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"FXR2\" })-[:REGULATES_GrG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are downregulated by \"polycystic ovary syndrome\", where \"gestational diabetes\" resembles \"polycystic ovary syndrome\" and \"FXR2\" does not regulate those genes?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is associated with polycystic ovary syndrome, where gestational diabetes resembles polycystic ovary syndrome, and epilepsy syndrome does not upregulate this gene?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:ASSOCIATES_DaG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"epilepsy syndrome\" })-[:UPREGULATES_DuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is associated with \"polycystic ovary syndrome\", where \"gestational diabetes\" resembles \"polycystic ovary syndrome\", and \"epilepsy syndrome\" does not upregulate this gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Disease(name:\"epilepsy syndrome\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by the POMK gene, which is itself downregulated by the prostate gland, that are not upregulated by the disease nicotine dependence?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:DOWNREGULATES_AdG]->(n2:Gene{ name: \"POMK\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"nicotine dependence\" })-[:UPREGULATES_DuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by the \"POMK\" gene, which is itself downregulated by the \"prostate gland\", that are not upregulated by the disease \"nicotine dependence\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"nicotine dependence\")",
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"POMK\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is downregulated by allergic rhinitis, which is treated by hydrocortisone, and is not upregulated by the bulbo-urethral gland?",
+    "cql": "MATCH (n1:Compound{ name: \"Hydrocortisone\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"bulbo-urethral gland\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is downregulated by \"allergic rhinitis\", which is treated by \"Hydrocortisone\", and is not upregulated by the \"bulbo-urethral gland\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"bulbo-urethral gland\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Hydrocortisone\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is regulated by the gene POMK (which is downregulated by the prostate gland), and is not downregulated by the disease epilepsy syndrome?",
+    "cql": "MATCH (n1:Anatomy{ name: \"prostate gland\" })-[r1:DOWNREGULATES_AdG]->(n2:Gene{ name: \"POMK\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"epilepsy syndrome\" })-[:DOWNREGULATES_DdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene is regulated by the gene \"POMK\" (which is downregulated by the \"prostate gland\"), and is not downregulated by the disease \"epilepsy syndrome\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"epilepsy syndrome\")",
+      "Anatomy(name:\"prostate gland\")",
+      "Gene(name:\"POMK\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Anatomy",
+          "rel": "DOWNREGULATES_AdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of a gene that is regulated by CAND1, where FXR2 interacts with CAND1, and ARID4B does not covary with this gene?",
+    "cql": "MATCH (n1:Gene{ name: \"FXR2\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"CAND1\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"ARID4B\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of a gene that is regulated by \"CAND1\", where \"FXR2\" interacts with \"CAND1\", and \"ARID4B\" does not covary with this gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ARID4B\")",
+      "Gene(name:\"CAND1\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that FOXP3 regulates, which is associated with allergic rhinitis, but is not expressed in urine?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n2:Gene{ name: \"FOXP3\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"urine\" })-[:EXPRESSES_AeG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that \"FOXP3\" regulates, which is associated with \"allergic rhinitis\", but is not expressed in \"urine\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"FOXP3\")",
+      "Anatomy(name:\"urine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by CAND1, where FXR2 interacts with CAND1, and that gene is not upregulated by bile duct cancer?",
+    "cql": "MATCH (n1:Gene{ name: \"FXR2\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"CAND1\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"bile duct cancer\" })-[:UPREGULATES_DuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by \"CAND1\", where \"FXR2\" interacts with \"CAND1\", and that gene is not upregulated by \"bile duct cancer\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"bile duct cancer\")",
+      "Gene(name:\"CAND1\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by the gene CAND1 that is interacted with FXR2, and are not upregulated by the atrioventricular bundle through an UPREGULATES_AuG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"FXR2\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"CAND1\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"atrioventricular bundle\" })-[:UPREGULATES_AuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by the gene \"CAND1\" that is interacted with \"FXR2\", and are not upregulated by the \"atrioventricular bundle\" through an UPREGULATES_AuG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"atrioventricular bundle\")",
+      "Gene(name:\"CAND1\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "UPREGULATES_AuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene that FOXP3 regulates, where allergic rhinitis associates with the FOXP3 gene, and bile duct cancer does not upregulate it?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n2:Gene{ name: \"FOXP3\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"bile duct cancer\" })-[:UPREGULATES_DuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which gene that \"FOXP3\" regulates, where \"allergic rhinitis\" associates with the \"FOXP3\" gene, and \"bile duct cancer\" does not upregulate it?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Disease(name:\"bile duct cancer\")",
+      "Gene(name:\"FOXP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by ARHGEF2, where IQGAP3 covaries with ARHGEF2, and this gene is not expressed in the bulbo-urethral gland?",
+    "cql": "MATCH (n1:Gene{ name: \"IQGAP3\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ARHGEF2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"bulbo-urethral gland\" })-[:EXPRESSES_AeG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by \"ARHGEF2\", where \"IQGAP3\" covaries with \"ARHGEF2\", and this gene is not expressed in the \"bulbo-urethral gland\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Anatomy(name:\"bulbo-urethral gland\")",
+      "Gene(name:\"ARHGEF2\")",
+      "Gene(name:\"IQGAP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that FDFT1 regulates, which is upregulated by Niclosamide and is not a binding target of Salbutamol?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:UPREGULATES_CuG]->(n2:Gene{ name: \"FDFT1\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Salbutamol\" })-[:BINDS_CbG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that \"FDFT1\" regulates, which is upregulated by \"Niclosamide\" and is not a binding target of \"Salbutamol\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Compound(name:\"Salbutamol\")",
+      "Gene(name:\"FDFT1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by the gene FGF2, where polycystic ovary syndrome downregulates FGF2, and the corpus luteum does not express this gene?",
+    "cql": "MATCH (n1:Disease{ name: \"polycystic ovary syndrome\" })-[r1:DOWNREGULATES_DdG]->(n2:Gene{ name: \"FGF2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Anatomy{ name: \"corpus luteum\" })-[:EXPRESSES_AeG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by the gene \"FGF2\", where \"polycystic ovary syndrome\" downregulates \"FGF2\", and the \"corpus luteum\" does not express this gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Anatomy(name:\"corpus luteum\")",
+      "Gene(name:\"FGF2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Anatomy",
+          "rel": "EXPRESSES_AeG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is interacted with by IQCB1, which is regulated by AKAP8L, and is not covaried with by AIMP1?",
+    "cql": "MATCH (n1:Gene{ name: \"AKAP8L\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"IQCB1\" })-[r2:INTERACTS_GiG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"AIMP1\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is interacted with by \"IQCB1\", which is regulated by \"AKAP8L\", and is not covaried with by \"AIMP1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"AKAP8L\")",
+      "Gene(name:\"AIMP1\")",
+      "Gene(name:\"IQCB1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Identify the name of the gene that is regulated by PHKG2 with a REGULATES_GrG relationship, which is also regulated by ID2 via REGULATES_GrG, and is not the target of an UPREGULATES_CuG link from Fusafungine.",
+    "cql": "MATCH (n1:Gene{ name: \"ID2\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Fusafungine\" })-[:UPREGULATES_CuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Identify the name of the gene that is regulated by \"PHKG2\" with a REGULATES_GrG relationship, which is also regulated by \"ID2\" via REGULATES_GrG, and is not the target of an UPREGULATES_CuG link from \"Fusafungine\".",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Fusafungine\")",
+      "Gene(name:\"PHKG2\")",
+      "Gene(name:\"ID2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is downregulated by polycystic ovary syndrome, which is resembled by gestational diabetes, and is not downregulated by Cefacetrile?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n4:Gene) WHERE NOT ((:Compound{ name: \"Cefacetrile\" })-[:DOWNREGULATES_CdG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is downregulated by \"polycystic ovary syndrome\", which is resembled by \"gestational diabetes\", and is not downregulated by \"Cefacetrile\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Compound(name:\"Cefacetrile\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which Gene is regulated by the gene FOXP3, which is associated with allergic rhinitis, and is not covaried with by the gene SUSD1?",
+    "cql": "MATCH (n1:Disease{ name: \"allergic rhinitis\" })-[r1:ASSOCIATES_DaG]->(n2:Gene{ name: \"FOXP3\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Gene{ name: \"SUSD1\" })-[:COVARIES_GcG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which Gene is regulated by the gene \"FOXP3\", which is associated with \"allergic rhinitis\", and is not covaried with by the gene \"SUSD1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"FOXP3\")",
+      "Gene(name:\"SUSD1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by PHKG2, which in turn is regulated by the gene ID2, and are not upregulated by the disease polycystic ovary syndrome?",
+    "cql": "MATCH (n1:Gene{ name: \"ID2\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n4:Gene) WHERE NOT ((:Disease{ name: \"polycystic ovary syndrome\" })-[:UPREGULATES_DuG]->(n4)) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by \"PHKG2\", which in turn is regulated by the gene \"ID2\", and are not upregulated by the disease \"polycystic ovary syndrome\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Gene(name:\"PHKG2\")",
+      "Gene(name:\"ID2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": true
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  }
+]

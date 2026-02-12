@@ -1,0 +1,3963 @@
+[
+  {
+    "rawnl": "What is the name of the gene that is covaried by IQGAP3, given that IQGAP3 is covaried by ARHGEF11 and ARHGEF11 is interacted with by LPAR1?",
+    "cql": "MATCH (n1:Gene{ name: \"LPAR1\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"ARHGEF11\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by \"IQGAP3\", given that \"IQGAP3\" is covaried by \"ARHGEF11\" and \"ARHGEF11\" is interacted with by \"LPAR1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ARHGEF11\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"LPAR1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is covaried by the gene ZNF706, where ZNF706 is downregulated by polycystic ovary syndrome, and polycystic ovary syndrome is resembled by gestational diabetes?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n3:Gene{ name: \"ZNF706\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which gene is covaried by the gene \"ZNF706\", where \"ZNF706\" is downregulated by \"polycystic ovary syndrome\", and \"polycystic ovary syndrome\" is resembled by \"gestational diabetes\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Gene(name:\"ZNF706\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is regulated by FXR2, where FXR2 is interacted with RPL6, and RPL6 is regulated by DHRS7?",
+    "cql": "MATCH (n1:Gene{ name: \"DHRS7\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"RPL6\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"FXR2\" })-[r3:REGULATES_GrG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which gene is regulated by \"FXR2\", where \"FXR2\" is interacted with \"RPL6\", and \"RPL6\" is regulated by \"DHRS7\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"DHRS7\")",
+      "Gene(name:\"FXR2\")",
+      "Gene(name:\"RPL6\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene does IQGAP3 covary with, given that ARHGEF11 covaries with IQGAP3 and ABL1 interacts with ARHGEF11?",
+    "cql": "MATCH (n1:Gene{ name: \"ABL1\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"ARHGEF11\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which gene does \"IQGAP3\" covary with, given that \"ARHGEF11\" covaries with \"IQGAP3\" and \"ABL1\" interacts with \"ARHGEF11\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ARHGEF11\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"ABL1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is interacted with by FXR2, where RPL23A interacts with RPS4X, RPS4X covaries with FXR2, and FXR2 interacts with another gene?",
+    "cql": "MATCH (n1:Gene{ name: \"RPL23A\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"RPS4X\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"FXR2\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is interacted with by \"FXR2\", where \"RPL23A\" interacts with \"RPS4X\", \"RPS4X\" covaries with \"FXR2\", and \"FXR2\" interacts with another gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"RPL23A\")",
+      "Gene(name:\"RPS4X\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of biological processes that the gene SDCBP participates in, where SDCBP is downregulated by the disease allergic rhinitis, and allergic rhinitis is palliated by the compound pseudoephedrine?",
+    "cql": "MATCH (n1:Compound{ name: \"Pseudoephedrine\" })-[r1:PALLIATES_CpD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:DOWNREGULATES_DdG]->(n3:Gene{ name: \"SDCBP\" })-[r3:PARTICIPATES_GpBP]->(n4:BiologicalProcess) RETURN n4.name",
+    "rewrite_nl": "What are the names of biological processes that the gene \"SDCBP\" participates in, where \"SDCBP\" is downregulated by the disease \"allergic rhinitis\", and \"allergic rhinitis\" is palliated by the compound \"Pseudoephedrine\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Pseudoephedrine\")",
+      "Gene(name:\"SDCBP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that SDCBP participates in, where SDCBP is a gene downregulated by allergic rhinitis, which is treated by Diphenhydramine?",
+    "cql": "MATCH (n1:Compound{ name: \"Diphenhydramine\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:DOWNREGULATES_DdG]->(n3:Gene{ name: \"SDCBP\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "What is the name of the cellular component that \"SDCBP\" participates in, where \"SDCBP\" is a gene downregulated by \"allergic rhinitis\", which is treated by \"Diphenhydramine\"?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Diphenhydramine\")",
+      "Gene(name:\"SDCBP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the CellularComponent that is participated in by the gene CSGALNACT2, which is upregulated by the compound Niclosamide, where Niclosamide is resembled by the compound Diflunisal?",
+    "cql": "MATCH (n1:Compound{ name: \"Diflunisal\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Niclosamide\" })-[r2:UPREGULATES_CuG]->(n3:Gene{ name: \"CSGALNACT2\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "What is the name of the CellularComponent that is participated in by the gene \"CSGALNACT2\", which is upregulated by the compound \"Niclosamide\", where \"Niclosamide\" is resembled by the compound \"Diflunisal\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Compound(name:\"Diflunisal\")",
+      "Gene(name:\"CSGALNACT2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the disease that is resembled by gestational diabetes, where Chlorpropamide resembles Glyburide and Glyburide treats gestational diabetes?",
+    "cql": "MATCH (n1:Compound{ name: \"Chlorpropamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Glyburide\" })-[r2:TREATS_CtD]->(n3:Disease{ name: \"gestational diabetes\" })-[r3:RESEMBLES_DrD]->(n4:Disease) RETURN n4.name",
+    "rewrite_nl": "What is the name of the disease that is resembled by \"gestational diabetes\", where \"Chlorpropamide\" resembles \"Glyburide\" and \"Glyburide\" treats \"gestational diabetes\"?",
+    "nodes": [
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"gestational diabetes\")",
+      "Compound(name:\"Chlorpropamide\")",
+      "Compound(name:\"Glyburide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the disease that is palliated by Ephedrine, where Ephedrine is resembled by Methamphetamine, Methamphetamine is included in the pharmacologic class \"Appetite Suppression\"?",
+    "cql": "MATCH (n1:PharmacologicClass{ name: \"Appetite Suppression\" })-[r1:INCLUDES_PCiC]->(n2:Compound{ name: \"Methamphetamine\" })-[r2:RESEMBLES_CrC]->(n3:Compound{ name: \"Ephedrine\" })-[r3:PALLIATES_CpD]->(n4:Disease) RETURN n4.name",
+    "rewrite_nl": "What is the name of the disease that is palliated by \"Ephedrine\", where \"Ephedrine\" is resembled by \"Methamphetamine\", \"Methamphetamine\" is included in the pharmacologic class \"Appetite Suppression\"?",
+    "nodes": [
+      "Disease",
+      "PharmacologicClass"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"Appetite Suppression\")",
+      "Compound(name:\"Methamphetamine\")",
+      "Compound(name:\"Ephedrine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is connected from IQGAP3 by a COVARIES_GcG relationship, where IQGAP3 is connected from ARL8A by COVARIES_GcG, and ARL8A is connected from ARL2 by COVARIES_GcG?",
+    "cql": "MATCH (n1:Gene{ name: \"ARL2\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ARL8A\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is connected from \"IQGAP3\" by a COVARIES_GcG relationship, where \"IQGAP3\" is connected from \"ARL8A\" by COVARIES_GcG, and \"ARL8A\" is connected from \"ARL2\" by COVARIES_GcG?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"ARL8A\")",
+      "Gene(name:\"ARL2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are downregulated by the disease allergic rhinitis that is treated by Dimenhydrinate, which is resembled by Bromodiphenhydramine?",
+    "cql": "MATCH (n1:Compound{ name: \"Bromodiphenhydramine\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Dimenhydrinate\" })-[r2:TREATS_CtD]->(n3:Disease{ name: \"allergic rhinitis\" })-[r3:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes are downregulated by the disease \"allergic rhinitis\" that is treated by \"Dimenhydrinate\", which is resembled by \"Bromodiphenhydramine\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Compound(name:\"Bromodiphenhydramine\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Dimenhydrinate\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried by the gene ITCH, where Tolcapone resembles Niclosamide, and Niclosamide upregulates ITCH?",
+    "cql": "MATCH (n1:Compound{ name: \"Tolcapone\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Niclosamide\" })-[r2:UPREGULATES_CuG]->(n3:Gene{ name: \"ITCH\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by the gene \"ITCH\", where \"Tolcapone\" resembles \"Niclosamide\", and \"Niclosamide\" upregulates \"ITCH\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Compound(name:\"Tolcapone\")",
+      "Gene(name:\"ITCH\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that is participated in by the gene GPAA1, where GPAA1 is regulated by the gene AXIN2, and AXIN2 is interacted with the gene GSK3B?",
+    "cql": "MATCH (n1:Gene{ name: \"GSK3B\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"AXIN2\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"GPAA1\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "What is the name of the cellular component that is participated in by the gene \"GPAA1\", where \"GPAA1\" is regulated by the gene \"AXIN2\", and \"AXIN2\" is interacted with the gene \"GSK3B\"?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"GSK3B\")",
+      "Gene(name:\"GPAA1\")",
+      "Gene(name:\"AXIN2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that is associated with the gene ETFB, where ETFB is regulated by ARHGEF2, which in turn is covaried with IQGAP3?",
+    "cql": "MATCH (n1:Gene{ name: \"IQGAP3\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ARHGEF2\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"ETFB\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "What is the name of the cellular component that is associated with the gene \"ETFB\", where \"ETFB\" is regulated by \"ARHGEF2\", which in turn is covaried with \"IQGAP3\"?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"ARHGEF2\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"ETFB\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the disease that is treated by the compound Dimenhydrinate, which is resembled by Benzatropine, the compound included in the pharmacologic class Histamine Receptor Antagonists?",
+    "cql": "MATCH (n1:PharmacologicClass{ name: \"Histamine Receptor Antagonists\" })-[r1:INCLUDES_PCiC]->(n2:Compound{ name: \"Benzatropine\" })-[r2:RESEMBLES_CrC]->(n3:Compound{ name: \"Dimenhydrinate\" })-[r3:TREATS_CtD]->(n4:Disease) RETURN n4.name",
+    "rewrite_nl": "What is the name of the disease that is treated by the compound \"Dimenhydrinate\", which is resembled by \"Benzatropine\", the compound included in the pharmacologic class \"Histamine Receptor Antagonists\"?",
+    "nodes": [
+      "Disease",
+      "Compound",
+      "PharmacologicClass"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"Histamine Receptor Antagonists\")",
+      "Compound(name:\"Dimenhydrinate\")",
+      "Compound(name:\"Benzatropine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that is involved with the gene PBX3, considering that gestational diabetes resembles polycystic ovary syndrome, polycystic ovary syndrome downregulates PBX3, and PBX3 participates in that cellular component?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n3:Gene{ name: \"PBX3\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "What is the name of the cellular component that is involved with the gene \"PBX3\", considering that \"gestational diabetes\" resembles \"polycystic ovary syndrome\", \"polycystic ovary syndrome\" downregulates \"PBX3\", and \"PBX3\" participates in that cellular component?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Gene(name:\"PBX3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is connected from FXR2 by an INTERACTS_GiG relationship, where FXR2 is connected from RPS4X by a COVARIES_GcG relationship, and RPS4X is connected from BRPF3 by a REGULATES_GrG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"BRPF3\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"RPS4X\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"FXR2\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is connected from \"FXR2\" by an INTERACTS_GiG relationship, where \"FXR2\" is connected from \"RPS4X\" by a COVARIES_GcG relationship, and \"RPS4X\" is connected from \"BRPF3\" by a REGULATES_GrG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"BRPF3\")",
+      "Gene(name:\"RPS4X\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried with IQGAP3, where IQGAP3 is interacted with IQCB1, and IQCB1 is regulated by MBTPS1?",
+    "cql": "MATCH (n1:Gene{ name: \"MBTPS1\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"IQCB1\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried with \"IQGAP3\", where \"IQGAP3\" is interacted with \"IQCB1\", and \"IQCB1\" is regulated by \"MBTPS1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"MBTPS1\")",
+      "Gene(name:\"IQCB1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that the gene CYP1A2 participates in, given that Clonazepam resembles Niclosamide and Niclosamide binds to CYP1A2?",
+    "cql": "MATCH (n1:Compound{ name: \"Clonazepam\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Niclosamide\" })-[r2:BINDS_CbG]->(n3:Gene{ name: \"CYP1A2\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "What is the name of the cellular component that the gene \"CYP1A2\" participates in, given that \"Clonazepam\" resembles \"Niclosamide\" and \"Niclosamide\" binds to \"CYP1A2\"?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Compound(name:\"Clonazepam\")",
+      "Gene(name:\"CYP1A2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are regulated by the gene PLAT that is associated with polycystic ovary syndrome, which in turn is resembled by gestational diabetes?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:ASSOCIATES_DaG]->(n3:Gene{ name: \"PLAT\" })-[r3:REGULATES_GrG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes are regulated by the gene \"PLAT\" that is associated with \"polycystic ovary syndrome\", which in turn is resembled by \"gestational diabetes\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Gene(name:\"PLAT\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is interacted with by the gene PTPRO, where PTMS regulates PHKG2, and PHKG2 regulates PTPRO?",
+    "cql": "MATCH (n1:Gene{ name: \"PTMS\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"PTPRO\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is interacted with by the gene \"PTPRO\", where \"PTMS\" regulates \"PHKG2\", and \"PHKG2\" regulates \"PTPRO\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"PTPRO\")",
+      "Gene(name:\"PHKG2\")",
+      "Gene(name:\"PTMS\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is connected to FXR2 by an INTERACTS_GiG relationship, where ARNTL regulates RPS4X via a REGULATES_GrG relationship, and RPS4X covaries with FXR2 by a COVARIES_GcG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"ARNTL\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"RPS4X\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"FXR2\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is connected to \"FXR2\" by an INTERACTS_GiG relationship, where \"ARNTL\" regulates \"RPS4X\" via a REGULATES_GrG relationship, and \"RPS4X\" covaries with \"FXR2\" by a COVARIES_GcG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ARNTL\")",
+      "Gene(name:\"RPS4X\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the pathway that the gene CSRP1 participates in, given that Niclosamide resembles Meclofenamic acid, which downregulates CSRP1?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:DOWNREGULATES_CdG]->(n3:Gene{ name: \"CSRP1\" })-[r3:PARTICIPATES_GpPW]->(n4:Pathway) RETURN n4.name",
+    "rewrite_nl": "What is the name of the pathway that the gene \"CSRP1\" participates in, given that \"Niclosamide\" resembles \"Meclofenamic acid\", which downregulates \"CSRP1\"?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Compound(name:\"Meclofenamic acid\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"CSRP1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are bound by the compound Ranitidine, where Ranitidine is resembled by the compound Nizatidine, and Nizatidine is included in the pharmacologic class \"Histamine H2 Receptor Antagonists\"?",
+    "cql": "MATCH (n1:PharmacologicClass{ name: \"Histamine H2 Receptor Antagonists\" })-[r1:INCLUDES_PCiC]->(n2:Compound{ name: \"Nizatidine\" })-[r2:RESEMBLES_CrC]->(n3:Compound{ name: \"Ranitidine\" })-[r3:BINDS_CbG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes are bound by the compound \"Ranitidine\", where \"Ranitidine\" is resembled by the compound \"Nizatidine\", and \"Nizatidine\" is included in the pharmacologic class \"Histamine H2 Receptor Antagonists\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "PharmacologicClass"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"Histamine H2 Receptor Antagonists\")",
+      "Compound(name:\"Ranitidine\")",
+      "Compound(name:\"Nizatidine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is connected from IQGAP3 by a COVARIES_GcG relationship, where IQGAP3 is connected from ARL8A by a COVARIES_GcG relationship, and ARL8A is connected from LRRC8E by a COVARIES_GcG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"LRRC8E\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ARL8A\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is connected from \"IQGAP3\" by a COVARIES_GcG relationship, where \"IQGAP3\" is connected from \"ARL8A\" by a COVARIES_GcG relationship, and \"ARL8A\" is connected from \"LRRC8E\" by a COVARIES_GcG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"LRRC8E\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"ARL8A\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are covaried with the gene CKS2, where CKS2 is associated with polycystic ovary syndrome, and polycystic ovary syndrome is resembled by obesity?",
+    "cql": "MATCH (n1:Disease{ name: \"obesity\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:ASSOCIATES_DaG]->(n3:Gene{ name: \"CKS2\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes are covaried with the gene \"CKS2\", where \"CKS2\" is associated with \"polycystic ovary syndrome\", and \"polycystic ovary syndrome\" is resembled by \"obesity\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"obesity\")",
+      "Gene(name:\"CKS2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes are downregulated by the disease allergic rhinitis, where allergic rhinitis is palliated by Salbutamol, and Salbutamol is resembled by Terbutaline?",
+    "cql": "MATCH (n1:Compound{ name: \"Terbutaline\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Salbutamol\" })-[r2:PALLIATES_CpD]->(n3:Disease{ name: \"allergic rhinitis\" })-[r3:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes are downregulated by the disease \"allergic rhinitis\", where \"allergic rhinitis\" is palliated by \"Salbutamol\", and \"Salbutamol\" is resembled by \"Terbutaline\"?",
+    "nodes": [
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Terbutaline\")",
+      "Compound(name:\"Salbutamol\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene does IQGAP3 covary with, given that IQGAP3 is covaried with ULBP3 and ULBP3 is the target of an interaction from KLRK1?",
+    "cql": "MATCH (n1:Gene{ name: \"KLRK1\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"ULBP3\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which gene does \"IQGAP3\" covary with, given that \"IQGAP3\" is covaried with \"ULBP3\" and \"ULBP3\" is the target of an interaction from \"KLRK1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"KLRK1\")",
+      "Gene(name:\"ULBP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the disease that is resembled by allergic rhinitis, where Terbutaline resembles Salbutamol, Salbutamol palliates allergic rhinitis, and allergic rhinitis resembles this disease?",
+    "cql": "MATCH (n1:Compound{ name: \"Terbutaline\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Salbutamol\" })-[r2:PALLIATES_CpD]->(n3:Disease{ name: \"allergic rhinitis\" })-[r3:RESEMBLES_DrD]->(n4:Disease) RETURN n4.name",
+    "rewrite_nl": "What is the name of the disease that is resembled by \"allergic rhinitis\", where \"Terbutaline\" resembles \"Salbutamol\", \"Salbutamol\" palliates \"allergic rhinitis\", and \"allergic rhinitis\" resembles this disease?",
+    "nodes": [
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Terbutaline\")",
+      "Compound(name:\"Salbutamol\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of a disease that is resembled by gestational diabetes, where Tolazamide resembles Glyburide and Glyburide treats gestational diabetes?",
+    "cql": "MATCH (n1:Compound{ name: \"Tolazamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Glyburide\" })-[r2:TREATS_CtD]->(n3:Disease{ name: \"gestational diabetes\" })-[r3:RESEMBLES_DrD]->(n4:Disease) RETURN n4.name",
+    "rewrite_nl": "What is the name of a disease that is resembled by \"gestational diabetes\", where \"Tolazamide\" resembles \"Glyburide\" and \"Glyburide\" treats \"gestational diabetes\"?",
+    "nodes": [
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"gestational diabetes\")",
+      "Compound(name:\"Tolazamide\")",
+      "Compound(name:\"Glyburide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of pathways that the gene FOXP3, which is associated with allergic rhinitis treated by Cyproheptadine, participates in?",
+    "cql": "MATCH (n1:Compound{ name: \"Cyproheptadine\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n3:Gene{ name: \"FOXP3\" })-[r3:PARTICIPATES_GpPW]->(n4:Pathway) RETURN n4.name",
+    "rewrite_nl": "What are the names of pathways that the gene \"FOXP3\", which is associated with \"allergic rhinitis\" treated by \"Cyproheptadine\", participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Cyproheptadine\")",
+      "Gene(name:\"FOXP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried by ZNHIT1, where ZNHIT1 is regulated by VDAC1, and VDAC1 is regulated by ASRGL1?",
+    "cql": "MATCH (n1:Gene{ name: \"ASRGL1\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"VDAC1\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"ZNHIT1\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by \"ZNHIT1\", where \"ZNHIT1\" is regulated by \"VDAC1\", and \"VDAC1\" is regulated by \"ASRGL1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ASRGL1\")",
+      "Gene(name:\"ZNHIT1\")",
+      "Gene(name:\"VDAC1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is downregulated by the disease allergic rhinitis, which is palliated by the compound Salbutamol that is included in the pharmacologic class Adrenergic beta2-Agonists?",
+    "cql": "MATCH (n1:PharmacologicClass{ name: \"Adrenergic beta2-Agonists\" })-[r1:INCLUDES_PCiC]->(n2:Compound{ name: \"Salbutamol\" })-[r2:PALLIATES_CpD]->(n3:Disease{ name: \"allergic rhinitis\" })-[r3:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is downregulated by the disease \"allergic rhinitis\", which is palliated by the compound \"Salbutamol\" that is included in the pharmacologic class \"Adrenergic beta2-Agonists\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound",
+      "PharmacologicClass"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"Adrenergic beta2-Agonists\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Salbutamol\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that is associated with gene ASF1B, where ASF1B is downregulated by the compound Triclosan, which is itself structurally resembled by Niclosamide?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Triclosan\" })-[r2:DOWNREGULATES_CdG]->(n3:Gene{ name: \"ASF1B\" })-[r3:PARTICIPATES_GpMF]->(n4:MolecularFunction) RETURN n4.name",
+    "rewrite_nl": "What is the name of the molecular function that is associated with gene \"ASF1B\", where \"ASF1B\" is downregulated by the compound \"Triclosan\", which is itself structurally resembled by \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Compound(name:\"Triclosan\")",
+      "Gene(name:\"ASF1B\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "DOWNREGULATES_CdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is connected to FXR2 by an INTERACTS_GiG relationship, where FXR2 is connected to RPL6 by an INTERACTS_GiG relationship, and RPL6 is regulated by NPRL2 via a REGULATES_GrG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"NPRL2\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"RPL6\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"FXR2\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is connected to \"FXR2\" by an INTERACTS_GiG relationship, where \"FXR2\" is connected to \"RPL6\" by an INTERACTS_GiG relationship, and \"RPL6\" is regulated by \"NPRL2\" via a REGULATES_GrG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"NPRL2\")",
+      "Gene(name:\"FXR2\")",
+      "Gene(name:\"RPL6\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by FXR2, where RPS6 regulates RPS4X, RPS4X covaries with FXR2, and FXR2 regulates this gene?",
+    "cql": "MATCH (n1:Gene{ name: \"RPS6\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"RPS4X\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"FXR2\" })-[r3:REGULATES_GrG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by \"FXR2\", where \"RPS6\" regulates \"RPS4X\", \"RPS4X\" covaries with \"FXR2\", and \"FXR2\" regulates this gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"RPS4X\")",
+      "Gene(name:\"FXR2\")",
+      "Gene(name:\"RPS6\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Gene that is covaried by IQGAP3, where IQGAP3 is interacted with IQCB1, and IQCB1 is regulated by PPAT?",
+    "cql": "MATCH (n1:Gene{ name: \"PPAT\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"IQCB1\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the Gene that is covaried by \"IQGAP3\", where \"IQGAP3\" is interacted with \"IQCB1\", and \"IQCB1\" is regulated by \"PPAT\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"IQCB1\")",
+      "Gene(name:\"PPAT\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is interacted with by PTPRO, where PTPRO is regulated by PHKG2, and PHKG2 is regulated by RXRA?",
+    "cql": "MATCH (n1:Gene{ name: \"RXRA\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"PTPRO\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is interacted with by \"PTPRO\", where \"PTPRO\" is regulated by \"PHKG2\", and \"PHKG2\" is regulated by \"RXRA\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"PTPRO\")",
+      "Gene(name:\"PHKG2\")",
+      "Gene(name:\"RXRA\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is connected by a \"COVARIES_GcG\" relationship from IQGAP3, where IQGAP3 is connected by a \"COVARIES_GcG\" relationship from ARL8A, and ARL8A is connected by a \"COVARIES_GcG\" relationship from SLC6A18?",
+    "cql": "MATCH (n1:Gene{ name: \"SLC6A18\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ARL8A\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is connected by a \"COVARIES_GcG\" relationship from \"IQGAP3\", where \"IQGAP3\" is connected by a \"COVARIES_GcG\" relationship from \"ARL8A\", and \"ARL8A\" is connected by a \"COVARIES_GcG\" relationship from \"SLC6A18\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"SLC6A18\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"ARL8A\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is downregulated by allergic rhinitis, which is treated by Triamcinolone included in the pharmacologic class Corticosteroid Hormone Receptor Agonists?",
+    "cql": "MATCH (n1:PharmacologicClass{ name: \"Corticosteroid Hormone Receptor Agonists\" })-[r1:INCLUDES_PCiC]->(n2:Compound{ name: \"Triamcinolone\" })-[r2:TREATS_CtD]->(n3:Disease{ name: \"allergic rhinitis\" })-[r3:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is downregulated by \"allergic rhinitis\", which is treated by \"Triamcinolone\" included in the pharmacologic class \"Corticosteroid Hormone Receptor Agonists\"?",
+    "nodes": [
+      "Gene",
+      "PharmacologicClass"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"Corticosteroid Hormone Receptor Agonists\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Triamcinolone\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is interacted with by PTPRO, where GH1 interacts with NUDT5, NUDT5 regulates PTPRO, and PTPRO interacts with this gene?",
+    "cql": "MATCH (n1:Gene{ name: \"GH1\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"NUDT5\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"PTPRO\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is interacted with by \"PTPRO\", where \"GH1\" interacts with \"NUDT5\", \"NUDT5\" regulates \"PTPRO\", and \"PTPRO\" interacts with this gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"PTPRO\")",
+      "Gene(name:\"NUDT5\")",
+      "Gene(name:\"GH1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the disease that is resembled by gestational diabetes, where Glimepiride resembles Glyburide, and Glyburide treats gestational diabetes?",
+    "cql": "MATCH (n1:Compound{ name: \"Glimepiride\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Glyburide\" })-[r2:TREATS_CtD]->(n3:Disease{ name: \"gestational diabetes\" })-[r3:RESEMBLES_DrD]->(n4:Disease) RETURN n4.name",
+    "rewrite_nl": "What is the name of the disease that is resembled by \"gestational diabetes\", where \"Glimepiride\" resembles \"Glyburide\", and \"Glyburide\" treats \"gestational diabetes\"?",
+    "nodes": [
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"gestational diabetes\")",
+      "Compound(name:\"Glimepiride\")",
+      "Compound(name:\"Glyburide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is interacted with by PTPRO, where NPC1 regulates PHKG2, PHKG2 regulates PTPRO?",
+    "cql": "MATCH (n1:Gene{ name: \"NPC1\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"PTPRO\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is interacted with by \"PTPRO\", where \"NPC1\" regulates \"PHKG2\", \"PHKG2\" regulates \"PTPRO\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"PTPRO\")",
+      "Gene(name:\"PHKG2\")",
+      "Gene(name:\"NPC1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is connected to \"FXR2\" through an \"INTERACTS_GiG\" relationship, where \"TOLLIP\" regulates \"RPL6\" via \"REGULATES_GrG\", \"RPL6\" interacts with \"FXR2\" via \"INTERACTS_GiG\", and \"FXR2\" interacts with this gene via \"INTERACTS_GiG\"?",
+    "cql": "MATCH (n1:Gene{ name: \"TOLLIP\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"RPL6\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"FXR2\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is connected to \"FXR2\" through an \"INTERACTS_GiG\" relationship, where \"TOLLIP\" regulates \"RPL6\" via \"REGULATES_GrG\", \"RPL6\" interacts with \"FXR2\" via \"INTERACTS_GiG\", and \"FXR2\" interacts with this gene via \"INTERACTS_GiG\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"TOLLIP\")",
+      "Gene(name:\"FXR2\")",
+      "Gene(name:\"RPL6\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is downregulated by the disease allergic rhinitis, where allergic rhinitis is palliated by the compound Salbutamol, and Salbutamol is resembled by Levonordefrin?",
+    "cql": "MATCH (n1:Compound{ name: \"Levonordefrin\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Salbutamol\" })-[r2:PALLIATES_CpD]->(n3:Disease{ name: \"allergic rhinitis\" })-[r3:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is downregulated by the disease \"allergic rhinitis\", where \"allergic rhinitis\" is palliated by the compound \"Salbutamol\", and \"Salbutamol\" is resembled by \"Levonordefrin\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Levonordefrin\")",
+      "Compound(name:\"Salbutamol\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried by ZNHIT1, where ZNHIT1 is regulated by VDAC1, and VDAC1 is regulated by NME9?",
+    "cql": "MATCH (n1:Gene{ name: \"NME9\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"VDAC1\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"ZNHIT1\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by \"ZNHIT1\", where \"ZNHIT1\" is regulated by \"VDAC1\", and \"VDAC1\" is regulated by \"NME9\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ZNHIT1\")",
+      "Gene(name:\"VDAC1\")",
+      "Gene(name:\"NME9\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which pathways are named such that the gene IQGAP3 covaries with ARHGEF2, ARHGEF2 interacts with MARK4, and MARK4 participates in the pathway?",
+    "cql": "MATCH (n1:Gene{ name: \"IQGAP3\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ARHGEF2\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"MARK4\" })-[r3:PARTICIPATES_GpPW]->(n4:Pathway) RETURN n4.name",
+    "rewrite_nl": "Which pathways are named such that the gene \"IQGAP3\" covaries with \"ARHGEF2\", \"ARHGEF2\" interacts with \"MARK4\", and \"MARK4\" participates in the pathway?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ARHGEF2\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"MARK4\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is connected by an \"INTERACTS_GiG\" relationship from the gene \"PTPRO\", where \"PTPRO\" is connected by a \"REGULATES_GrG\" relationship from \"PHKG2\", and \"PHKG2\" is connected by a \"REGULATES_GrG\" relationship from \"TYMS\"?",
+    "cql": "MATCH (n1:Gene{ name: \"TYMS\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"PTPRO\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is connected by an \"INTERACTS_GiG\" relationship from the gene \"PTPRO\", where \"PTPRO\" is connected by a \"REGULATES_GrG\" relationship from \"PHKG2\", and \"PHKG2\" is connected by a \"REGULATES_GrG\" relationship from \"TYMS\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"PTPRO\")",
+      "Gene(name:\"PHKG2\")",
+      "Gene(name:\"TYMS\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried by IQGAP3, where IQGAP3 is interacted with IQCB1, and IQCB1 is regulated by AKAP8L?",
+    "cql": "MATCH (n1:Gene{ name: \"AKAP8L\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"IQCB1\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by \"IQGAP3\", where \"IQGAP3\" is interacted with \"IQCB1\", and \"IQCB1\" is regulated by \"AKAP8L\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"AKAP8L\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"IQCB1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that is connected by a PARTICIPATES_GpMF relationship from the gene ME3, where ME3 is interacted with CREB1 via INTERACTS_GiG, and CREB1 is regulated by PFKM through a REGULATES_GrG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"PFKM\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"CREB1\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"ME3\" })-[r3:PARTICIPATES_GpMF]->(n4:MolecularFunction) RETURN n4.name",
+    "rewrite_nl": "What is the name of the molecular function that is connected by a PARTICIPATES_GpMF relationship from the gene \"ME3\", where \"ME3\" is interacted with \"CREB1\" via INTERACTS_GiG, and \"CREB1\" is regulated by \"PFKM\" through a REGULATES_GrG relationship?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"CREB1\")",
+      "Gene(name:\"PFKM\")",
+      "Gene(name:\"ME3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is upregulated by the disease allergic rhinitis, where allergic rhinitis is palliated by the compound Pseudoephedrine, and Pseudoephedrine is resembled by the compound Phenylpropanolamine?",
+    "cql": "MATCH (n1:Compound{ name: \"Phenylpropanolamine\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Pseudoephedrine\" })-[r2:PALLIATES_CpD]->(n3:Disease{ name: \"allergic rhinitis\" })-[r3:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is upregulated by the disease \"allergic rhinitis\", where \"allergic rhinitis\" is palliated by the compound \"Pseudoephedrine\", and \"Pseudoephedrine\" is resembled by the compound \"Phenylpropanolamine\"?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "Compound"
+    ],
+    "instance": [
+      "Compound(name:\"Phenylpropanolamine\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Pseudoephedrine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which cellular component does the gene PFKM, upregulated by polycystic ovary syndrome that is palliated by Ethinyl Estradiol, participate in?",
+    "cql": "MATCH (n1:Compound{ name: \"Ethinyl Estradiol\" })-[r1:PALLIATES_CpD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:UPREGULATES_DuG]->(n3:Gene{ name: \"PFKM\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "Which cellular component does the gene \"PFKM\", upregulated by \"polycystic ovary syndrome\" that is palliated by \"Ethinyl Estradiol\", participate in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Ethinyl Estradiol\")",
+      "Gene(name:\"PFKM\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried by ZNHIT1, where ZNHIT1 is regulated by DIDO1, and DIDO1 is covaried with SEC16A?",
+    "cql": "MATCH (n1:Gene{ name: \"SEC16A\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"DIDO1\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"ZNHIT1\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by \"ZNHIT1\", where \"ZNHIT1\" is regulated by \"DIDO1\", and \"DIDO1\" is covaried with \"SEC16A\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ZNHIT1\")",
+      "Gene(name:\"SEC16A\")",
+      "Gene(name:\"DIDO1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is connected to FXR2 by an INTERACTS_GiG relationship, where FXR2 is connected to RPL6 by an INTERACTS_GiG relationship, and RPL6 is regulated by EXOSC4 via a REGULATES_GrG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"EXOSC4\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"RPL6\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"FXR2\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is connected to \"FXR2\" by an INTERACTS_GiG relationship, where \"FXR2\" is connected to \"RPL6\" by an INTERACTS_GiG relationship, and \"RPL6\" is regulated by \"EXOSC4\" via a REGULATES_GrG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"EXOSC4\")",
+      "Gene(name:\"FXR2\")",
+      "Gene(name:\"RPL6\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the disease that is resembled by the disease gestational diabetes treated by Glyburide, where Sulpiride resembles Glyburide?",
+    "cql": "MATCH (n1:Compound{ name: \"Sulpiride\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Glyburide\" })-[r2:TREATS_CtD]->(n3:Disease{ name: \"gestational diabetes\" })-[r3:RESEMBLES_DrD]->(n4:Disease) RETURN n4.name",
+    "rewrite_nl": "What is the name of the disease that is resembled by the disease \"gestational diabetes\" treated by \"Glyburide\", where \"Sulpiride\" resembles \"Glyburide\"?",
+    "nodes": [
+      "Disease"
+    ],
+    "instance": [
+      "Compound(name:\"Sulpiride\")",
+      "Compound(name:\"Glyburide\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which disease is treated by Dimenhydrinate, where Dimenhydrinate is resembled by Modafinil, and Modafinil is included in the pharmacologic class named Central Nervous System Stimulation?",
+    "cql": "MATCH (n1:PharmacologicClass{ name: \"Central Nervous System Stimulation\" })-[r1:INCLUDES_PCiC]->(n2:Compound{ name: \"Modafinil\" })-[r2:RESEMBLES_CrC]->(n3:Compound{ name: \"Dimenhydrinate\" })-[r3:TREATS_CtD]->(n4:Disease) RETURN n4.name",
+    "rewrite_nl": "Which disease is treated by \"Dimenhydrinate\", where \"Dimenhydrinate\" is resembled by \"Modafinil\", and \"Modafinil\" is included in the pharmacologic class named \"Central Nervous System Stimulation\"?",
+    "nodes": [
+      "Disease",
+      "PharmacologicClass"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"Central Nervous System Stimulation\")",
+      "Compound(name:\"Dimenhydrinate\")",
+      "Compound(name:\"Modafinil\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is downregulated by allergic rhinitis, which is treated by Hydrocortisone included in the pharmacologic class of Corticosteroid Hormone Receptor Agonists?",
+    "cql": "MATCH (n1:PharmacologicClass{ name: \"Corticosteroid Hormone Receptor Agonists\" })-[r1:INCLUDES_PCiC]->(n2:Compound{ name: \"Hydrocortisone\" })-[r2:TREATS_CtD]->(n3:Disease{ name: \"allergic rhinitis\" })-[r3:DOWNREGULATES_DdG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is downregulated by \"allergic rhinitis\", which is treated by \"Hydrocortisone\" included in the pharmacologic class of \"Corticosteroid Hormone Receptor Agonists\"?",
+    "nodes": [
+      "Gene",
+      "PharmacologicClass"
+    ],
+    "instance": [
+      "PharmacologicClass(name:\"Corticosteroid Hormone Receptor Agonists\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Hydrocortisone\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Cellular Component that the gene CSGALNACT2, which is upregulated by the compound Niclosamide that resembled by Clonazepam, participates in?",
+    "cql": "MATCH (n1:Compound{ name: \"Clonazepam\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Niclosamide\" })-[r2:UPREGULATES_CuG]->(n3:Gene{ name: \"CSGALNACT2\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "What is the name of the Cellular Component that the gene \"CSGALNACT2\", which is upregulated by the compound \"Niclosamide\" that resembled by \"Clonazepam\", participates in?",
+    "nodes": [
+      "Gene",
+      "Compound",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Compound(name:\"Clonazepam\")",
+      "Gene(name:\"CSGALNACT2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that the gene CRYBA2 participates in, given that Dimenhydrinate treats allergic rhinitis, which in turn upregulates CRYBA2?",
+    "cql": "MATCH (n1:Compound{ name: \"Dimenhydrinate\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:UPREGULATES_DuG]->(n3:Gene{ name: \"CRYBA2\" })-[r3:PARTICIPATES_GpMF]->(n4:MolecularFunction) RETURN n4.name",
+    "rewrite_nl": "What is the name of the molecular function that the gene \"CRYBA2\" participates in, given that \"Dimenhydrinate\" treats \"allergic rhinitis\", which in turn upregulates \"CRYBA2\"?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Dimenhydrinate\")",
+      "Gene(name:\"CRYBA2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of a gene that is connected from SLC6A15 to ARHGEF11 by a COVARIES_GcG relationship, from ARHGEF11 to IQGAP3 by a COVARIES_GcG relationship, and from IQGAP3 to that gene by a COVARIES_GcG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"SLC6A15\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ARHGEF11\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of a gene that is connected from \"SLC6A15\" to \"ARHGEF11\" by a COVARIES_GcG relationship, from \"ARHGEF11\" to \"IQGAP3\" by a COVARIES_GcG relationship, and from \"IQGAP3\" to that gene by a COVARIES_GcG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ARHGEF11\")",
+      "Gene(name:\"SLC6A15\")",
+      "Gene(name:\"IQGAP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried by IQGAP3, which is interactd with IQCB1, which is regulated by DHRS7?",
+    "cql": "MATCH (n1:Gene{ name: \"DHRS7\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"IQCB1\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by \"IQGAP3\", which is interacted with \"IQCB1\", which is regulated by \"DHRS7\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"DHRS7\")",
+      "Gene(name:\"IQCB1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which pathways does the gene SDCBP participate in, given that Dimenhydrinate treats allergic rhinitis, allergic rhinitis downregulates SDCBP, and SDCBP participates in those pathways?",
+    "cql": "MATCH (n1:Compound{ name: \"Dimenhydrinate\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:DOWNREGULATES_DdG]->(n3:Gene{ name: \"SDCBP\" })-[r3:PARTICIPATES_GpPW]->(n4:Pathway) RETURN n4.name",
+    "rewrite_nl": "Which pathways does the gene \"SDCBP\" participate in, given that \"Dimenhydrinate\" treats \"allergic rhinitis\", \"allergic rhinitis\" downregulates \"SDCBP\", and \"SDCBP\" participates in those pathways?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Dimenhydrinate\")",
+      "Gene(name:\"SDCBP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is connected from ZNHIT1 by a COVARIES_GcG relationship, where CAMSAP1 connects to DIDO1 by COVARIES_GcG, and DIDO1 connects to ZNHIT1 by REGULATES_GrG?",
+    "cql": "MATCH (n1:Gene{ name: \"CAMSAP1\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"DIDO1\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"ZNHIT1\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is connected from \"ZNHIT1\" by a COVARIES_GcG relationship, where \"CAMSAP1\" connects to \"DIDO1\" by COVARIES_GcG, and \"DIDO1\" connects to \"ZNHIT1\" by REGULATES_GrG?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"CAMSAP1\")",
+      "Gene(name:\"ZNHIT1\")",
+      "Gene(name:\"DIDO1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that the gene IL1RL1, which is associated with the disease allergic rhinitis that is treated by Methylprednisolone, participates in?",
+    "cql": "MATCH (n1:Compound{ name: \"Methylprednisolone\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n3:Gene{ name: \"IL1RL1\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "What is the name of the cellular component that the gene \"IL1RL1\", which is associated with the disease \"allergic rhinitis\" that is treated by \"Methylprednisolone\", participates in?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Compound(name:\"Methylprednisolone\")",
+      "Disease(name:\"allergic rhinitis\")",
+      "Gene(name:\"IL1RL1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that the gene IL1RL1, which is associated with the disease allergic rhinitis (which in turn is treated by Diphenhydramine), participates in?",
+    "cql": "MATCH (n1:Compound{ name: \"Diphenhydramine\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n3:Gene{ name: \"IL1RL1\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "What is the name of the cellular component that the gene \"IL1RL1\", which is associated with the disease \"allergic rhinitis\" (which in turn is treated by \"Diphenhydramine\"), participates in?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Diphenhydramine\")",
+      "Gene(name:\"IL1RL1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is connected to FXR2 by an INTERACTS_GiG relationship, where FXR2 is connected to RPL6 by another INTERACTS_GiG relationship, and RPL6 is regulated by CDX2 through a REGULATES_GrG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"CDX2\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"RPL6\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"FXR2\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is connected to \"FXR2\" by an INTERACTS_GiG relationship, where \"FXR2\" is connected to \"RPL6\" by another INTERACTS_GiG relationship, and \"RPL6\" is regulated by \"CDX2\" through a REGULATES_GrG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"FXR2\")",
+      "Gene(name:\"CDX2\")",
+      "Gene(name:\"RPL6\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of the biological processes that the gene RASA1 takes part in after being upregulated by Meclofenamic acid, which itself is resembled by Niclosamide?",
+    "cql": "MATCH (n1:Compound{ name: \"Niclosamide\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Meclofenamic acid\" })-[r2:UPREGULATES_CuG]->(n3:Gene{ name: \"RASA1\" })-[r3:PARTICIPATES_GpBP]->(n4:BiologicalProcess) RETURN n4.name",
+    "rewrite_nl": "What are the names of the biological processes that the gene \"RASA1\" takes part in after being upregulated by \"Meclofenamic acid\", which itself is resembled by \"Niclosamide\"?",
+    "nodes": [
+      "Gene",
+      "BiologicalProcess"
+    ],
+    "instance": [
+      "Compound(name:\"Meclofenamic acid\")",
+      "Compound(name:\"Niclosamide\")",
+      "Gene(name:\"RASA1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "UPREGULATES_CuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpBP",
+          "obj": "BiologicalProcess",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "BiologicalProcess",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried by IQGAP3, where OR8D4 covaries ARL8A, ARL8A covaries IQGAP3, and IQGAP3 covaries this gene?",
+    "cql": "MATCH (n1:Gene{ name: \"OR8D4\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ARL8A\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by \"IQGAP3\", where \"OR8D4\" covaries \"ARL8A\", \"ARL8A\" covaries \"IQGAP3\", and \"IQGAP3\" covaries this gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"OR8D4\")",
+      "Gene(name:\"ARL8A\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried by IQGAP3, given that HBA2 interacts with IQCB1, IQCB1 interacts with IQGAP3, and IQGAP3 covaries with this gene?",
+    "cql": "MATCH (n1:Gene{ name: \"HBA2\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"IQCB1\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by \"IQGAP3\", given that \"HBA2\" interacts with \"IQCB1\", \"IQCB1\" interacts with \"IQGAP3\", and \"IQGAP3\" covaries with this gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"IQCB1\")",
+      "Gene(name:\"HBA2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the pathway that is participated in by the gene TAZ, where TAZ is interacted with RUNX1, RUNX1 is regulated by KCNQ1?",
+    "cql": "MATCH (n1:Gene{ name: \"KCNQ1\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"RUNX1\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"TAZ\" })-[r3:PARTICIPATES_GpPW]->(n4:Pathway) RETURN n4.name",
+    "rewrite_nl": "What is the name of the pathway that is participated in by the gene \"TAZ\", where \"TAZ\" is interacted with \"RUNX1\", \"RUNX1\" is regulated by \"KCNQ1\"?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"KCNQ1\")",
+      "Gene(name:\"RUNX1\")",
+      "Gene(name:\"TAZ\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that is participated in by the gene MAFK, which is upregulated by polycystic ovary syndrome, where polycystic ovary syndrome is resembled by gestational diabetes?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:UPREGULATES_DuG]->(n3:Gene{ name: \"MAFK\" })-[r3:PARTICIPATES_GpMF]->(n4:MolecularFunction) RETURN n4.name",
+    "rewrite_nl": "What is the name of the molecular function that is participated in by the gene \"MAFK\", which is upregulated by \"polycystic ovary syndrome\", where \"polycystic ovary syndrome\" is resembled by \"gestational diabetes\"?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Gene(name:\"MAFK\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the pathway that the gene FOXP3, which is associated with the disease allergic rhinitis treated by Hydrocortisone, participates in?",
+    "cql": "MATCH (n1:Compound{ name: \"Hydrocortisone\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n3:Gene{ name: \"FOXP3\" })-[r3:PARTICIPATES_GpPW]->(n4:Pathway) RETURN n4.name",
+    "rewrite_nl": "What is the name of the pathway that the gene \"FOXP3\", which is associated with the disease \"allergic rhinitis\" treated by \"Hydrocortisone\", participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene",
+      "Disease"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Hydrocortisone\")",
+      "Gene(name:\"FOXP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried by IQGAP3, where IQGAP3 is interacted by IQCB1, and IQCB1 is interacted by NEFM?",
+    "cql": "MATCH (n1:Gene{ name: \"NEFM\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"IQCB1\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by \"IQGAP3\", where \"IQGAP3\" is interacted by \"IQCB1\", and \"IQCB1\" is interacted by \"NEFM\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"IQCB1\")",
+      "Gene(name:\"NEFM\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is interacted with by BID, where BID is regulated by ARHGEF2, and ARHGEF2 is covaried with IQGAP3?",
+    "cql": "MATCH (n1:Gene{ name: \"IQGAP3\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ARHGEF2\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"BID\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is interacted with by \"BID\", where \"BID\" is regulated by \"ARHGEF2\", and \"ARHGEF2\" is covaried with \"IQGAP3\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ARHGEF2\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"BID\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene's name is connected by a COVARIES_GcG relationship to SUSD1, after tracing from CCL26 covarying ATF7IP and ATF7IP interacting with SUSD1?",
+    "cql": "MATCH (n1:Gene{ name: \"CCL26\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ATF7IP\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"SUSD1\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which gene's name is connected by a COVARIES_GcG relationship to \"SUSD1\", after tracing from \"CCL26\" covarying \"ATF7IP\" and \"ATF7IP\" interacting with \"SUSD1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ATF7IP\")",
+      "Gene(name:\"CCL26\")",
+      "Gene(name:\"SUSD1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Cellular Component that the gene PDLIM1, which is downregulated by polycystic ovary syndrome (itself is resembled by gestational diabetes), participates in?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n3:Gene{ name: \"PDLIM1\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "What is the name of the Cellular Component that the gene \"PDLIM1\", which is downregulated by \"polycystic ovary syndrome\" (itself is resembled by \"gestational diabetes\"), participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Gene(name:\"PDLIM1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the CellularComponent that the gene EFNA3, which is downregulated by polycystic ovary syndrome—the disease is resembled by gestational diabetes—participates in?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:DOWNREGULATES_DdG]->(n3:Gene{ name: \"EFNA3\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "What is the name of the CellularComponent that the gene \"EFNA3\", which is downregulated by \"polycystic ovary syndrome\"—the disease is resembled by \"gestational diabetes\"—participates in?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Gene(name:\"EFNA3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which genes covaried with the gene PLAT, where PLAT is associated with polycystic ovary syndrome, and polycystic ovary syndrome is resembled by gestational diabetes?",
+    "cql": "MATCH (n1:Disease{ name: \"gestational diabetes\" })-[r1:RESEMBLES_DrD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:ASSOCIATES_DaG]->(n3:Gene{ name: \"PLAT\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which genes covaried with the gene \"PLAT\", where \"PLAT\" is associated with \"polycystic ovary syndrome\", and \"polycystic ovary syndrome\" is resembled by \"gestational diabetes\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Disease(name:\"gestational diabetes\")",
+      "Gene(name:\"PLAT\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Disease",
+          "rel": "RESEMBLES_DrD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which cellular component is associated with the gene CYP2C9, where CYP2C9 is bound by Niclosamide, Niclosamide is resembled by Clonazepam, and the cellular component is participated by CYP2C9?",
+    "cql": "MATCH (n1:Compound{ name: \"Clonazepam\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Niclosamide\" })-[r2:BINDS_CbG]->(n3:Gene{ name: \"CYP2C9\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "Which cellular component is associated with the gene \"CYP2C9\", where \"CYP2C9\" is bound by \"Niclosamide\", \"Niclosamide\" is resembled by \"Clonazepam\", and the cellular component is participated by \"CYP2C9\"?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Compound(name:\"Niclosamide\")",
+      "Compound(name:\"Clonazepam\")",
+      "Gene(name:\"CYP2C9\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "BINDS_CbG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are interacted with by PTPRO, where PHKG1 interacts with PHKG2, PHKG2 regulates PTPRO, and PTPRO interacts with those genes?",
+    "cql": "MATCH (n1:Gene{ name: \"PHKG1\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"PHKG2\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"PTPRO\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are interacted with by \"PTPRO\", where \"PHKG1\" interacts with \"PHKG2\", \"PHKG2\" regulates \"PTPRO\", and \"PTPRO\" interacts with those genes?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"PTPRO\")",
+      "Gene(name:\"PHKG2\")",
+      "Gene(name:\"PHKG1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which gene is connected by an INTERACTS_GiG relationship from PTPRO, where PTPRO is connected from TIMM22 by a REGULATES_GrG relationship, and TIMM22 receives an INTERACTS_GiG connection from TIMM10?",
+    "cql": "MATCH (n1:Gene{ name: \"TIMM10\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"TIMM22\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"PTPRO\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "Which gene is connected by an INTERACTS_GiG relationship from \"PTPRO\", where \"PTPRO\" is connected from \"TIMM22\" by a REGULATES_GrG relationship, and \"TIMM22\" receives an INTERACTS_GiG connection from \"TIMM10\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"TIMM22\")",
+      "Gene(name:\"TIMM10\")",
+      "Gene(name:\"PTPRO\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is interacted with by FXR2, where PSMD2 interacts with RPS4X, RPS4X covaries with FXR2, and FXR2 interacts with that gene?",
+    "cql": "MATCH (n1:Gene{ name: \"PSMD2\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"RPS4X\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"FXR2\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is interacted with by \"FXR2\", where \"PSMD2\" interacts with \"RPS4X\", \"RPS4X\" covaries with \"FXR2\", and \"FXR2\" interacts with that gene?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"PSMD2\")",
+      "Gene(name:\"RPS4X\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried by ZNHIT1, where ZNHIT1 is regulated by VDAC1, and VDAC1 is regulated by PPARA?",
+    "cql": "MATCH (n1:Gene{ name: \"PPARA\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"VDAC1\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"ZNHIT1\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by \"ZNHIT1\", where \"ZNHIT1\" is regulated by \"VDAC1\", and \"VDAC1\" is regulated by \"PPARA\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ZNHIT1\")",
+      "Gene(name:\"PPARA\")",
+      "Gene(name:\"VDAC1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the pathway that the gene FOXP3, which is associated with allergic rhinitis treated by Olopatadine, participates in?",
+    "cql": "MATCH (n1:Compound{ name: \"Olopatadine\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n3:Gene{ name: \"FOXP3\" })-[r3:PARTICIPATES_GpPW]->(n4:Pathway) RETURN n4.name",
+    "rewrite_nl": "What is the name of the pathway that the gene \"FOXP3\", which is associated with \"allergic rhinitis\" treated by \"Olopatadine\", participates in?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Olopatadine\")",
+      "Gene(name:\"FOXP3\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the cellular component that the gene MS4A2, which is associated with allergic rhinitis (palliated by pseudoephedrine), participates in?",
+    "cql": "MATCH (n1:Compound{ name: \"Pseudoephedrine\" })-[r1:PALLIATES_CpD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:ASSOCIATES_DaG]->(n3:Gene{ name: \"MS4A2\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "What is the name of the cellular component that the gene \"MS4A2\", which is associated with \"allergic rhinitis\" (palliated by \"Pseudoephedrine\"), participates in?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Pseudoephedrine\")",
+      "Gene(name:\"MS4A2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "ASSOCIATES_DaG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the disease that is palliated by Ephedrine, where Ephedrine is resembled by Methamphetamine, and Methamphetamine is included in the amphetamines pharmacologic class?",
+    "cql": "MATCH (n1:PharmacologicClass{ name: \"Amphetamines\" })-[r1:INCLUDES_PCiC]->(n2:Compound{ name: \"Methamphetamine\" })-[r2:RESEMBLES_CrC]->(n3:Compound{ name: \"Ephedrine\" })-[r3:PALLIATES_CpD]->(n4:Disease) RETURN n4.name",
+    "rewrite_nl": "What is the name of the disease that is palliated by \"Ephedrine\", where \"Ephedrine\" is resembled by \"Methamphetamine\", and \"Methamphetamine\" is included in the \"Amphetamines\" pharmacologic class?",
+    "nodes": [
+      "Disease",
+      "PharmacologicClass"
+    ],
+    "instance": [
+      "Compound(name:\"Methamphetamine\")",
+      "PharmacologicClass(name:\"Amphetamines\")",
+      "Compound(name:\"Ephedrine\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "PharmacologicClass",
+          "rel": "INCLUDES_PCiC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "PALLIATES_CpD",
+          "obj": "Disease",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Disease",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried with ZNHIT1, where ZNHIT1 is regulated by DIDO1, and DIDO1 is covaried with NOP14?",
+    "cql": "MATCH (n1:Gene{ name: \"NOP14\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"DIDO1\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"ZNHIT1\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried with \"ZNHIT1\", where \"ZNHIT1\" is regulated by \"DIDO1\", and \"DIDO1\" is covaried with \"NOP14\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ZNHIT1\")",
+      "Gene(name:\"NOP14\")",
+      "Gene(name:\"DIDO1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which cellular component does the gene SDCBP, which is downregulated in allergic rhinitis (the disease treated by triamcinolone), participate in?",
+    "cql": "MATCH (n1:Compound{ name: \"Triamcinolone\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:DOWNREGULATES_DdG]->(n3:Gene{ name: \"SDCBP\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "Which cellular component does the gene \"SDCBP\", which is downregulated in \"allergic rhinitis\" (the disease treated by \"Triamcinolone\"), participate in?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Triamcinolone\")",
+      "Gene(name:\"SDCBP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the molecular function that the gene MYC participates in, where MYC is regulated by ARHGEF2, which in turn is covaried with the gene IQGAP3?",
+    "cql": "MATCH (n1:Gene{ name: \"IQGAP3\" })-[r1:COVARIES_GcG]->(n2:Gene{ name: \"ARHGEF2\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"MYC\" })-[r3:PARTICIPATES_GpMF]->(n4:MolecularFunction) RETURN n4.name",
+    "rewrite_nl": "What is the name of the molecular function that the gene \"MYC\" participates in, where \"MYC\" is regulated by \"ARHGEF2\", which in turn is covaried with the gene \"IQGAP3\"?",
+    "nodes": [
+      "Gene",
+      "MolecularFunction"
+    ],
+    "instance": [
+      "Gene(name:\"ARHGEF2\")",
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"MYC\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpMF",
+          "obj": "MolecularFunction",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "MolecularFunction",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Find the name of the pathway that TAZ participates in, where TAZ is connected to CHGB via an interaction, and CHGB is regulated by the gene CTRB1.",
+    "cql": "MATCH (n1:Gene{ name: \"CTRB1\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"CHGB\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"TAZ\" })-[r3:PARTICIPATES_GpPW]->(n4:Pathway) RETURN n4.name",
+    "rewrite_nl": "Find the name of the pathway that \"TAZ\" participates in, where \"TAZ\" is connected to \"CHGB\" via an interaction, and \"CHGB\" is regulated by the gene \"CTRB1\".",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"CTRB1\")",
+      "Gene(name:\"CHGB\")",
+      "Gene(name:\"TAZ\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is regulated by FXR2, where FXR2 is covaried with RPS4X, and RPS4X is regulated by KSR1?",
+    "cql": "MATCH (n1:Gene{ name: \"KSR1\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"RPS4X\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"FXR2\" })-[r3:REGULATES_GrG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is regulated by \"FXR2\", where \"FXR2\" is covaried with \"RPS4X\", and \"RPS4X\" is regulated by \"KSR1\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"RPS4X\")",
+      "Gene(name:\"FXR2\")",
+      "Gene(name:\"KSR1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the Pathway that the gene COL3A1 participates in, where COL3A1 is upregulated by polycystic ovary syndrome, and polycystic ovary syndrome is treated by Metformin?",
+    "cql": "MATCH (n1:Compound{ name: \"Metformin\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"polycystic ovary syndrome\" })-[r2:UPREGULATES_DuG]->(n3:Gene{ name: \"COL3A1\" })-[r3:PARTICIPATES_GpPW]->(n4:Pathway) RETURN n4.name",
+    "rewrite_nl": "What is the name of the Pathway that the gene \"COL3A1\" participates in, where \"COL3A1\" is upregulated by \"polycystic ovary syndrome\", and \"polycystic ovary syndrome\" is treated by \"Metformin\"?",
+    "nodes": [
+      "Pathway",
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"polycystic ovary syndrome\")",
+      "Compound(name:\"Metformin\")",
+      "Gene(name:\"COL3A1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpPW",
+          "obj": "Pathway",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Pathway",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "Which cellular component is participated in by the gene GPAA1, where SMAD4 regulates TUBA4A, TUBA4A interacts with GPAA1, and GPAA1 participates in that cellular component?",
+    "cql": "MATCH (n1:Gene{ name: \"SMAD4\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"TUBA4A\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"GPAA1\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "Which cellular component is participated in by the gene \"GPAA1\", where \"SMAD4\" regulates \"TUBA4A\", \"TUBA4A\" interacts with \"GPAA1\", and \"GPAA1\" participates in that cellular component?",
+    "nodes": [
+      "Gene",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Gene(name:\"TUBA4A\")",
+      "Gene(name:\"GPAA1\")",
+      "Gene(name:\"SMAD4\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried by ZNHIT1, where ZNHIT1 is regulated by DIDO1, and DIDO1 is interacted with WWP2?",
+    "cql": "MATCH (n1:Gene{ name: \"WWP2\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"DIDO1\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"ZNHIT1\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by \"ZNHIT1\", where \"ZNHIT1\" is regulated by \"DIDO1\", and \"DIDO1\" is interacted with \"WWP2\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"ZNHIT1\")",
+      "Gene(name:\"DIDO1\")",
+      "Gene(name:\"WWP2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is covaried by IQGAP3, where IQGAP3 is interacted with IQCB1, and IQCB1 is interacted with PSMB4?",
+    "cql": "MATCH (n1:Gene{ name: \"PSMB4\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"IQCB1\" })-[r2:INTERACTS_GiG]->(n3:Gene{ name: \"IQGAP3\" })-[r3:COVARIES_GcG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is covaried by \"IQGAP3\", where \"IQGAP3\" is interacted with \"IQCB1\", and \"IQCB1\" is interacted with \"PSMB4\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"IQGAP3\")",
+      "Gene(name:\"PSMB4\")",
+      "Gene(name:\"IQCB1\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the CellularComponent that the gene SDCBP, which is downregulated by the disease allergic rhinitis (treated by Cyproheptadine), participates in?",
+    "cql": "MATCH (n1:Compound{ name: \"Cyproheptadine\" })-[r1:TREATS_CtD]->(n2:Disease{ name: \"allergic rhinitis\" })-[r2:DOWNREGULATES_DdG]->(n3:Gene{ name: \"SDCBP\" })-[r3:PARTICIPATES_GpCC]->(n4:CellularComponent) RETURN n4.name",
+    "rewrite_nl": "What is the name of the CellularComponent that the gene \"SDCBP\", which is downregulated by the disease \"allergic rhinitis\" (treated by \"Cyproheptadine\"), participates in?",
+    "nodes": [
+      "Gene",
+      "Disease",
+      "CellularComponent"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Cyproheptadine\")",
+      "Gene(name:\"SDCBP\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "DOWNREGULATES_DdG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "PARTICIPATES_GpCC",
+          "obj": "CellularComponent",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "CellularComponent",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of Genes that are upregulated by allergic rhinitis, where allergic rhinitis is treated by Hydrocortisone, and Hydrocortisone is resembled by Fludrocortisone?",
+    "cql": "MATCH (n1:Compound{ name: \"Fludrocortisone\" })-[r1:RESEMBLES_CrC]->(n2:Compound{ name: \"Hydrocortisone\" })-[r2:TREATS_CtD]->(n3:Disease{ name: \"allergic rhinitis\" })-[r3:UPREGULATES_DuG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of Genes that are upregulated by \"allergic rhinitis\", where \"allergic rhinitis\" is treated by \"Hydrocortisone\", and \"Hydrocortisone\" is resembled by \"Fludrocortisone\"?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Disease(name:\"allergic rhinitis\")",
+      "Compound(name:\"Fludrocortisone\")",
+      "Compound(name:\"Hydrocortisone\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Compound",
+          "rel": "RESEMBLES_CrC",
+          "obj": "Compound",
+          "negation": false
+        },
+        {
+          "sub": "Compound",
+          "rel": "TREATS_CtD",
+          "obj": "Disease",
+          "negation": false
+        },
+        {
+          "sub": "Disease",
+          "rel": "UPREGULATES_DuG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What are the names of genes that are connected from PTPRO by an INTERACTS_GiG relationship, where UBC connects to NUDT5 by INTERACTS_GiG and NUDT5 connects to PTPRO by REGULATES_GrG?",
+    "cql": "MATCH (n1:Gene{ name: \"UBC\" })-[r1:INTERACTS_GiG]->(n2:Gene{ name: \"NUDT5\" })-[r2:REGULATES_GrG]->(n3:Gene{ name: \"PTPRO\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What are the names of genes that are connected from \"PTPRO\" by an INTERACTS_GiG relationship, where \"UBC\" connects to \"NUDT5\" by INTERACTS_GiG and \"NUDT5\" connects to \"PTPRO\" by REGULATES_GrG?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"PTPRO\")",
+      "Gene(name:\"NUDT5\")",
+      "Gene(name:\"UBC\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  },
+  {
+    "rawnl": "What is the name of the gene that is connected to FXR2 by an INTERACTS_GiG relationship, where FXR2 is connected to RPS4X by a COVARIES_GcG relationship, and RPS4X is regulated by PROCR through a REGULATES_GrG relationship?",
+    "cql": "MATCH (n1:Gene{ name: \"PROCR\" })-[r1:REGULATES_GrG]->(n2:Gene{ name: \"RPS4X\" })-[r2:COVARIES_GcG]->(n3:Gene{ name: \"FXR2\" })-[r3:INTERACTS_GiG]->(n4:Gene) RETURN n4.name",
+    "rewrite_nl": "What is the name of the gene that is connected to \"FXR2\" by an INTERACTS_GiG relationship, where \"FXR2\" is connected to \"RPS4X\" by a COVARIES_GcG relationship, and \"RPS4X\" is regulated by \"PROCR\" through a REGULATES_GrG relationship?",
+    "nodes": [
+      "Gene"
+    ],
+    "instance": [
+      "Gene(name:\"PROCR\")",
+      "Gene(name:\"RPS4X\")",
+      "Gene(name:\"FXR2\")"
+    ],
+    "output": {
+      "edges": [
+        {
+          "sub": "Gene",
+          "rel": "REGULATES_GrG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "COVARIES_GcG",
+          "obj": "Gene",
+          "negation": false
+        },
+        {
+          "sub": "Gene",
+          "rel": "INTERACTS_GiG",
+          "obj": "Gene",
+          "negation": false
+        }
+      ],
+      "return_node": {
+        "label": "Gene",
+        "property": "name"
+      }
+    }
+  }
+]
