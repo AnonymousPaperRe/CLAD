@@ -1,9 +1,8 @@
 # CLAD
 
-**CLAD: Complexity- and Logic-Aware Decomposition for Text-to-Cypher  
-over Domain-Specific Knowledge Graphs**
+**CLAD: Complexity- and Logic-Aware Decomposition for Text-to-Cypher over Biomedical Knowledge Graphs**
 
-CLAD is a research codebase for **logic-aware Text-to-Cypher generation** over domain-specific knowledge graphs.  
+CLAD is a research codebase for **logic-aware Text-to-Cypher generation** over biomedical knowledge graphs.  
 It explicitly models **query complexity, logical structure, and decomposition** to enable robust translation of complex natural language questions into executable Cypher queries.
 
 This repository provides **datasets, training/testing code, and reasoning modules** for a multi-stage T5-based framework.
