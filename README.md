@@ -40,6 +40,7 @@ Each task is trained with an **independent T5-base model**.
 - `data/T5training` — datasets for **𝒯ₐ**, **𝒯_dm**, **𝒯_df**, **𝒯_f** (train).
 - `data/testing`  — test datasets across 16 logic types (test).
 - `clad/utils/` — source code for the clad pipeline.
+- `clad/utils/notebook` — four stage demos
 - `clad/T5/` — source code for the T5 base training and inference.
 - `clad/notebook/` — example code for question rewriting, complexity reasoning, logic reasoning, and Cypher synthesis.
 - `baseline/` — baseline model prompts/scripts.
